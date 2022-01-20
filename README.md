@@ -1,13 +1,20 @@
 # 멋쟁이 사자처럼 홍보 사이트 nana
 
 ## Before Start
+
 - 이 프로젝트는 패키지 매니저로 yarn을 권장합니다
 
 ## Start Project
+
 ```bash
 yarn dev
 # or
 npm run dev
+
+# Error
+`'next'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.`
+발생시 `yarn upgrade`를 해주세요
+
 
 명령어 입력 후
 http://localhost:3000에 접속해 보세요
@@ -21,5 +28,6 @@ yarn add styled-reset
 ```
 
 ## Tech Stack
+
 - React, Next.js
 - styled-components, Styled-reset
