@@ -29,6 +29,7 @@ const PropsStyle = styled.div`
 
 // 컴포넌트의 이름(파일명포함)은 반드시 첫 글자가 대문자여야 합니다
 const Test = () => {
+  console.log('test');
   return (
     // return문 안에는 HTML과 매우 유사한 코드를 작성할 수 있습니다
     <TestBox>
