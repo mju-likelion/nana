@@ -13,6 +13,7 @@ const ApplyBtn = styled.button`
   color: #000;
   font-size: 16px;
   font-weight: bolder;
+  cursor: pointer;
 
   img {
     width: 40px;
