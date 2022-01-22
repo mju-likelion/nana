@@ -1,11 +1,16 @@
-import Test from '../components/Test';
+import styled from 'styled-components';
+
+import Welcom from '../components/Welcom';
+
+const MainContainer = styled.div`
+  min-width: 100%;
+  height: 100vh;
+`;
 
 export default function Home() {
   return (
-    <>
-      <h1>멋쟁이 사자처럼 홍보사이트 메인</h1>
-      <p>여기에 다양한 컴포넌트를 불러와 보세요</p>
-      <Test />
-    </>
+    <MainContainer>
+      <Welcom />
+    </MainContainer>
   );
 }
