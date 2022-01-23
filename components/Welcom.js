@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 import ApplyButton from './ApplyButton';
+import FallingStarEffect from './FallingStarEffect';
 
 const WelcomContainer = styled.div`
+  overflow: hidden;
   display: flex;
   position: relative;
   align-items: center;
@@ -84,6 +86,8 @@ const WelcomText = styled.div`
 const Welcom = () => {
   return (
     <WelcomContainer>
+      {/* 별똥별 이팩트 */}
+      <FallingStarEffect />
       {/* 백그라운드를 제외하고 싶다면 이 컴포넌트를 주석해주세요 */}
       <BackgroundBox />
       <WelcomText>
