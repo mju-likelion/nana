@@ -77,7 +77,7 @@ const WelcomText = styled.div`
     }
     p {
       margin: 8px auto 50px auto;
-      width: 151px;
+      width: 165px;
       font-size: 10px;
     }
   }
