@@ -3,6 +3,7 @@
 ## Before Start
 
 - 이 프로젝트는 패키지 매니저로 yarn을 권장합니다
+- 원활한 개발을 위해 prettier, eslint 확장자 설치가 필요합니다
 
 ## Start Project
 
@@ -24,22 +25,20 @@ http://localhost:3000에 접속해 보세요
 
 - React, Next.js
 - styled-components, styled-reset
+- eslint, prettier
 
 ## Convention
+
 ### commit message
-```
-feature: 기능 추가
+|머릿말|내용|
+|------|---|
+|feature|새로운 기능 추가|
+|refactor|코드 리팩토링|
+|fix|버그 수정|
+|style|세미 콜론 수정, 줄바꿈, 스타일 등 기능에 지장 가지 않는 스타일 변경|
+|setting|빌드수행, 패키지 설치, 환경 설정 수정 등|
+|document|주석 추가삭제, reademe 작성|
 
-refactoring: 리팩토링, 기능을 그대로 하고 코드의 최적화, 재구조화
-
-fix: 버그 수정
-
-style: 기능에 지장 가지 않는 스타일 변경
-
-setting: eslint 변경, 라이브러리 설치
-
-document: 주석 추가삭제, readme 변경
-```
 ### branch naming
 ```
 ├── main
@@ -47,5 +46,4 @@ document: 주석 추가삭제, readme 변경
 │-----------relese
 └── develop
     └── feature
-
 ```
