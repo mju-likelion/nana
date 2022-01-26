@@ -179,7 +179,7 @@ const FallingStarEffect = () => {
         <InnerBox>
           <AnimationBox>
             {effectPositions.map((position) => (
-              <img src='../fallingStar.png' alt='유성' key={position} />
+              <img src='../img/fallingStar.png' alt='유성' key={position} />
             ))}
           </AnimationBox>
         </InnerBox>

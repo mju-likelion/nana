@@ -27,7 +27,7 @@ const ApplyButton = ({ text, width, height }) => {
     // 받아온 props를 스타일링을 위한 수치로 활용합니다
     <ApplyBtn width={width} height={height}>
       {text}
-      <img src='../svg/ic-more.svg' alt='화살표' />
+      <img src='../img/ic-more.svg' alt='화살표' />
     </ApplyBtn>
   );
 };

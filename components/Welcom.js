@@ -38,7 +38,7 @@ const BackgroundBox = styled.div`
   min-height: 90%;
   top: 0;
   /* background: url('../svg/bgSky.svg'); */
-  background: url('../svg/bgSky.png');
+  background: url('../img/bgSky.png');
   background-size: cover;
   z-index: -1;
 `;
