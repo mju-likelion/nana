@@ -44,9 +44,15 @@ const BackgroundBox = styled.div`
 `;
 
 const WelcomText = styled.div`
+  @font-face {
+    font-family: 'Mulish-ExtraBold';
+    src: local('Mulish'),
+      url(${'/fonts/Mulish-ExtraBold.ttf'}) format('truetype');
+  }
   margin: 0 auto;
   text-align: center;
   h1 {
+    font-family: 'Mulish-ExtraBold';
     color: #ffd25e;
     font-size: 60px;
     font-weight: bolder;
@@ -56,12 +62,18 @@ const WelcomText = styled.div`
     color: #fff;
     font-size: 30px;
     font-weight: bolder;
+    line-height: 25px;
+  }
+  h2:nth-child(1)::after {
+    content: '';
+    margin-left: 8px;
   }
   p {
     color: #fff;
     font-size: 16px;
     font-weight: bolder;
     margin: 24px 0 61px 0;
+    line-height: 12px;
   }
   span {
     display: flex;
@@ -71,13 +83,16 @@ const WelcomText = styled.div`
     span {
       display: block;
     }
+    h1 {
+      font-family: 'Muilsh-ExtraBold';
+    }
     h1,
     h2 {
       font-size: 20px;
     }
     p {
       margin: 8px auto 50px auto;
-      width: 165px;
+      width: 150px;
       font-size: 10px;
     }
   }

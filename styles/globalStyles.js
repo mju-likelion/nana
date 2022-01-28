@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     url(${'/fonts/Mulish-Regular.ttf'}) format("truetype");
   }
   body{
+    user-select: none;
     background-color: #ffffff;
     font-family: -apple-system,Mulish,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
