@@ -13,6 +13,11 @@ const IntroWapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  // 텍스트 드래그 방지 css
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 const IntroServiceHover = styled.p`
