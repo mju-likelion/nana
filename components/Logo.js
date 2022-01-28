@@ -27,7 +27,7 @@ const LogoTitle = styled.div`
   /* 모바일 디자인 */
   @media screen and (max-width: 1024px) {
    font-weight: bold;
-   font-size: 14px;
+   font-size: 13px;
   }
 `;
 

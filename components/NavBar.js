@@ -38,7 +38,7 @@ const ToggleMenu = styled.div`
   display: none;
   position: absolute;
   top: 35px;
-  right: 80px;
+  right: 30px;
   font-size: 25px;
   color: #FFFFFF;
   cursor: pointer;
