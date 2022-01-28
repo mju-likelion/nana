@@ -1,4 +1,6 @@
+import {useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
+import {MdClose} from 'react-icons/md';
 import styled from 'styled-components';
 
 import Logo from './Logo';
@@ -6,7 +8,6 @@ import Menu from './Menu';
 
 const NavWrap = styled.div`
   /* 상단 고정 */
-  background-color: royalblue;
   display: flex;
   position: fixed;
   top: 0;
@@ -32,11 +33,12 @@ const NavContainer = styled.div`
   }
 `;
 
-const HamburgerMenu = styled.div`
+const ToggleMenu = styled.div`
+  /* 기본 설정 none -> 모바일에서는 block */
   display: none;
   position: absolute;
   top: 35px;
-  right: 100px;
+  right: 80px;
   font-size: 25px;
   color: #FFFFFF;
   cursor: pointer;
@@ -48,17 +50,22 @@ const HamburgerMenu = styled.div`
 `;
 
 const NavBar = () => {
+  // 모바일 메뉴바 선택 전 기본 값 false
+  const [isToggled, setIsToggled] = useState(false);
+
   return (
     <div>
       <NavWrap>
         <NavContainer>
           <Logo />
-          <Menu />
+          <Menu isToggled={isToggled} />
         </NavContainer>
+        <ToggleMenu onClick={()=>{
+          setIsToggled(!isToggled);
+        }}>
+          {!isToggled ? <GiHamburgerMenu /> : <MdClose />}
+        </ToggleMenu>
       </NavWrap>
-      <HamburgerMenu>
-        <GiHamburgerMenu />
-      </HamburgerMenu>
     </div>
   );
 };

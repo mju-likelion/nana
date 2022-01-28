@@ -1,4 +1,4 @@
-// MJU, CURRICULUM, OUTPUT, JOIN 메뉴 컴포넌트
+// LIKELION|MJU, CURRICULUM, OUTPUT, JOIN 메뉴 컴포넌트
 import styled from 'styled-components';
 
 const MenuWrap = styled.div`
@@ -8,6 +8,7 @@ const MenuWrap = styled.div`
   height: 25px;
 
   @media screen and (max-width: 1024px) {
+    display: ${(props) => (props.isToggled ? "flex" : "none")};
     flex-direction: column;
     /* 세로변환 시 메뉴들 센터로 -> 너비는 넓게 100% */
     align-items: center;
@@ -34,9 +35,9 @@ const MenuBtn = styled.button`
   }
 `;
 
-const Menu = () => {
+const Menu = ({isToggled}) => {
   return (
-    <MenuWrap>
+    <MenuWrap isToggled={isToggled}>
       <MenuBtn>LIKELION | MJU</MenuBtn>
       <MenuBtn>CURRICULUM</MenuBtn>
       <MenuBtn>OUTPUT</MenuBtn>
