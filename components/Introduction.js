@@ -20,14 +20,16 @@ const IntroWapper = styled.div`
   user-select: none;
 `;
 
-const IntroServiceHover = styled.p`
+const IntroServiceHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
+  text-decoration: underline;
 `;
 
 const IntroStudyHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
+  text-decoration: underline;
 `;
 
 const IntroTextArray = styled.div`
@@ -40,6 +42,10 @@ const IntroTextArray = styled.div`
   text-align: center;
   margin-top: 30px;
 `;
+
+const IntroMjuTextColor = styled.p`
+    color: #FFFFFF;
+`
 const IntroLastTextBox = styled.div`
   margin-top: 250px;
   margin-bottom: 200px;
@@ -67,7 +73,7 @@ const Introduction = () => {
           </p>
           <p>
             현재는 멋쟁이사자처럼 대학생, 멋쟁이사자처럼 직장인 , 멋쟁이사자처럼
-            AI School , 광주 인공지능사관학교 등의{' '}
+            AI School , 광주 인공지능사관학교 등의
           </p>
           <p>
             오프라인 교육과, 글로벌 온라인 코딩 교육 플랫폼 코드라이언(CODE
@@ -76,7 +82,7 @@ const Introduction = () => {
 
           <p>
             2018년 5월 영리법인으로 전환한 이후, 2019년 전년 대비 매출액 425%를
-            달성했고,{' '}
+            달성했고,
           </p>
           <p>2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다. </p>
           <p>
@@ -87,29 +93,32 @@ const Introduction = () => {
       </IntroductionMju>
       <IntroductionMju img={false}>
         <IntroTextArray>
-          <p>
+          <IntroMjuTextColor>
             명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
             이어오는 중이에요 !
-          </p>
-          <p>우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지 </p>
-          <p>하나하나 맛보고 내 것으로 만들 수 있어요. </p>
-          <IntroServiceHover>
-            우리가 만든 웹서비스가 궁금하다면 ?
-          </IntroServiceHover>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지 </IntroMjuTextColor>
+          <IntroMjuTextColor>하나하나 맛보고 내 것으로 만들 수 있어요. </IntroMjuTextColor>
+          <IntroMjuTextColor>
+            우리가 만든  <IntroServiceHover>웹서비스</IntroServiceHover>가 궁금하다면 ?
+          </IntroMjuTextColor>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
-          <p>
+          <IntroMjuTextColor>
             명지대 멋사는 우리끼리의 활동뿐만 아니라 다른 학교와의 연합스터디도
             준비되어 있어요 !
-          </p>
-          <p>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
             많은 사람들과 원하는 스택을 공부할 수 있는 환경까지 만들어준답니다.
-          </p>
-          <IntroStudyHover
-            href='https://github.com/KOSMOSstudy'
-            target='_blank'
-          >
-            명지대(자연)와 다른 학교의 연합이 궁금하다면?
-          </IntroStudyHover>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
+            <IntroStudyHover
+              href='https://github.com/KOSMOSstudy'
+              target='_blank'
+            >
+              명지대(자연)와 다른 학교의 연합
+            </IntroStudyHover>
+            이 궁금하다면?
+          </IntroMjuTextColor>
           {/* 위 문장을 코스모스 깃허브 링크 url로 연결해야 함 */}
         </IntroTextArray>
       </IntroductionMju>
