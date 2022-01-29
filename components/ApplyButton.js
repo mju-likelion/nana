@@ -21,6 +21,16 @@ const ApplyBtn = styled.button`
     width: 40px;
     height: 15px;
   }
+
+  @media screen and (max-width: 1024px) {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    img {
+      margin-left: 5px;
+      width: 10px;
+    }
+  }
 `;
 
 // props로 text, width, height을 받아옵니다

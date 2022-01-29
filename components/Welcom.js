@@ -73,7 +73,7 @@ const WelcomText = styled.div`
     font-size: 16px;
     font-weight: bolder;
     margin: 24px 0 61px 0;
-    line-height: 12px;
+    line-height: 15px;
   }
   span {
     display: flex;
@@ -91,8 +91,8 @@ const WelcomText = styled.div`
       font-size: 20px;
     }
     p {
-      margin: 8px auto 50px auto;
-      width: 150px;
+      margin: 8px auto 30px auto;
+      width: 160px;
       font-size: 10px;
     }
   }
