@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const IntroductionMju = styled.div`
+  @media screen and (max-width: 1024px) {
+  }
   width: 1078px;
   height: 425px;
   margin-top: 81px;
@@ -14,9 +16,6 @@ const IntroWapper = styled.div`
   align-items: center;
   flex-direction: column;
   // 텍스트 드래그 방지 css
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 `;
 
@@ -44,8 +43,9 @@ const IntroTextArray = styled.div`
 `;
 
 const IntroMjuTextColor = styled.p`
-    color: #FFFFFF;
-`
+  color: #ffffff;
+`;
+
 const IntroLastTextBox = styled.div`
   margin-top: 250px;
   margin-bottom: 200px;
@@ -56,8 +56,6 @@ const IntroLastTextBox = styled.div`
 `;
 
 const Introduction = () => {
-  // eslint-disable-next-line no-console
-  console.log('hello');
   return (
     <IntroWapper>
       <IntroductionMju img>
@@ -97,10 +95,15 @@ const Introduction = () => {
             명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
             이어오는 중이에요 !
           </IntroMjuTextColor>
-          <IntroMjuTextColor>우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지 </IntroMjuTextColor>
-          <IntroMjuTextColor>하나하나 맛보고 내 것으로 만들 수 있어요. </IntroMjuTextColor>
           <IntroMjuTextColor>
-            우리가 만든  <IntroServiceHover>웹서비스</IntroServiceHover>가 궁금하다면 ?
+            우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지{' '}
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
+            하나하나 맛보고 내 것으로 만들 수 있어요.{' '}
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
+            우리가 만든 <IntroServiceHover>웹서비스</IntroServiceHover>가
+            궁금하다면 ?
           </IntroMjuTextColor>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
           <IntroMjuTextColor>
