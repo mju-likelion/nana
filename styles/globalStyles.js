@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -8,9 +8,11 @@ const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: "Mulish";
-    src: url("/fonts/Mulish.ttf") format("truetype");
+    src: local('Mulish'),
+    url(${'/fonts/Mulish-Regular.ttf'}) format("truetype");
   }
   body{
+    user-select: none;
     background-color: #ffffff;
     font-family: -apple-system,Mulish,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
