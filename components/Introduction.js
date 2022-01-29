@@ -40,7 +40,7 @@ const IntroTextArray = styled.div`
   font-size: 18px;
   line-height: 45px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 36px;
 `;
 
 const IntroMjuTextColor = styled.p`
