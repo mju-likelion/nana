@@ -1,14 +1,21 @@
 import styled from 'styled-components';
 
-const IntroductionMju = styled.div`
+const IntroductionMjuImg = styled.div`
   @media screen and (max-width: 1024px) {
-    color: red;
+    position: static;
+    width: 80%;
+    height: 0 auto;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
-  width: 1078px;
-  height: 425px;
-  margin-top: 81px;
   background: url(${(props) =>
     props.img ? '../img/introLikelion.png' : '../img/introLikelionMju.png'});
+  width: 1024px;
+  height: 425px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: -1;
 `;
 
 const IntroWapper = styled.div`
@@ -33,21 +40,34 @@ const IntroStudyHover = styled.a`
 `;
 
 const IntroTextArray = styled.div`
+  @media screen and (max-width: 1024px) {
+    position: static;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -130px;
+  }
   width: 985px;
-  height: 357px;
+  // height: 385px;
   margin: 0 auto;
   font-weight: bold;
   font-size: 18px;
   line-height: 45px;
   text-align: center;
-  margin-top: 36px;
+  z-index: 1;
+  margin-top: ${(props) => (props.textTop ? '60px' : '5px')};
 `;
 
 const IntroMjuTextColor = styled.p`
+  @media screen and (max-width: 1024px) {
+    color: black;
+  }
   color: #ffffff;
 `;
 
 const IntroLastTextBox = styled.div`
+  @media screen and (max-width: 1024px) {
+    font-size: 30px;
+  }
   margin-top: 250px;
   margin-bottom: 200px;
   font-size: 55px;
@@ -56,11 +76,26 @@ const IntroLastTextBox = styled.div`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
+const IntroContainer = styled.div`
+  @media screen and (max-width: 1024px) {
+    color: red;
+  }
+  margin-top: 21px;
+  position: relative;
+  margin-top: 100px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
 const Introduction = () => {
   return (
     <IntroWapper>
-      <IntroductionMju img>
-        <IntroTextArray>
+      <IntroContainer>
+        <IntroductionMjuImg img />
+        <IntroTextArray textTop={false}>
           <IntroMjuTextColor>
             멋쟁이사자처럼은 2013년 비영리법인으로 시작하여
           </IntroMjuTextColor>
@@ -80,20 +115,24 @@ const Introduction = () => {
             오프라인 교육과, 글로벌 온라인 코딩 교육 플랫폼 코드라이언(CODE
             LION)을 개발, 운영하고 있습니다.
           </IntroMjuTextColor>
-
+          <br />
           <IntroMjuTextColor>
             2018년 5월 영리법인으로 전환한 이후, 2019년 전년 대비 매출액 425%를
             달성했고,
           </IntroMjuTextColor>
-          <IntroMjuTextColor>2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다. </IntroMjuTextColor>
+          <IntroMjuTextColor>
+            2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다.{' '}
+          </IntroMjuTextColor>
           <IntroMjuTextColor>
             이에 역량과 향후 글로벌 차원의 성장성을 인정받아 2019년 9월
             미래에셋벤처투자로부터 투자를 유치한바 있습니다.
           </IntroMjuTextColor>
         </IntroTextArray>
-      </IntroductionMju>
-      <IntroductionMju img={false}>
-        <IntroTextArray>
+      </IntroContainer>
+
+      <IntroContainer>
+        <IntroductionMjuImg img={false} />
+        <IntroTextArray textTop>
           <IntroMjuTextColor>
             명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
             이어오는 중이에요 !
@@ -127,7 +166,7 @@ const Introduction = () => {
           </IntroMjuTextColor>
           {/* 위 문장을 코스모스 깃허브 링크 url로 연결해야 함 */}
         </IntroTextArray>
-      </IntroductionMju>
+      </IntroContainer>
       <IntroLastTextBox>
         <p>지금 보시는 페이지도 만들 수 있어요! </p>
       </IntroLastTextBox>
