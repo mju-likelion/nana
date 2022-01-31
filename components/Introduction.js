@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const IntroductionMju = styled.div`
   @media screen and (max-width: 1024px) {
+    color: red;
   }
   width: 1078px;
   height: 425px;
@@ -60,33 +61,35 @@ const Introduction = () => {
     <IntroWapper>
       <IntroductionMju img>
         <IntroTextArray>
-          <p>멋쟁이사자처럼은 2013년 비영리법인으로 시작하여 </p>
-          <p>
+          <IntroMjuTextColor>
+            멋쟁이사자처럼은 2013년 비영리법인으로 시작하여
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
             국내 및 국외(한국, 미국, 호주, 홍콩, 일본 등) 7,000여명의 대학생에게
             프로그래밍 교육을 제공해왔습니다.
-          </p>
-          <p>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
             2018년 5월 영리법인으로 전환하여 교육 대상과 지역(베트남 등)을
             확장했고,
-          </p>
-          <p>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
             현재는 멋쟁이사자처럼 대학생, 멋쟁이사자처럼 직장인 , 멋쟁이사자처럼
             AI School , 광주 인공지능사관학교 등의
-          </p>
-          <p>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>
             오프라인 교육과, 글로벌 온라인 코딩 교육 플랫폼 코드라이언(CODE
             LION)을 개발, 운영하고 있습니다.
-          </p>
+          </IntroMjuTextColor>
 
-          <p>
+          <IntroMjuTextColor>
             2018년 5월 영리법인으로 전환한 이후, 2019년 전년 대비 매출액 425%를
             달성했고,
-          </p>
-          <p>2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다. </p>
-          <p>
+          </IntroMjuTextColor>
+          <IntroMjuTextColor>2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다. </IntroMjuTextColor>
+          <IntroMjuTextColor>
             이에 역량과 향후 글로벌 차원의 성장성을 인정받아 2019년 9월
             미래에셋벤처투자로부터 투자를 유치한바 있습니다.
-          </p>
+          </IntroMjuTextColor>
         </IntroTextArray>
       </IntroductionMju>
       <IntroductionMju img={false}>
