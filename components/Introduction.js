@@ -1,30 +1,10 @@
 import styled from 'styled-components';
 
-const IntroductionMjuImg = styled.div`
-  @media screen and (max-width: 1024px) {
-    position: static;
-    width: 80%;
-    height: 0 auto;
-    margin: 0 auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  background: url(${(props) =>
-    props.img ? '../img/introLikelion.png' : '../img/introLikelionMju.png'});
-  width: 1024px;
-  height: 425px;
-  margin: 0 auto;
-  position: absolute;
-  z-index: -1;
-`;
-
 const IntroWapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // 텍스트 드래그 방지 css
-  user-select: none;
 `;
 
 const IntroServiceHover = styled.a`
@@ -44,17 +24,15 @@ const IntroTextArray = styled.div`
     position: static;
     width: 80%;
     margin: 0 auto;
-    margin-top: -130px;
+    text-align: left;
   }
   width: 985px;
-  // height: 385px;
   margin: 0 auto;
   font-weight: bold;
   font-size: 18px;
   line-height: 45px;
   text-align: center;
   z-index: 1;
-  margin-top: ${(props) => (props.textTop ? '60px' : '5px')};
 `;
 
 const IntroMjuTextColor = styled.p`
@@ -77,25 +55,34 @@ const IntroLastTextBox = styled.div`
 `;
 
 const IntroContainer = styled.div`
-  @media screen and (max-width: 1024px) {
-    color: red;
-  }
-  margin-top: 21px;
   position: relative;
   margin-top: 100px;
-  object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  img {
+    position: absolute;
+    width: 1024px;
+    height: 425px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    img {
+      position: static;
+      width: 80%;
+      height: auto;
+    }
+  }
 `;
 
 const Introduction = () => {
   return (
     <IntroWapper>
       <IntroContainer>
-        <IntroductionMjuImg img />
-        <IntroTextArray textTop={false}>
+        <img src='../img/introLikelion.png' alt='멋사중앙건물' />
+        <IntroTextArray>
           <IntroMjuTextColor>
             멋쟁이사자처럼은 2013년 비영리법인으로 시작하여
           </IntroMjuTextColor>
@@ -131,8 +118,8 @@ const Introduction = () => {
       </IntroContainer>
 
       <IntroContainer>
-        <IntroductionMjuImg img={false} />
-        <IntroTextArray textTop>
+        <img src='../img/introLikelionMju.png' alt='멋사명지대단체사진' />
+        <IntroTextArray>
           <IntroMjuTextColor>
             명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
             이어오는 중이에요 !
