@@ -69,11 +69,30 @@ const Join = () => {
     <Wrapper>
       <ColleagueBox>
         <ColleagueTitle>동료상</ColleagueTitle>
-        <ColleagueContent>동료상내용</ColleagueContent>
+        <ColleagueContent>
+          - 일단 해보자구요, 도전정신 가득한 사람👊🏻
+        </ColleagueContent>
+        <ColleagueContent>
+          - 질문해도 물지 않아요🦁 질문하는 사람 대환영 !
+        </ColleagueContent>
+        <ColleagueContent>- 마음껏 나대볼 사람 🙋🏻‍♀🙋🏻‍♂</ColleagueContent>
+        <ColleagueContent>
+          - 의지활활, 열정뿜뿜 사람을 찾아요🔥
+        </ColleagueContent>
+        <ColleagueContent>
+          - 명지대 멋사에 애정을 갖고 투자해주세요💙
+        </ColleagueContent>
       </ColleagueBox>
       <RecruitBox>
         <RecruitTitle>모집정보</RecruitTitle>
-        <RecruitContent>모집정보 내용</RecruitContent>
+        <RecruitContent>● 모집기간</RecruitContent>
+        <RecruitContent>
+          - 3월 2일(수) ~ 3월 11일(금) PM 11:59까지
+        </RecruitContent>
+        <RecruitContent>● 모집인원 (약 25명~30명)</RecruitContent>
+        <RecruitContent>
+          ● 기획, 디자인, 웹 파트로 나눠 지원받아요!
+        </RecruitContent>
       </RecruitBox>
     </Wrapper>
   );
