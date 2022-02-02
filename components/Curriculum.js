@@ -12,7 +12,6 @@ const CurriWapper = styled.div`
 `;
 
 const CurriContainer = styled.div`
-  position: relative;
   margin-top: 150px;
   display: flex;
   justify-content: center;
@@ -21,39 +20,35 @@ const CurriContainer = styled.div`
   font-size: 30px;
 
   img {
-    position: absolute;
     width: 854px;
     height: 319px;
   }
   p {
-    position: absolute;
     width: 420px;
     height: 22px;
-    margin-top: 380px;
+    margin-top: 8px;
     margin-left: 520px;
-
     font-family: NanumGothic;
     font-style: normal;
     font-weight: 900;
     font-size: 16px;
     line-height: 16px;
     text-align: center;
-
     color: #737070;
   }
 
-  @media screen and (max-width: 1024px) {
-    img {
-      position: static;
-      width: 80%;
-      height: auto;
-    }
-  }
+  // @media screen and (max-width: 1024px) {
+  //   img {
+  //     width: 50px;
+  //     height: auto;
+  //   }
+  // }
 `;
+
 const PLText = styled.div`
   width: 413px;
   height: 21px;
-  margin-top: 240px;
+  margin-top: 49px;
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
@@ -62,24 +57,15 @@ const PLText = styled.div`
   text-align: center;
   color: #737070;
 `;
+
 const PLImgBox = styled.div`
-  position: relative;
   margin-top: 41px;
   display: inline-flex;
 
-  img {  
-    margin-left:36px;
-     margin-bottom: 50px;
+  img {
+    margin-left: 36px;
+    margin-bottom: 50px;
     margin-right: 37px;
-  }
-  
-
-  // @media screen and (max-width: 1024px) {
-  //   img {
-  //     position: static;
-  //     width: 80%;
-  //     height: auto;
-  //   }
   }
 `;
 
@@ -105,3 +91,4 @@ const Curriculum = () => {
 };
 
 export default Curriculum;
+ 
