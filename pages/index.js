@@ -10,11 +10,9 @@ const MainContainer = styled.div`
 
 export default function Home() {
   return (
-    <>
-      <MainContainer>
-        <Welcom />
-      </MainContainer>
+    <MainContainer>
+      <Welcom />
       <Introduction />
-    </>
+    </MainContainer>
   );
 }
