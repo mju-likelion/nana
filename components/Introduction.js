@@ -25,6 +25,9 @@ const IntroTextArray = styled.div`
     width: 80%;
     margin: 0 auto;
     text-align: left;
+    margin-top: 27px;
+    font-size: 16px;
+    font-weight: 700;
   }
   width: 985px;
   margin: 0 auto;
@@ -40,18 +43,6 @@ const IntroMjuTextColor = styled.p`
     color: black;
   }
   color: #ffffff;
-`;
-
-const IntroLastTextBox = styled.div`
-  @media screen and (max-width: 1024px) {
-    font-size: 30px;
-  }
-  margin-top: 250px;
-  margin-bottom: 200px;
-  font-size: 55px;
-  font-weight: 800;
-  color: #1f1f1f;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const IntroContainer = styled.div`
@@ -75,6 +66,17 @@ const IntroContainer = styled.div`
       height: auto;
     }
   }
+`;
+const IntroLastTextBox = styled.div`
+  @media screen and (max-width: 1024px) {
+    font-size: 25px;
+  }
+  margin-top: 250px;
+  margin-bottom: 200px;
+  font-size: 55px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const Introduction = () => {
