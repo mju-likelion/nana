@@ -5,49 +5,15 @@ const IntroWapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
-
-const IntroServiceHover = styled.a`
-  color: #ffd25d;
-  cursor: pointer;
-  text-decoration: underline;
-`;
-
-const IntroStudyHover = styled.a`
-  color: #ffd25d;
-  cursor: pointer;
-  text-decoration: underline;
-`;
-
-const IntroTextArray = styled.div`
+  margin-top: 70px;
   @media screen and (max-width: 1024px) {
-    position: static;
-    width: 80%;
-    margin: 0 auto;
-    text-align: left;
-    margin-top: 27px;
-    font-size: 16px;
-    font-weight: 700;
+    margin-top: 20px;
   }
-  width: 985px;
-  margin: 0 auto;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 45px;
-  text-align: center;
-  z-index: 1;
-`;
-
-const IntroMjuTextColor = styled.p`
-  @media screen and (max-width: 1024px) {
-    color: black;
-  }
-  color: #ffffff;
 `;
 
 const IntroContainer = styled.div`
   position: relative;
-  margin-top: 100px;
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,6 +33,46 @@ const IntroContainer = styled.div`
     }
   }
 `;
+
+const IntroServiceHover = styled.a`
+  color: #ffd25d;
+  cursor: pointer;
+  text-decoration: underline;
+`;
+
+const IntroStudyHover = styled.a`
+  color: #ffd25d;
+  cursor: pointer;
+  text-decoration: underline;
+`;
+
+const IntroTextArray = styled.div`
+  @media screen and (max-width: 1024px) {
+    position: static;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 27px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  width: 985px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 45px;
+  text-align: center;
+  z-index: 1;
+  word-break: keep-all;
+`;
+
+const IntroMjuTextColor = styled.p`
+  @media screen and (max-width: 1024px) {
+    color: black;
+  }
+  color: #ffffff;
+`;
+
 const IntroLastTextBox = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 25px;
