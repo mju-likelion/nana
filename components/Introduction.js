@@ -76,6 +76,7 @@ const IntroMjuTextColor = styled.p`
 const IntroLastTextBox = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 25px;
+    margin-top: 120px;
   }
   margin-top: 250px;
   margin-bottom: 200px;
@@ -116,7 +117,7 @@ const Introduction = () => {
             달성했고,
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다.{' '}
+            2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다.
           </IntroMjuTextColor>
           <IntroMjuTextColor>
             이에 역량과 향후 글로벌 차원의 성장성을 인정받아 2019년 9월
@@ -133,10 +134,10 @@ const Introduction = () => {
             이어오는 중이에요 !
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지{' '}
+            우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            하나하나 맛보고 내 것으로 만들 수 있어요.{' '}
+            하나하나 맛보고 내 것으로 만들 수 있어요.
           </IntroMjuTextColor>
           <IntroMjuTextColor>
             우리가 만든 <IntroServiceHover>웹서비스</IntroServiceHover>가
