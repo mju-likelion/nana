@@ -51,18 +51,16 @@ const CurriContainer = styled.div`
   }
 `;
 const PLText = styled.div`
-  p {
-    width: 413px;
-    height: 21px;
-    margin-top: 240px;
-    font-family: Mulish;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #737070;
-  }
+  width: 413px;
+  height: 21px;
+  margin-top: 240px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #737070;
 `;
 const PLImgBox = styled.div`
   position: relative;
