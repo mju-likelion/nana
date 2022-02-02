@@ -28,7 +28,6 @@ const CurriContainer = styled.div`
     height: 22px;
     margin-top: 8px;
     margin-left: 520px;
-    font-family: NanumGothic;
     font-style: normal;
     font-weight: 900;
     font-size: 16px;
@@ -49,7 +48,6 @@ const PLText = styled.div`
   width: 413px;
   height: 21px;
   margin-top: 49px;
-  font-family: Mulish;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -60,7 +58,7 @@ const PLText = styled.div`
 
 const PLImgBox = styled.div`
   margin-top: 41px;
-  display: inline-flex;
+  display: flex;
 
   img {
     margin-left: 36px;
@@ -91,4 +89,3 @@ const Curriculum = () => {
 };
 
 export default Curriculum;
- 
