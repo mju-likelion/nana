@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Apply from '../components/Apply';
 import Join from '../components/Join';
 import Welcom from '../components/Welcom';
 
@@ -13,6 +14,7 @@ export default function Home() {
     <MainContainer>
       <Welcom />
       <Join />
+      <Apply />
     </MainContainer>
   );
 }
