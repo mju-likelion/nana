@@ -15,7 +15,7 @@ const ContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 85px;
-  width: 50%;
+  width: 900px;
   height: 70%;
   background-color: orange;
 
