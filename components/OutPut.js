@@ -16,15 +16,15 @@ const ContentWrap = styled.div`
   align-items: center;
   margin-top: 85px;
   width: 900px;
-  height: 70%;
-  background-color: orange;
+  height: 80%;
+  /* background-color: orange; */
 
   h2 {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     padding: 30px 0 20px 0;
-    background-color: tomato;
+    /* background-color: tomato; */
   }
 `;
 
@@ -39,7 +39,7 @@ const Hackathon = [
     serviceImg: "../Img/raonAir.png",
   },
   {
-    title: "Maplog 팀의 그 날의 기록을 지도로 한 눈에 보는 서비스",
+    title: "MapLog 팀의 그 날의 기록을 지도로 한 눈에 보는 서비스",
     serviceImg: "../Img/mapLog.png",
   },
   {

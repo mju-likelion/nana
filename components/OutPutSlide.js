@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const SlideContainer = styled.div`
   display: flex;
-  height: 70%;
-  background-color: white;
+  height: 100%;
+  /* background-color: white; */
   /* SlideWrap 요소 hidden */
   overflow-x: hidden;
 `;
@@ -12,10 +12,9 @@ const SlideContainer = styled.div`
 const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
-  width: 700px;
-  /* width: 100%; */
-  height: 100%;
-  background-color: black;
+  width: 600px;
+  height: 400px;
+  /* background-color: black; */
 `;
 
 // 해커톤 설명과 사진이 들어갈 컨테이너
@@ -26,24 +25,24 @@ const SlideContent = styled.div`
 
   /* 이미지가 들어갈 틀 */
   .ImgContainer {
-    background-color: olive;
+    /* background-color: olive; */
     width: 600px;
     height: 300px;
-    margin: 10px 50px 0 50px;
+    margin: 10px 50px 0 0;
   }
 `;
 
 // 해커톤 서비스 설명
 const OutPutContent = styled.div`
-  background-color: pink;
+  /* background-color: pink; */
   color: #7a7a7a;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   width: 600px;
   height: 60px;
-  padding-top: 15px;
-  margin: 0 50px 0 50px;
+  padding-top: 20px;
+  margin: 0 50px 0 0;
 `;
 
 // 해커톤 서비스 이미지
@@ -67,7 +66,8 @@ const DotsWrap = styled.div`
   display: flex;
   align-items: center;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 `;
 
 const Dots = styled.span`
@@ -98,7 +98,7 @@ const OutPutSlide = ({Hackathon}) => {
 
   useEffect(()=>{
     slideRef.current.style.transition = "all 0.4s ease-out";
-    slideRef.current.style.transform = `translateX(-${currentSlide * 700}px)`;
+    slideRef.current.style.transform = `translateX(-${currentSlide * 650}px)`;
   }, [currentSlide]);
 
   return(
