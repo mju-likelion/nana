@@ -1,6 +1,4 @@
-import {useState} from 'react';
-import {GiHamburgerMenu} from 'react-icons/gi';
-import {MdClose} from 'react-icons/md';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo';
@@ -13,7 +11,7 @@ const NavWrap = styled.div`
   top: 0;
   left: 0;
   right: 0;
-
+  z-index: 10;
   width: 100%;
   height: 114px;
   background-color: transparent;
@@ -40,7 +38,7 @@ const ToggleMenu = styled.div`
   top: 35px;
   right: 30px;
   font-size: 25px;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 
   /* 모바일 디자인 */
@@ -49,24 +47,84 @@ const ToggleMenu = styled.div`
   }
 `;
 
+const HamburgerMenu = styled.div`
+  /* width: 60px; */
+  width: 40px;
+  height: 20px;
+  position: relative;
+  margin: 50 auto;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 9px;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+  span:nth-child(1) {
+    top: 0px;
+  }
+  span:nth-child(2) {
+    top: 10px;
+  }
+  span:nth-child(3) {
+    top: 20px;
+  }
+`;
+
 const NavBar = () => {
   // 모바일 메뉴바 선택 전 기본 값 false
+  const toggleRefTop = useRef();
+  const toggleRefMid = useRef();
+  const toggleRefBottom = useRef();
+
   const [isToggled, setIsToggled] = useState(false);
 
+  const handleToggleMenu = () => {
+    setIsToggled(!isToggled);
+  };
+
+  useEffect(() => {
+    if (isToggled) {
+      toggleRefTop.current.style.transform = 'rotate(135deg)';
+      toggleRefTop.current.style.top = '10px';
+      toggleRefMid.current.style.left = '-60px';
+      toggleRefMid.current.style.opacity = '0';
+      toggleRefBottom.current.style.top = '10px';
+      toggleRefBottom.current.style.transform = 'rotate(-135deg)';
+    } else {
+      toggleRefTop.current.style.transform = 'rotate(0)';
+      toggleRefTop.current.style.top = '0';
+      toggleRefMid.current.style.left = '0';
+      toggleRefMid.current.style.opacity = '1';
+      toggleRefBottom.current.style.top = '20px';
+      toggleRefBottom.current.style.transform = 'rotate(0)';
+    }
+  }, [isToggled]);
+
   return (
-    <div>
-      <NavWrap>
-        <NavContainer>
-          <Logo />
-          <Menu isToggled={isToggled} />
-        </NavContainer>
-        <ToggleMenu onClick={()=>{
-          setIsToggled(!isToggled);
-        }}>
-          {!isToggled ? <GiHamburgerMenu /> : <MdClose />}
-        </ToggleMenu>
-      </NavWrap>
-    </div>
+    <NavWrap>
+      <NavContainer>
+        <Logo />
+        <Menu isToggled={isToggled} />
+      </NavContainer>
+      <ToggleMenu onClick={handleToggleMenu}>
+        <HamburgerMenu>
+          <span ref={toggleRefTop} />
+          <span ref={toggleRefMid} />
+          <span ref={toggleRefBottom} />
+        </HamburgerMenu>
+        {/* {!isToggled ? <GiHamburgerMenu /> : <MdClose />} */}
+      </ToggleMenu>
+    </NavWrap>
   );
 };
 

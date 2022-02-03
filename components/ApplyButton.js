@@ -23,7 +23,7 @@ const ApplyBtn = styled.button`
   }
 
   @media screen and (max-width: 1024px) {
-    width: 100px;
+    width: 110px;
     height: 40px;
     font-size: 12px;
     img {
