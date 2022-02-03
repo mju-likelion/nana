@@ -54,7 +54,7 @@ const HamburgerMenu = styled.div`
   position: relative;
   margin: 50 auto;
   transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
 
   span {
@@ -122,7 +122,6 @@ const NavBar = () => {
           <span ref={toggleRefMid} />
           <span ref={toggleRefBottom} />
         </HamburgerMenu>
-        {/* {!isToggled ? <GiHamburgerMenu /> : <MdClose />} */}
       </ToggleMenu>
     </NavWrap>
   );

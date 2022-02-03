@@ -5,7 +5,6 @@ const MenuWrap = styled.div`
   display: flex;
   justify-content: space-between;
   width: 485px;
-  transition: 0.5s ease-in-out;
 
   @media screen and (max-width: 1024px) {
     display: ${(props) => (props.isToggled ? 'flex' : 'none')};
@@ -14,7 +13,6 @@ const MenuWrap = styled.div`
     align-items: center;
     width: 100%;
   }
-  /* background: red; */
 `;
 
 const MenuBtn = styled.button`
