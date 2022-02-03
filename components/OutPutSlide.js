@@ -5,11 +5,12 @@ const SlideContainer = styled.div`
   display: flex;
   height: 70%;
   background-color: white;
+  /* SlideWrap 요소 hidden */
   overflow-x: hidden;
 `;
 
 const SlideWrap = styled.div`
-  /* 보이길 원하는 컨테이너 크기 설정 후, SlideContent를 hidden */
+  /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
   width: 700px;
   /* width: 100%; */
@@ -78,10 +79,10 @@ const Dots = styled.span`
   background-color: ${props => props.active ? "#FFD25D" : "transparent"}
 `;
 
-// 총 슬라이드 개수(0부터 시작이므로 6개면 5로 설정)
-const totalSlides = 5;
-
 const OutPutSlide = ({Hackathon}) => {
+  // 총 슬라이드 개수(0부터 시작이므로 6개면 5로 설정)
+  const totalSlides = 5;
+
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -100,7 +101,7 @@ const OutPutSlide = ({Hackathon}) => {
     slideRef.current.style.transform = `translateX(-${currentSlide * 700}px)`;
   }, [currentSlide]);
 
-  return (
+  return(
     <>
       <SlideContainer>
         <SlideBtn src="../img/arrow.svg" prevBtn onClick={prevEvent} />
