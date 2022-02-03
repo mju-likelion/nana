@@ -1,3 +1,4 @@
+import {useState, useRef, useEffect} from 'react';
 import styled from 'styled-components';
 
 const SlideContainer = styled.div`
@@ -53,44 +54,39 @@ const OutPutImages = styled.img`
 
 // 슬라이드 버튼
 const SlideBtn = styled.img`
+  z-index: 2;
   width: 50px;
   height: 50px;
   transform: ${(props)=>props.prevBtn && "rotate(180deg)"};
   cursor: pointer;
 `;
 
-const Hackathon = [
-  {
-    title: "준비됐멍 팀의 반려견 입양 준비도 테스트 & 커뮤니티",
-    serviceImg: "../Img/walwal.png",
-  },
-  {
-    title: "라온에어 팀의 연극, 극단을 찾아볼 수 있는 서비스", 
-    serviceImg: "../Img/raonAir.png",
-  },
-  {
-    title: "Maplog 팀의 그 날의 기록을 지도로 한 눈에 보는 서비스",
-    serviceImg: "../Img/mapLog.png",
-  },
-  {
-    title: "Man’s Skin 팀의 그루밍 정보를 빠르게 제공하는 서비스",
-    serviceImg: "../Img/mansSkin.png",
-  },
-  {
-    title: "Save Energy 팀의 대기 전력 계산을 통한 환경보호 서비스",
-    serviceImg: "../Img/saveEnergy.png",
-  },
-  {
-    title: "One can do it 팀의 1인 가구 맞춤형 마켓 & 커뮤니티",
-    serviceImg: "../Img/oneCan.png",
-  },
-]
+// 총 슬라이드 개수(0부터 시작이므로 6개면 5로 설정)
+const totalSlides = 5;
 
-const OutPutSlide = () => {
+const OutPutSlide = ({Hackathon}) => {
+  const slideRef = useRef();
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const prevEvent = () => {
+    if (currentSlide === 0) setCurrentSlide(totalSlides);
+    else setCurrentSlide(currentSlide - 1);
+  }
+
+  const nextEvent = () => {
+    if (currentSlide >= totalSlides) setCurrentSlide(0);
+    else setCurrentSlide(currentSlide + 1);
+  }
+
+  useEffect(()=>{
+    slideRef.current.style.transition = "all 0.4s ease-out";
+    slideRef.current.style.transform = `translateX(-${currentSlide * 700}px)`;
+  }, [currentSlide]);
+
   return (
     <SlideContainer>
-      <SlideBtn src="../img/arrow.svg" prevBtn />
-      <SlideWrap>
+      <SlideBtn src="../img/arrow.svg" prevBtn onClick={prevEvent} />
+      <SlideWrap ref={slideRef}>
         {
           Hackathon.map((item, index)=>
             <SlideContent key={item.index}>
@@ -102,7 +98,7 @@ const OutPutSlide = () => {
           )
         }
       </SlideWrap>
-      <SlideBtn src="../img/arrow.svg" />
+      <SlideBtn src="../img/arrow.svg" onClick={nextEvent} />
     </SlideContainer>
   );
 };
