@@ -3,16 +3,17 @@ import styled from 'styled-components';
 
 const SlideContainer = styled.div`
   display: flex;
-  height: 80%;
+  height: 70%;
   background-color: white;
+  overflow-x: hidden;
 `;
 
 const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 후, SlideContent를 hidden */
   display: flex;
   width: 700px;
-  height: 95%;
-  /* overflow-x: hidden; */
+  /* width: 100%; */
+  height: 100%;
   background-color: black;
 `;
 
@@ -26,7 +27,7 @@ const SlideContent = styled.div`
   .ImgContainer {
     background-color: olive;
     width: 600px;
-    height: 315px;
+    height: 300px;
     margin: 10px 50px 0 50px;
   }
 `;
@@ -40,7 +41,7 @@ const OutPutContent = styled.div`
   text-align: center;
   width: 600px;
   height: 60px;
-  padding-top: 20px;
+  padding-top: 15px;
   margin: 0 50px 0 50px;
 `;
 
@@ -59,6 +60,22 @@ const SlideBtn = styled.img`
   height: 50px;
   transform: ${(props)=>props.prevBtn && "rotate(180deg)"};
   cursor: pointer;
+`;
+
+const DotsWrap = styled.div`
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-top: 20px;
+`;
+
+const Dots = styled.span`
+  width: 13px;
+  height: 13px;
+  border: 1px solid #7a7a7a;
+  margin: 0 2.5px;
+  border-radius: 100%;
+  background-color: ${props => props.active ? "#FFD25D" : "transparent"}
 `;
 
 // 총 슬라이드 개수(0부터 시작이므로 6개면 5로 설정)
@@ -84,22 +101,32 @@ const OutPutSlide = ({Hackathon}) => {
   }, [currentSlide]);
 
   return (
-    <SlideContainer>
-      <SlideBtn src="../img/arrow.svg" prevBtn onClick={prevEvent} />
-      <SlideWrap ref={slideRef}>
-        {
-          Hackathon.map((item, index)=>
-            <SlideContent key={item.index}>
-              <OutPutContent>{item.title}</OutPutContent>
-              <div className="ImgContainer">
-                <OutPutImages src={item.serviceImg} />
-              </div>
-            </SlideContent>
-          )
-        }
-      </SlideWrap>
-      <SlideBtn src="../img/arrow.svg" onClick={nextEvent} />
-    </SlideContainer>
+    <>
+      <SlideContainer>
+        <SlideBtn src="../img/arrow.svg" prevBtn onClick={prevEvent} />
+        <SlideWrap ref={slideRef}>
+          {
+            Hackathon.map((item, index)=>
+              <SlideContent key={item.index}>
+                <OutPutContent>{item.title}</OutPutContent>
+                <div className="ImgContainer">
+                  <OutPutImages src={item.serviceImg} />
+                </div>
+              </SlideContent>
+            )
+          }
+        </SlideWrap>
+        <SlideBtn src="../img/arrow.svg" onClick={nextEvent} />
+      </SlideContainer>
+      {/* 슬라이드 Dots 부분 */}
+        <DotsWrap>
+          { 
+            Hackathon.map((_, index) => 
+              /* 현재 슬라이드와 index 값이 같을때 true반환 */
+              <Dots active={currentSlide === index} /> 
+          )}
+        </DotsWrap>
+    </>
   );
 };
 
