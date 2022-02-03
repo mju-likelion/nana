@@ -18,39 +18,33 @@ const ColleagueBox = styled.div`
   width: 974px;
   height: 469px;
   background: url(${'../img/colleague.svg'});
-  margin-top: 81px;
+  margin-top: 232px;
 `;
 
 // 동료상 타이틀 컴포넌트 ColleagueTitle
 const ColleagueTitle = styled.p`
   @media screen and (max-width: 1024px) {
     font-size: 20px;
-    margin-left: 11px;
-    margin-top: 10px;
+    margin: 10px auto auto 11px;
   }
   font-size: 40px;
   font-weight: 800;
   color: white;
-  margin-top: 53px;
-  margin-left: 46px;
-  position: relative;
+  margin: 55px auto auto 46px;
 `;
 
 // 동료상 내용 컴포넌트 ColleagueContent
 const ColleagueContent = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 10px;
-    margin-left: 30px;
-    margin-top: 20px;
+    margin: 20px auto auto 30px;
     line-height: 20px;
   }
   font-size: 20px;
   font-weight: 800;
   color: white;
   align-items: center;
-  margin-top: -20px;
-  margin-left: 277px;
-  position: relative;
+  margin: -20px auto auto 277px;
   line-height: 70px;
 `;
 
@@ -71,32 +65,26 @@ const RecruitBox = styled.div`
 const RecruitTitle = styled.p`
   @media screen and (max-width: 1024px) {
     font-size: 20px;
-    margin-left: 8px;
-    margin-top: 12px;
+    margin: 12px auto auto 8px;
   }
   font-size: 40px;
   font-weight: 800;
   color: white;
-  margin-top: 53px;
-  margin-left: 46px;
-  position: relative;
+  margin: 55px auto auto 46px;
 `;
 
 // 모집정보 내용 컴포넌트 RecruitContent
 const RecruitContent = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 10px;
-    margin-left: 30px;
-    margin-top: 20px;
+    margin: 20px auto auto 30px;
     line-height: 20px;
   }
   font-size: 20px;
   font-weight: 800;
   color: white;
   align-items: center;
-  margin-top: 10px;
-  margin-left: 277px;
-  position: relative;
+  margin: 10px auto auto 277px;
   line-height: 75px;
 `;
 
@@ -116,11 +104,10 @@ const Join = () => {
       <RecruitBox>
         <RecruitTitle>모집정보</RecruitTitle>
         <RecruitContent>
-          <p>
-            ● 모집기간 <br /> - 3월 2일(수) ~ 3월 11일(금) PM 11:59까지
-          </p>
-          <p>● 모집인원(약25명-30명)</p>
-          <p>● 기획, 디자인, 웹 파트로 나눠 지원받아요!</p>
+          <p>• 모집기간</p>
+          <p style={{marginLeft: "20px"}}>- 3월 2일(수) ~ 3월 11일(금) PM 11:59까지</p> 
+          <p>• 모집인원(약25명-30명)</p>
+          <p>• 기획, 디자인, 웹 파트로 나눠 지원받아요!</p>
         </RecruitContent>
       </RecruitBox>
     </Wrapper>
