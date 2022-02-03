@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -8,11 +8,20 @@ const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: "Mulish";
-    src: url("/fonts/Mulish.ttf") format("truetype");
+    src: local('Mulish'),
+    url(${'/fonts/Mulish-Regular.ttf'}) format("truetype");
+  }
+  @font-face {
+    font-family: "NanumGothicBold";
+    src: local('NanumGothicBold'), url(${'/fonts/NanumGothicBold.ttf'}) format("truetype");
+    // 한글만 해당 폰트 적용
+    unicode-range: U+AC00–D7A3;
   }
   body{
+    user-select: none;
     background-color: #ffffff;
-    font-family: -apple-system,Mulish,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: -apple-system,Mulish,NanumGothic,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    /* font-family: -apple-system,Mulish,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
     /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
   }
   a {
@@ -23,9 +32,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     border: none;
     outline: none;
-  }
-  h1, h2, h3, h4, h5, h6{
-    font-family:'Maven Pro', sans-serif;
   }
   ol, ul, li {
     list-style: none;
