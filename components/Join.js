@@ -104,8 +104,7 @@ const RecruitText = styled.div`
 
 const RecruitDot = styled.p` 
   justify-content: center;
-  margin-right: 8px;
-  margin-bottom: 5px;
+  margin: 0 8px 5px 0;
 `;
 
 const RecruitDate = styled.p`
