@@ -5,6 +5,7 @@ const MenuWrap = styled.div`
   display: flex;
   justify-content: space-between;
   width: 485px;
+  margin: 0 20px;
 
   @media screen and (max-width: 1024px) {
     display: ${(props) => (props.isToggled ? 'flex' : 'none')};
@@ -16,15 +17,28 @@ const MenuWrap = styled.div`
 `;
 
 const MenuBtn = styled.button`
+  position: relative;
   color: #ffffff;
   font-weight: bold;
   font-size: 12px;
   transition: 0.2s;
   cursor: pointer;
 
-  &:hover {
-    /* 밑줄 애니메이션을 좀 더 개선 필요 */
-    border-bottom: 1px #fff solid;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    border-radius: 3px;
+    margin: 5px auto 0 auto;
+    transition: 0.2s ease-in-out;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+    background: #fff;
   }
 
   /* 모바일 디자인 */
