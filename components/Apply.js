@@ -42,6 +42,7 @@ const BackgroundImage = styled.div`
     ),
     url('../img/applyBg2.png');
   background-size: cover;
+  background-position: center center;
   z-index: -1;
 `;
 
