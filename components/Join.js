@@ -11,8 +11,8 @@ const Wrapper = styled.div`
 // 동료상 컴포넌트 ColleagueBox
 const ColleagueBox = styled.div`
   @media screen and (max-width: 1024px) {
-    width: 289px;
-    height: 183px;
+    width: 80%;
+    height: 250px;
     margin-top: 117px;
   }
   width: 974px;
@@ -25,7 +25,7 @@ const ColleagueBox = styled.div`
 const ColleagueTitle = styled.p`
   @media screen and (max-width: 1024px) {
     font-size: 20px;
-    margin: 10px auto auto 11px;
+    margin: 20px auto auto 20px;
   }
   font-size: 40px;
   font-weight: 800;
@@ -37,8 +37,8 @@ const ColleagueTitle = styled.p`
 const ColleagueContent = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 10px;
-    margin: 20px auto auto 30px;
-    line-height: 20px;
+    margin: 12px auto auto 80px;
+    line-height: 34px;
   }
   font-size: 20px;
   font-weight: 800;
@@ -51,8 +51,8 @@ const ColleagueContent = styled.div`
 // 모집정보 컴포넌트 RecruitBox
 const RecruitBox = styled.div`
   @media screen and (max-width: 1024px) {
-    width: 289px;
-    height: 183px;
+    width: 80%;
+    height: 250px;
     margin-top: 33px;
   }
   width: 974px;
@@ -65,7 +65,7 @@ const RecruitBox = styled.div`
 const RecruitTitle = styled.p`
   @media screen and (max-width: 1024px) {
     font-size: 20px;
-    margin: 12px auto auto 8px;
+    margin: 20px auto auto 20px;
   }
   font-size: 40px;
   font-weight: 800;
@@ -77,8 +77,8 @@ const RecruitTitle = styled.p`
 const RecruitContent = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 10px;
-    margin: 20px auto auto 30px;
-    line-height: 20px;
+    margin: 15px auto auto 90px;
+    line-height: 37px;
   }
   font-size: 20px;
   font-weight: 800;
