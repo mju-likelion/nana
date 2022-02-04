@@ -82,7 +82,6 @@ const IntroLastTextBox = styled.div`
   margin-bottom: 200px;
   font-size: 55px;
   font-weight: 800;
-  margin: 250 200;
   color: #1f1f1f;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
