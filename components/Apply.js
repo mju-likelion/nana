@@ -11,6 +11,7 @@ const BgGradient = styled.div`
   justify-content: center;
   align-items: center;
   z-index: -2;
+  margin-top: 300px;
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -45,12 +46,20 @@ const BackgroundImage = styled.div`
 `;
 
 const ApplyEng = styled.div`
+  @media screen and (max-width: 1024px) {
+    font-size: 30px;
+    margin-bottom: -20px;
+  }
+  font-family: 'Mulish-ExtraBold';
   font-size: 30px;
-  font-weight: 800;
   color: white;
 `;
 
 const ApplyText = styled.div`
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
   font-size: 60px;
   font-weight: 800;
   color: white;
