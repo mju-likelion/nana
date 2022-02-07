@@ -5,7 +5,8 @@ const CurriWapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin: 100px 0;
+
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
   }
@@ -26,19 +27,7 @@ const CurriContainer = styled.div`
 const CurriImgBox = styled.div`
 @media screen and (max-width: 1024px) {
       justify-content: center;
-      img {
-        /* width: 10px; */
-        /* height: auto; */
-      }
     }
-    img {
-      /* margin-left: 36px;
-      margin-bottom: 50px;
-      margin-right: 37px;
-      width: 840px;
-      height: 316px; */
-    }
-    background: blue;
   }`;
 
 const CurriTextBox = styled.p`
@@ -54,9 +43,8 @@ const CurriTextBox = styled.p`
   text-align: right;
   color: #737070;
 `;
-const PLText = styled.div`
+const TechStackTitle = styled.div`
   width: 413px;
-  height: 21px;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -64,6 +52,10 @@ const PLText = styled.div`
   margin: 53px auto;
   text-align: center;
   color: #737070;
+
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+  }
 `;
 
 const PLImgContainer = styled.div`
@@ -75,12 +67,19 @@ const PLImgContainer = styled.div`
 const PLImgFirstBox = styled.div`
   display: flex;
   justify-content: center;
+  img:nth-child(1) {
+    margin-right: 33px;
+  }
+  img:nth-child(2) {
+    margin: 0 33px;
+    width: ;
+  }
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 15px;
     img:nth-child(1) {
-      margin-right: 33px;
-      width: 150px;
+      margin-right: 27px;
+      width: 180px;
       height: 91px;
     }
     img:nth-child(2) {
@@ -89,33 +88,63 @@ const PLImgFirstBox = styled.div`
       height: 87px;
     }
   }
-  img {
-    /* margin: 0 33px; */
-  }
-  img:nth-child(1) {
-    margin-right: 33px;
-  }
-  img:nth-child(2) {
-    margin: 0 33px;
-    width: ;
-  }
 `;
 const PLImgSecondBox = styled.div`
   display: flex;
   img:nth-child(1) {
-    margin: 0 33px;
+    margin: 0 27px;
   }
   img:nth-child(2) {
     margin: 0 33px;
   }
   img:nth-child(3) {
-    margin-left: 33px;
+    margin-left: 30px;
   }
 
   @media screen and (max-width: 1024px) {
-    /* justify-content: space-between; */
+    margin-top: 15px;
+    width: 75px;
+    height: auto;
+    align-items: center;
     img:nth-child(1) {
-      margin: 0 33px 0 0;
+      margin: 0 21px 0 0;
+      width: 90px;
+    }
+    img:nth-child(2) {
+      margin: 0 30px;
+      width: 550px;
+    }
+    img:nth-child(3) {
+      margin-left: 21px;
+      width: 550px;
+    }
+  }
+`;
+
+const PLImgThirdBox = styled.div`
+  display: flex;
+  img:nth-child(1) {
+    margin: 0 27px;
+  }
+  img:nth-child(2) {
+    margin: 0 33px;
+  }
+  img:nth-child(3) {
+    margin-left: 30px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 15px;
+    width: 75px;
+    height: auto;
+    align-items: center;
+    img:nth-child(1) {
+      margin: 0 21px 0 30px;
+      width: 90px;
+    }
+    img:nth-child(2) {
+      margin: 0 0 0 50px;
+      width: 550px;
     }
   }
 `;
@@ -129,9 +158,9 @@ const Curriculum = () => {
         </CurriImgBox>
         <CurriTextBox>*커리큘럼은 상황에 따라 변경될 수 있습니다.</CurriTextBox>
       </CurriContainer>
-      <PLText>
+      <TechStackTitle>
         <p>Programming Language</p>
-      </PLText>
+      </TechStackTitle>
       <PLImgContainer>
         <PLImgFirstBox>
           <img src='../img/htmlcss.png' alt='HtmlAndCss' />
@@ -142,6 +171,27 @@ const Curriculum = () => {
           <img src='../img/javascript.png' alt='javascript' />
           <img src='../img/django.png' alt='django' />
         </PLImgSecondBox>
+      </PLImgContainer>
+
+      <CurriContainer>
+        <CurriImgBox>
+          <img src='../img/fakeCurriculum.png' alt='커리큘럼사진예시' />
+        </CurriImgBox>
+        <CurriTextBox>*커리큘럼은 상황에 따라 변경될 수 있습니다.</CurriTextBox>
+      </CurriContainer>
+      <TechStackTitle>
+        <p>Team Collaboration Tool</p>
+      </TechStackTitle>
+      <PLImgContainer>
+        {/* 피그마 아이콘 잘리는 현상 */}
+        <PLImgFirstBox>
+          <img src='../img/slack.png' alt='HtmlAndCss' />
+          <img src='../img/notion.png' alt='react' />
+        </PLImgFirstBox>
+        <PLImgThirdBox>
+          <img src='../img/figma.png' alt='node.js' />
+          <img src='../img/github.png' alt='javascript' />
+        </PLImgThirdBox>
       </PLImgContainer>
     </CurriWapper>
   );
