@@ -3,25 +3,17 @@ import styled from 'styled-components';
 
 const SlideContainer = styled.div`
   display: flex;
-  height: 100%;
-  /* background-color: white; */
   /* SlideWrap 요소 hidden */
-  overflow-x: hidden;
-
-  @media screen and (max-width: 1024px) {
-    height: 100%;
-  }
+  overflow: hidden;
 `;
 
 const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
   width: 600px;
-  height: 400px;
-  /* background-color: black; */
 
   @media screen and (max-width: 1024px) {
-    width: 500px;
+    width: 300px;
   }
 `;
 
@@ -33,41 +25,46 @@ const SlideContent = styled.div`
 
   /* 이미지가 들어갈 틀 */
   .ImgContainer {
-    /* background-color: olive; */
     width: 590px;
-    height: 300px;
-    margin: 10px 50px 0 0;
+    margin-top: 50px;
 
     @media screen and (max-width: 1024px) {
-      width: 500px;
+      margin: 0;
+      width: 300px;
     }
   }
 `;
 
 // 해커톤 서비스 설명
 const OutPutContent = styled.div`
-  /* background-color: white; */
   color: #7a7a7a;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  width: 600px;
+  width: 590px;
   height: 60px;
   padding-top: 20px;
-  margin: 0 50px 0 0;
+  margin: 0 60px 0 0;
 
   @media screen and (max-width: 1024px) {
-    width: 500px;
-    padding-top: 15px;
+    font-size: 11.5px;
+    width: 300px;
+    height: 40px;
+    padding: 10px 0 10px 0;
   }
 `;
 
 // 해커톤 서비스 이미지
 const OutPutImages = styled.img`
   box-sizing: border-box;
-  /* 원본 비율 유지, ImgContainer에 맞춰 이미지 조정하기 */
-  object-fit: contain;
-  width: 100%;
+  width: 550px;
+  margin: 20px 0 0 28px;
+  box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media screen and (max-width: 1024px) {
+    width: 300px;
+    margin: 60px auto 0 auto;
+  }
 `;
 
 // 슬라이드 버튼
@@ -80,26 +77,36 @@ const SlideBtn = styled.img`
   cursor: pointer;
 
   @media screen and (max-width: 1024px) {
-    width: 40px;
-    height: 40px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
   }
 `;
 
 const DotsWrap = styled.div`
   display: flex;
+  position: absolute;
   align-items: center;
   height: 50px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 140px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 0 310px 0;
+  }
 `;
 
 const Dots = styled.span`
   width: 13px;
   height: 13px;
-  border: 1px solid #7a7a7a;
-  margin: 0 2.5px;
+  margin: 0 2px;
   border-radius: 100%;
+  border: ${(props) => (props.active ? 'none' : '1px solid #7a7a7a80 ')};
   background-color: ${(props) => (props.active ? '#FFD25D' : 'transparent')};
+
+  @media screen and (max-width: 1024px) {
+    width: 11px;
+    height: 11px;
+  }
 `;
 
 const OutPutSlide = ({ Hackathon }) => {
@@ -108,6 +115,7 @@ const OutPutSlide = ({ Hackathon }) => {
 
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
+  // const [prevState, setPrevState] = useState(0);
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -119,13 +127,25 @@ const OutPutSlide = ({ Hackathon }) => {
     else setCurrentSlide(currentSlide + 1);
   };
 
+  // useEffect(() => {
+  //   setPrevState(window.innerWidth);
+  // });
+
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
-    // slideRef.current.style.transform = `translateX(-${currentSlide * 650}px)`;
+
     if (window.innerWidth >= 1024) {
       slideRef.current.style.transform = `translateX(-${currentSlide * 650}px)`;
+      // if (prevState < 1024) {
+      //   // setCurrentSlide(0);
+      //   // setPrevState(window.innerWidth);
+      // }
     } else {
-      slideRef.current.style.transform = `translateX(-${currentSlide * 550}px)`;
+      slideRef.current.style.transform = `translateX(-${currentSlide * 360}px)`;
+      // if (prevState >= 1024) {
+      //   // setCurrentSlide(0);
+      //   // setPrevState(window.innerWidth);
+      // }
     }
   }, [currentSlide]);
 
@@ -134,11 +154,11 @@ const OutPutSlide = ({ Hackathon }) => {
       <SlideContainer>
         <SlideBtn src='../img/arrow.svg' prevBtn onClick={prevEvent} />
         <SlideWrap ref={slideRef}>
-          {Hackathon.map((item, id) => (
+          {Hackathon.map((item) => (
             <SlideContent key={item.id}>
               <OutPutContent>{item.title}</OutPutContent>
               <div className='ImgContainer'>
-                <OutPutImages src={item.serviceImg} />
+                <OutPutImages src={item.serviceImg} alt={item.title} />
               </div>
             </SlideContent>
           ))}
@@ -147,9 +167,9 @@ const OutPutSlide = ({ Hackathon }) => {
       </SlideContainer>
       {/* 슬라이드 Dots 부분 */}
       <DotsWrap>
-        {Hackathon.map((_, id) => (
+        {Hackathon.map((item) => (
           /* 현재 슬라이드와 id 값이 같을때 true반환 */
-          <Dots active={currentSlide === id} />
+          <Dots active={currentSlide === item.id} />
         ))}
       </DotsWrap>
     </>
