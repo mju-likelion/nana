@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     user-select: none;
     background-color: #ffffff;
-    font-family: -apple-system,Mulish,NanumGothicBold,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-family: -apple-system,Mulish,NanumGothic,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     /* font-family: -apple-system,Mulish,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
     /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
   }

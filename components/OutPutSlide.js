@@ -171,7 +171,7 @@ const OutPutSlide = ({ Hackathon }) => {
       <DotsWrap>
         {Hackathon.map((item) => (
           /* 현재 슬라이드와 id 값이 같을때 true반환 */
-          <Dots active={currentSlide === item.id} />
+          <Dots active={currentSlide === item.id} key={item.id} />
         ))}
       </DotsWrap>
     </>
