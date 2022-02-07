@@ -7,7 +7,6 @@ const OutPutWrap = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
   margin-top: 300px;
 
   @media screen and (max-width: 1024px) {
