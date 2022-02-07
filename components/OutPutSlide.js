@@ -22,6 +22,7 @@ const SlideWrap = styled.div`
 const SlideContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   /* 이미지가 들어갈 틀 */
   .ImgContainer {
@@ -30,7 +31,8 @@ const SlideContent = styled.div`
 
     @media screen and (max-width: 1024px) {
       margin: 0;
-      width: 300px;
+      width: 360px;
+      margin-top: 20px;
     }
   }
 `;
@@ -50,7 +52,7 @@ const OutPutContent = styled.div`
     font-size: 11.5px;
     width: 300px;
     height: 40px;
-    padding: 10px 0 10px 0;
+    padding-top: 10px;
   }
 `;
 
@@ -58,12 +60,11 @@ const OutPutContent = styled.div`
 const OutPutImages = styled.img`
   box-sizing: border-box;
   width: 550px;
-  margin: 20px 0 0 28px;
+  margin: 20px 0 0 0;
   box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 1024px) {
     width: 300px;
-    margin: 60px auto 0 auto;
   }
 `;
 
@@ -115,7 +116,6 @@ const OutPutSlide = ({ Hackathon }) => {
 
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
-  // const [prevState, setPrevState] = useState(0);
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -129,24 +129,26 @@ const OutPutSlide = ({ Hackathon }) => {
 
   // useEffect(() => {
   //   setPrevState(window.innerWidth);
+  //   console.log(prevState);
   // });
 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
+    // console.log(currentSlide);
 
     if (window.innerWidth >= 1024) {
       slideRef.current.style.transform = `translateX(-${currentSlide * 650}px)`;
       // if (prevState < 1024) {
-      //   // setCurrentSlide(0);
-      //   // setPrevState(window.innerWidth);
+      //   setCurrentSlide(0);
+      //   setPrevState(window.innerWidth);
       // }
     } else {
       slideRef.current.style.transform = `translateX(-${currentSlide * 360}px)`;
-      // if (prevState >= 1024) {
-      //   // setCurrentSlide(0);
-      //   // setPrevState(window.innerWidth);
-      // }
     }
+    // if (prevState >= 1024) {
+    //   // setCurrentSlide(0);
+    //   // setPrevState(window.innerWidth);
+    // }
   }, [currentSlide]);
 
   return (
