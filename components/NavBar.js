@@ -80,7 +80,7 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-const NavBar = ({ scrollRefs }) => {
+const NavBar = () => {
   // 모바일 메뉴바 선택 전 기본 값 false
   const toggleRefTop = useRef();
   const toggleRefMid = useRef();
@@ -114,7 +114,7 @@ const NavBar = ({ scrollRefs }) => {
     <NavWrap>
       <NavContainer>
         <Logo />
-        <Menu isToggled={isToggled} scrollRefs={scrollRefs} />
+        <Menu isToggled={isToggled} />
       </NavContainer>
       <ToggleMenu onClick={handleToggleMenu}>
         <HamburgerMenu>

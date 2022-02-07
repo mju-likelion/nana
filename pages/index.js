@@ -13,28 +13,13 @@ const MainContainer = styled.div`
 `;
 
 export default function Home() {
-  // 스크롤 이벤트 구현필요
-  const scrollIntroductionRef = useRef();
-  const scrollJoinRef = useRef();
-  const scrollApplyRef = useRef();
-  const scrollRefs = [scrollIntroductionRef, scrollJoinRef, scrollApplyRef];
-
-  // 처음 로딩시 width 판단
-  const [testState, setTestState] = useState(0);
-  useEffect(() => {
-    setTestState(window.innerWidth);
-  });
-
-  // 슬라이드 설정 useEffect
-  // some codes
-
   return (
     <MainContainer>
-      <NavBar scrollRefs={scrollRefs} />
+      <NavBar />
       <Welcom />
-      <Introduction ref={scrollIntroductionRef} />
-      <Join ref={scrollJoinRef} />
-      <Apply ref={scrollApplyRef} />
+      <Introduction />
+      <Join />
+      <Apply />
     </MainContainer>
   );
 }

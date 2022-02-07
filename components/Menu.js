@@ -48,8 +48,7 @@ const MenuBtn = styled.button`
   }
 `;
 
-const Menu = ({ isToggled, scrollRefs }) => {
-  console.log(scrollRefs[0].current);
+const Menu = ({ isToggled }) => {
   return (
     <MenuWrap isToggled={isToggled}>
       <MenuBtn>LIKELION | MJU</MenuBtn>
