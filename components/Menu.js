@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // LIKELION|MJU, CURRICULUM, OUTPUT, JOIN 메뉴 컴포넌트
 import styled from 'styled-components';
 
@@ -47,7 +48,8 @@ const MenuBtn = styled.button`
   }
 `;
 
-const Menu = ({ isToggled }) => {
+const Menu = ({ isToggled, scrollRefs }) => {
+  console.log(scrollRefs[0].current);
   return (
     <MenuWrap isToggled={isToggled}>
       <MenuBtn>LIKELION | MJU</MenuBtn>
