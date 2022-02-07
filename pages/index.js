@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Apply from '../components/Apply';
 import Introduction from '../components/Introduction';
 import Join from '../components/Join';
+import OutPut from '../components/OutPut';
 import Welcom from '../components/Welcom';
 
 const MainContainer = styled.div`
@@ -15,6 +16,7 @@ export default function Home() {
     <MainContainer>
       <Welcom />
       <Introduction />
+      <OutPut />
       <Join />
       <Apply />
     </MainContainer>
