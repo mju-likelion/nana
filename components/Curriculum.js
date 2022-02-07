@@ -23,6 +23,7 @@ const CurriContainer = styled.div`
     width: 854px;
     height: 319px;
   }
+
   p {
     width: 420px;
     height: 22px;
@@ -35,13 +36,6 @@ const CurriContainer = styled.div`
     text-align: center;
     color: #737070;
   }
-
-  // @media screen and (max-width: 1024px) {
-  //   img {
-  //     width: 50px;
-  //     height: auto;
-  //   }
-  // }
 `;
 
 const PLText = styled.div`
@@ -56,14 +50,28 @@ const PLText = styled.div`
   color: #737070;
 `;
 
+const PLImgContainer = styled.div`
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+  display: flex;
+`;
 const PLImgBox = styled.div`
   margin-top: 41px;
   display: flex;
-
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+    img {
+      width: 30%;
+      height: auto;
+    }
+  }
   img {
     margin-left: 36px;
     margin-bottom: 50px;
     margin-right: 37px;
+    width: 30%;
+    height: auto;
   }
 `;
 
@@ -77,13 +85,17 @@ const Curriculum = () => {
       <PLText>
         <p>Programming Language</p>
       </PLText>
-      <PLImgBox>
-        <img src='../img/htmlcss.png' alt='HtmlAndCss' />
-        <img src='../img/react.png' alt='react' />
-        <img src='../img/node.png' alt='node.js' />
-        <img src='../img/javascript.png' alt='javascript' />
-        <img src='../img/django.png' alt='django' />
-      </PLImgBox>
+      <PLImgContainer>
+        <PLImgBox>
+          <img src='../img/htmlcss.png' alt='HtmlAndCss' />
+          <img src='../img/react.png' alt='react' />
+        </PLImgBox>
+        <PLImgBox>
+          <img src='../img/node.png' alt='node.js' />
+          <img src='../img/javascript.png' alt='javascript' />
+          <img src='../img/django.png' alt='django' />
+        </PLImgBox>
+      </PLImgContainer>
     </CurriWapper>
   );
 };
