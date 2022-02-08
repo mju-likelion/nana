@@ -52,6 +52,7 @@ const Menu = ({ isToggled }) => {
       <a href='#curriculum'>CURRICULUM</a>
       <a href='#output'>OUTPUT</a>
       <a href='#join'>JOIN</a>
+      <a href='#apply'>APPLY</a>
     </MenuWrap>
   );
 };

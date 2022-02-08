@@ -69,7 +69,7 @@ const ApplyText = styled.div`
 
 const Apply = () => {
   return (
-    <BgGradient>
+    <BgGradient id='apply'>
       <BackgroundImage />
       <ApplyEng>APPLY</ApplyEng>
       <ApplyText>10기의 주인공은 바로 당신 !</ApplyText>
