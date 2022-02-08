@@ -47,7 +47,7 @@ const ColleagueContent = styled.div`
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: -20px auto auto 277px;
+  margin: 0 auto auto 180px;
   line-height: 70px;
 `;
 
@@ -82,13 +82,16 @@ const RecruitContent = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 10px;
     margin: 15px auto;
+    width: 90%;
   }
+  /* background: red; */
+
   width: 80%;
   font-size: 20px;
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: 10px auto auto 277px;
+  margin: 30px auto auto 180px;
 `;
 
 const RecruitText = styled.div`
