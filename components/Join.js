@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 // 두 컴포넌트를 감싸는 Wrapper
@@ -114,9 +115,9 @@ const RecruitDate = styled.p`
   margin: -10px auto auto 20px;
 `;
 
-const Join = () => {
+const Join = forwardRef((props, ref) => {
   return (
-    <Wrapper id='join'>
+    <Wrapper ref={ref} id='join'>
       <ColleagueBox>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
@@ -149,6 +150,6 @@ const Join = () => {
       </RecruitBox>
     </Wrapper>
   );
-};
+});
 
 export default Join;

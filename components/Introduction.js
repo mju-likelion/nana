@@ -1,3 +1,4 @@
+import { forwardRef, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const IntroWapper = styled.div`
@@ -86,9 +87,9 @@ const IntroLastTextBox = styled.div`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const Introduction = () => {
+const Introduction = forwardRef((props, ref) => {
   return (
-    <IntroWapper id='introduction'>
+    <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
         <img src='../img/introLikelion.png' alt='멋사중앙건물' />
         <IntroTextArray>
@@ -168,6 +169,6 @@ const Introduction = () => {
       </IntroLastTextBox>
     </IntroWapper>
   );
-};
+});
 
 export default Introduction;

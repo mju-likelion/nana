@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo';
@@ -14,7 +14,11 @@ const NavWrap = styled.div`
   z-index: 10;
   width: 100%;
   height: 114px;
-  background-color: transparent;
+  /* background-color: transparent; */
+
+  /* background: url('../img/applyBg2.png');
+  background-size: cover; */
+  /* box-shadow: 0 1px 5px #ffffff11; */
 `;
 
 const NavContainer = styled.div`
@@ -80,7 +84,7 @@ const HamburgerMenu = styled.div`
   }
 `;
 
-const NavBar = () => {
+const NavBar = forwardRef((props, ref) => {
   // 모바일 메뉴바 선택 전 기본 값 false
   const toggleRefTop = useRef();
   const toggleRefMid = useRef();
@@ -111,10 +115,10 @@ const NavBar = () => {
   }, [isToggled]);
 
   return (
-    <NavWrap>
+    <NavWrap ref={ref[0]}>
       <NavContainer>
         <Logo />
-        <Menu isToggled={isToggled} />
+        <Menu ref={ref} isToggled={isToggled} />
       </NavContainer>
       <ToggleMenu onClick={handleToggleMenu}>
         <HamburgerMenu>
@@ -125,6 +129,6 @@ const NavBar = () => {
       </ToggleMenu>
     </NavWrap>
   );
-};
+});
 
 export default NavBar;

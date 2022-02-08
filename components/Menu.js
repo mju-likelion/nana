@@ -1,4 +1,5 @@
 // LIKELION|MJU, CURRICULUM, OUTPUT, JOIN 메뉴 컴포넌트
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 const MenuWrap = styled.div`
@@ -13,6 +14,8 @@ const MenuWrap = styled.div`
     /* 세로변환 시 메뉴들 센터로 -> 너비는 넓게 100% */
     align-items: center;
     width: 100%;
+    margin: 0;
+    background: #9999ee99;
     a {
       padding: 20px 0;
     }
@@ -45,16 +48,27 @@ const MenuWrap = styled.div`
   }
 `;
 
-const Menu = ({ isToggled }) => {
+const Menu = forwardRef((props, ref) => {
+  const { isToggled } = props;
   return (
-    <MenuWrap isToggled={isToggled}>
-      <a href='#introduction'>LIKELION | MJU</a>
-      <a href='#curriculum'>CURRICULUM</a>
-      <a href='#output'>OUTPUT</a>
-      <a href='#join'>JOIN</a>
-      <a href='#apply'>APPLY</a>
+    <MenuWrap ref={ref} isToggled={isToggled}>
+      <a ref={ref[1]} href='#introduction'>
+        LIKELION | MJU
+      </a>
+      <a ref={ref[2]} href='#curriculum'>
+        CURRICULUM
+      </a>
+      <a ref={ref[3]} href='#output'>
+        OUTPUT
+      </a>
+      <a ref={ref[4]} href='#join'>
+        JOIN
+      </a>
+      <a ref={ref[5]} href='#apply'>
+        APPLY
+      </a>
     </MenuWrap>
   );
-};
+});
 
 export default Menu;

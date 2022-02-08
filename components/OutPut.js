@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import OutPutSlide from './OutPutSlide';
@@ -74,15 +75,15 @@ const Hackathon = [
   },
 ];
 
-const OutPut = () => {
+const OutPut = forwardRef((props, ref) => {
   return (
-    <OutPutWrap id='output'>
+    <OutPutWrap ref={ref} id='output'>
       <ContentWrap>
         <h2>우리는 이런 것을 만들었어요</h2>
         <OutPutSlide Hackathon={Hackathon} />
       </ContentWrap>
     </OutPutWrap>
   );
-};
+});
 
 export default OutPut;
