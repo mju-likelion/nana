@@ -19,7 +19,7 @@ const ContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 85px;
-  width: 900px;
+  width: 100%;
 
   @media screen and (max-width: 1024px) {
     justify-content: center;
