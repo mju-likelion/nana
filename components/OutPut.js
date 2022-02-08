@@ -10,7 +10,7 @@ const OutPutWrap = styled.div`
   margin-top: 300px;
 
   @media screen and (max-width: 1024px) {
-    margin-top: 130px;
+    margin-top: 30px;
   }
 `;
 

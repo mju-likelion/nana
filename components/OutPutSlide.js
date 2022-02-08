@@ -11,8 +11,6 @@ const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
   width: 550px;
-  /* width: 545px; */
-  /* margin: -7px; */
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -75,7 +73,6 @@ const TitleAndBtn = styled.div`
   height: 50px;
 
   @media screen and (max-width: 1024px) {
-    margin-bottom: 465px;
     width: 360px;
     height: 30px;
   }
@@ -98,13 +95,8 @@ const SlideBtn = styled.img`
 
 const DotsWrap = styled.div`
   display: flex;
-  /* position: absolute; */
   align-items: center;
   height: 50px;
-
-  /* @media screen and (max-width: 1024px) {
-    margin: 0 0 310px 0;
-  } */
 `;
 
 const Dots = styled.span`
@@ -127,6 +119,7 @@ const OutPutSlide = ({ Hackathon }) => {
 
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideTitle, setSliteTitle] = useState('');
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -140,6 +133,7 @@ const OutPutSlide = ({ Hackathon }) => {
 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
+    setSliteTitle(Hackathon[currentSlide].title);
 
     if (window.innerWidth >= 1024) {
       slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
@@ -152,7 +146,7 @@ const OutPutSlide = ({ Hackathon }) => {
     <>
       <TitleAndBtn>
         <SlideBtn src='../img/arrow.svg' prevBtn onClick={prevEvent} />
-        <OutPutTitle>ㅇㅇ</OutPutTitle>
+        <OutPutTitle>{slideTitle}</OutPutTitle>
         <SlideBtn src='../img/arrow.svg' onClick={nextEvent} />
       </TitleAndBtn>
       {/* 슬라이드 Dots 부분 */}
