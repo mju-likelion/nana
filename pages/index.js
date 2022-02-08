@@ -5,6 +5,7 @@ import Apply from '../components/Apply';
 import Introduction from '../components/Introduction';
 import Join from '../components/Join';
 import NavBar from '../components/NavBar';
+import OutPut from '../components/OutPut';
 import Welcom from '../components/Welcom';
 
 const MainContainer = styled.div`
@@ -18,6 +19,7 @@ export default function Home() {
       <NavBar />
       <Welcom />
       <Introduction />
+      <OutPut />
       <Join />
       <Apply />
     </MainContainer>
