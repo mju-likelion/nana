@@ -76,7 +76,7 @@ const Hackathon = [
 
 const OutPut = () => {
   return (
-    <OutPutWrap>
+    <OutPutWrap id='output'>
       <ContentWrap>
         <h2>우리는 이런 것을 만들었어요</h2>
         <OutPutSlide Hackathon={Hackathon} />

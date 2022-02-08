@@ -88,7 +88,7 @@ const IntroLastTextBox = styled.div`
 
 const Introduction = () => {
   return (
-    <IntroWapper>
+    <IntroWapper id='introduction'>
       <IntroContainer>
         <img src='../img/introLikelion.png' alt='멋사중앙건물' />
         <IntroTextArray>

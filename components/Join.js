@@ -102,7 +102,7 @@ const RecruitText = styled.div`
   line-height: 15px;
 `;
 
-const RecruitDot = styled.p` 
+const RecruitDot = styled.p`
   justify-content: center;
   margin: 0 8px 5px 0;
 `;
@@ -113,7 +113,7 @@ const RecruitDate = styled.p`
 
 const Join = () => {
   return (
-    <Wrapper>
+    <Wrapper id='join'>
       <ColleagueBox>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
