@@ -13,12 +13,10 @@ const NavWrap = styled.div`
   right: 0;
   z-index: 10;
   width: 100%;
-  height: 114px;
-  /* background-color: transparent; */
-
-  /* background: url('../img/applyBg2.png');
-  background-size: cover; */
-  /* box-shadow: 0 1px 5px #ffffff11; */
+  height: 95px;
+  @media screen and (max-width: 1024px) {
+    background: #071d49;
+  }
 `;
 
 const NavContainer = styled.div`
