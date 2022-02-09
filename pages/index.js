@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <MainContainer>
       <Welcom />
-      <Curriculum />
       <Introduction />
+      <Curriculum />
       <OutPut />
       <Join />
       <Apply />
