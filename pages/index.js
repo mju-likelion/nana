@@ -5,6 +5,7 @@ import { Children } from 'react/cjs/react.production.min';
 import styled from 'styled-components';
 
 import Apply from '../components/Apply';
+import Curriculum from '../components/Curriculum';
 import Introduction from '../components/Introduction';
 import Join from '../components/Join';
 import NavBar from '../components/NavBar';
@@ -112,6 +113,7 @@ export default function Home() {
       <NavBar ref={navRefArr} />
       <Welcom />
       <Introduction ref={introRef} />
+      <Curriculum />
       <OutPut ref={outputRef} />
       <Join ref={joinRef} />
       <Apply ref={applyRef} />
