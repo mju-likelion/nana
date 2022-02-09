@@ -54,35 +54,35 @@ const Menu = forwardRef((props, ref) => {
     {
       ref: ref[1],
       href: '#introduction',
-      tittle: 'LIKELION | MJU',
+      title: 'LIKELION | MJU',
     },
     {
       ref: ref[2],
       href: '#curriculum',
-      tittle: 'CURRICULUM',
+      title: 'CURRICULUM',
     },
     {
       ref: ref[3],
       href: '#output',
-      tittle: 'OUTPUT',
+      title: 'OUTPUT',
     },
     {
       ref: ref[4],
       href: '#join',
-      tittle: 'JOIN',
+      title: 'JOIN',
     },
     {
       ref: ref[5],
       href: '#apply',
-      tittle: 'APPLY',
+      title: 'APPLY',
     },
   ];
 
   return (
     <MenuWrap ref={ref} isToggled={isToggled}>
       {menuItems.map((item) => (
-        <a ref={item.ref} href={item.href}>
-          {item.tittle}
+        <a ref={item.ref} href={item.href} key={item.title}>
+          {item.title}
         </a>
       ))}
     </MenuWrap>
