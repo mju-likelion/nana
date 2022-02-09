@@ -142,10 +142,8 @@ const Introduction = forwardRef((props, ref) => {
           </IntroMjuTextColor>
           <IntroMjuTextColor>
             우리가 만든{' '}
-            <IntroServiceHover>
-              <a href='#output'>웹서비스</a>
-            </IntroServiceHover>
-            가 궁금하다면 ?
+            <IntroServiceHover href='#output'>웹서비스</IntroServiceHover>가
+            궁금하다면 ?
           </IntroMjuTextColor>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
           <IntroMjuTextColor>
