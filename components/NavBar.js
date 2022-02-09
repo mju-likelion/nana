@@ -13,7 +13,7 @@ const NavWrap = styled.div`
   right: 0;
   z-index: 10;
   width: 100%;
-  height: 95px;
+  height: 75px;
   @media screen and (max-width: 1024px) {
     background: #071d49;
   }
@@ -37,8 +37,9 @@ const ToggleMenu = styled.div`
   /* 기본 설정 none -> 모바일에서는 block */
   display: none;
   position: absolute;
-  top: 35px;
+  top: 25px;
   right: 30px;
+
   font-size: 25px;
   color: #ffffff;
   cursor: pointer;
@@ -51,10 +52,10 @@ const ToggleMenu = styled.div`
 
 const HamburgerMenu = styled.div`
   /* width: 60px; */
+  /* margin: 50 auto; */
   width: 40px;
   height: 20px;
   position: relative;
-  margin: 50 auto;
   transform: rotate(0deg);
   transition: 0.2s ease-in-out;
   cursor: pointer;

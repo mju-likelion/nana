@@ -16,6 +16,7 @@ const MenuWrap = styled.div`
     width: 100%;
     margin: 0;
     background: #071d49;
+
     a {
       padding: 20px 0;
     }
