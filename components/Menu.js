@@ -50,23 +50,41 @@ const MenuWrap = styled.div`
 
 const Menu = forwardRef((props, ref) => {
   const { isToggled } = props;
+  const menuItems = [
+    {
+      ref: ref[1],
+      href: '#introduction',
+      tittle: 'LIKELION | MJU',
+    },
+    {
+      ref: ref[2],
+      href: '#curriculum',
+      tittle: 'CURRICULUM',
+    },
+    {
+      ref: ref[3],
+      href: '#output',
+      tittle: 'OUTPUT',
+    },
+    {
+      ref: ref[4],
+      href: '#join',
+      tittle: 'JOIN',
+    },
+    {
+      ref: ref[5],
+      href: '#apply',
+      tittle: 'APPLY',
+    },
+  ];
+
   return (
     <MenuWrap ref={ref} isToggled={isToggled}>
-      <a ref={ref[1]} href='#introduction'>
-        LIKELION | MJU
-      </a>
-      <a ref={ref[2]} href='#curriculum'>
-        CURRICULUM
-      </a>
-      <a ref={ref[3]} href='#output'>
-        OUTPUT
-      </a>
-      <a ref={ref[4]} href='#join'>
-        JOIN
-      </a>
-      <a ref={ref[5]} href='#apply'>
-        APPLY
-      </a>
+      {menuItems.map((item) => (
+        <a ref={item.ref} href={item.href}>
+          {item.tittle}
+        </a>
+      ))}
     </MenuWrap>
   );
 });
