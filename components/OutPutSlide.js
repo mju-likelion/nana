@@ -25,6 +25,8 @@ const SlideContent = styled.div`
 
   /* 이미지가 들어갈 틀(사진 찌그러짐 방지) */
   div {
+    display: flex;
+    justify-content: center;
     width: 550px;
   }
 
@@ -57,12 +59,12 @@ const OutPutTitle = styled.div`
 const OutPutImages = styled.img`
   box-sizing: border-box;
   width: 550px;
-  margin: 20px 0 0 0;
-  /* border-radius: 6px; */
-  /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25); */
+  margin: 20px 5px;
+  border-radius: 6px;
 
   @media screen and (max-width: 1024px) {
     width: 300px;
+    margin: 0;
   }
 `;
 
