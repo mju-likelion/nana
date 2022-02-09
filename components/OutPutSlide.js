@@ -10,43 +10,42 @@ const SlideContainer = styled.div`
 const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
-  width: 600px;
+  width: 550px;
 
   @media screen and (max-width: 1024px) {
     width: 300px;
   }
 `;
 
-// 해커톤 설명과 사진이 들어갈 컨테이너
-// SlideContent에 ref를 줘서 설명과 사진이 동시에 동작하도록
+// SlideContent에 ref를 줘서 해커톤이미지 동작
 const SlideContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  /* 이미지가 들어갈 틀 */
-  .ImgContainer {
-    width: 590px;
-    margin-top: 50px;
+  /* 이미지가 들어갈 틀(사진 찌그러짐 방지) */
+  div {
+    display: flex;
+    justify-content: center;
+    width: 550px;
+  }
 
-    @media screen and (max-width: 1024px) {
-      margin: 0;
-      width: 360px;
-      margin-top: 20px;
+  @media screen and (max-width: 1024px) {
+    div {
+      width: 300px;
     }
   }
 `;
 
 // 해커톤 서비스 설명
-const OutPutContent = styled.div`
+const OutPutTitle = styled.div`
   color: #7a7a7a;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  width: 590px;
+  width: 550px;
   height: 60px;
   padding-top: 20px;
-  margin: 0 60px 0 0;
 
   @media screen and (max-width: 1024px) {
     font-size: 11.5px;
@@ -60,11 +59,24 @@ const OutPutContent = styled.div`
 const OutPutImages = styled.img`
   box-sizing: border-box;
   width: 550px;
-  margin: 20px 0 0 0;
-  box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 5px;
+  border-radius: 6px;
 
   @media screen and (max-width: 1024px) {
     width: 300px;
+    margin: 0;
+  }
+`;
+
+const TitleAndBtn = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 650px;
+  height: 50px;
+
+  @media screen and (max-width: 1024px) {
+    width: 360px;
+    height: 30px;
   }
 `;
 
@@ -74,7 +86,6 @@ const SlideBtn = styled.img`
   width: 50px;
   height: 50px;
   transform: ${(props) => props.prevBtn && 'rotate(180deg)'};
-  background-color: white;
   cursor: pointer;
 
   @media screen and (max-width: 1024px) {
@@ -86,14 +97,8 @@ const SlideBtn = styled.img`
 
 const DotsWrap = styled.div`
   display: flex;
-  position: absolute;
   align-items: center;
   height: 50px;
-  margin-top: 140px;
-
-  @media screen and (max-width: 1024px) {
-    margin: 0 0 310px 0;
-  }
 `;
 
 const Dots = styled.span`
@@ -116,6 +121,7 @@ const OutPutSlide = ({ Hackathon }) => {
 
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideTitle, setSliteTitle] = useState('');
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -127,46 +133,24 @@ const OutPutSlide = ({ Hackathon }) => {
     else setCurrentSlide(currentSlide + 1);
   };
 
-  // useEffect(() => {
-  //   setPrevState(window.innerWidth);
-  //   console.log(prevState);
-  // });
-
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
-    // console.log(currentSlide);
+    setSliteTitle(Hackathon[currentSlide].title);
 
     if (window.innerWidth >= 1024) {
-      slideRef.current.style.transform = `translateX(-${currentSlide * 650}px)`;
-      // if (prevState < 1024) {
-      //   setCurrentSlide(0);
-      //   setPrevState(window.innerWidth);
-      // }
+      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
     } else {
-      slideRef.current.style.transform = `translateX(-${currentSlide * 360}px)`;
+      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
     }
-    // if (prevState >= 1024) {
-    //   // setCurrentSlide(0);
-    //   // setPrevState(window.innerWidth);
-    // }
   }, [currentSlide]);
 
   return (
     <>
-      <SlideContainer>
+      <TitleAndBtn>
         <SlideBtn src='../img/arrow.svg' prevBtn onClick={prevEvent} />
-        <SlideWrap ref={slideRef}>
-          {Hackathon.map((item) => (
-            <SlideContent key={item.id}>
-              <OutPutContent>{item.title}</OutPutContent>
-              <div className='ImgContainer'>
-                <OutPutImages src={item.serviceImg} alt={item.title} />
-              </div>
-            </SlideContent>
-          ))}
-        </SlideWrap>
+        <OutPutTitle>{slideTitle}</OutPutTitle>
         <SlideBtn src='../img/arrow.svg' onClick={nextEvent} />
-      </SlideContainer>
+      </TitleAndBtn>
       {/* 슬라이드 Dots 부분 */}
       <DotsWrap>
         {Hackathon.map((item) => (
@@ -174,6 +158,17 @@ const OutPutSlide = ({ Hackathon }) => {
           <Dots active={currentSlide === item.id} key={item.id} />
         ))}
       </DotsWrap>
+      <SlideContainer>
+        <SlideWrap ref={slideRef}>
+          {Hackathon.map((item) => (
+            <SlideContent key={item.id}>
+              <div>
+                <OutPutImages src={item.serviceImg} alt={item.title} />
+              </div>
+            </SlideContent>
+          ))}
+        </SlideWrap>
+      </SlideContainer>
     </>
   );
 };
