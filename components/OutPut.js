@@ -10,7 +10,7 @@ const OutPutWrap = styled.div`
   margin-top: 300px;
 
   @media screen and (max-width: 1024px) {
-    margin-top: 130px;
+    margin-top: 30px;
   }
 `;
 
@@ -19,7 +19,7 @@ const ContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 85px;
-  width: 900px;
+  width: 100%;
 
   @media screen and (max-width: 1024px) {
     justify-content: center;
