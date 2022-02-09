@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 // 두 컴포넌트를 감싸는 Wrapper
@@ -47,7 +48,7 @@ const ColleagueContent = styled.div`
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: -20px auto auto 277px;
+  margin: 0 auto auto 180px;
   line-height: 70px;
 `;
 
@@ -82,13 +83,16 @@ const RecruitContent = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 10px;
     margin: 15px auto;
+    width: 90%;
   }
+  /* background: red; */
+
   width: 80%;
   font-size: 20px;
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: 10px auto auto 277px;
+  margin: 30px auto auto 180px;
 `;
 
 const RecruitText = styled.div`
@@ -102,7 +106,7 @@ const RecruitText = styled.div`
   line-height: 15px;
 `;
 
-const RecruitDot = styled.p` 
+const RecruitDot = styled.p`
   justify-content: center;
   margin: 0 8px 5px 0;
 `;
@@ -111,9 +115,9 @@ const RecruitDate = styled.p`
   margin: -10px auto auto 20px;
 `;
 
-const Join = () => {
+const Join = forwardRef((props, ref) => {
   return (
-    <Wrapper>
+    <Wrapper ref={ref} id='join'>
       <ColleagueBox>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
@@ -146,6 +150,6 @@ const Join = () => {
       </RecruitBox>
     </Wrapper>
   );
-};
+});
 
 export default Join;

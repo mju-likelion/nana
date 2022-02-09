@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import ApplyButton from './ApplyButton';
@@ -5,7 +6,7 @@ import ApplyButton from './ApplyButton';
 const BgGradient = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,15 +68,15 @@ const ApplyText = styled.div`
   margin: 50px auto;
 `;
 
-const Apply = () => {
+const Apply = forwardRef((props, ref) => {
   return (
-    <BgGradient>
-      <BackgroundImage />
+    <BgGradient id='apply'>
+      <BackgroundImage ref={ref} />
       <ApplyEng>APPLY</ApplyEng>
       <ApplyText>10기의 주인공은 바로 당신 !</ApplyText>
       <ApplyButton text='10기 지원하기' width='356px' height='61px' />
     </BgGradient>
   );
-};
+});
 
 export default Apply;

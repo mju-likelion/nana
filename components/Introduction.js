@@ -1,3 +1,4 @@
+import { forwardRef, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const IntroWapper = styled.div`
@@ -86,9 +87,9 @@ const IntroLastTextBox = styled.div`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-const Introduction = () => {
+const Introduction = forwardRef((props, ref) => {
   return (
-    <IntroWapper>
+    <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
         <img src='../img/introLikelion.png' alt='멋사중앙건물' />
         <IntroTextArray>
@@ -140,7 +141,8 @@ const Introduction = () => {
             하나하나 맛보고 내 것으로 만들 수 있어요.
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            우리가 만든 <IntroServiceHover>웹서비스</IntroServiceHover>가
+            우리가 만든{' '}
+            <IntroServiceHover href='#output'>웹서비스</IntroServiceHover>가
             궁금하다면 ?
           </IntroMjuTextColor>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
@@ -168,6 +170,6 @@ const Introduction = () => {
       </IntroLastTextBox>
     </IntroWapper>
   );
-};
+});
 
 export default Introduction;

@@ -92,7 +92,7 @@ const WelcomText = styled.div`
     }
     p {
       margin: 8px auto 30px auto;
-      width: 160px;
+      width: 165px;
       font-size: 10px;
     }
   }
