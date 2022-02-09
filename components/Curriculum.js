@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 const CurriWapper = styled.div`
@@ -149,9 +150,9 @@ const PLImgThirdBox = styled.div`
   }
 `;
 
-const Curriculum = () => {
+const Curriculum = forwardRef((props, ref) => {
   return (
-    <CurriWapper>
+    <CurriWapper ref={ref} id='curriculum'>
       <CurriContainer>
         <CurriImgBox>
           <img src='../img/fakeCurriculum.png' alt='커리큘럼사진예시' />
@@ -195,6 +196,6 @@ const Curriculum = () => {
       </PLImgContainer>
     </CurriWapper>
   );
-};
+});
 
 export default Curriculum;

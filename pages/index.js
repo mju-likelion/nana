@@ -35,6 +35,7 @@ export default function Home() {
   ];
 
   const introRef = useRef();
+  const curriculumRef = useRef();
   const outputRef = useRef();
   const joinRef = useRef();
   const applyRef = useRef();
@@ -45,6 +46,8 @@ export default function Home() {
       const scrollTop = window.pageYOffset;
       const introPos =
         window.pageYOffset + introRef.current.getBoundingClientRect().top;
+      const curriculumPos =
+        window.pageYOffset + curriculumRef.current.getBoundingClientRect().top;
       const outputPos =
         window.pageYOffset + outputRef.current.getBoundingClientRect().top;
       const joinPos =
@@ -73,6 +76,19 @@ export default function Home() {
         // navRefArr[1].current.style.color = '#FFFBE3';
         navRefArr[1].current.style.color = '#FFFB51';
         navRefArr[1].current.style.fontSize = '17px';
+      }
+
+      if (scrollTop >= curriculumPos) {
+        // navRefArr[0].current.style.background = '#212121DD';
+        navRefArr[0].current.style.background = '#071d49';
+        for (let i = 1; i < navRefArr.length; i++) {
+          navRefArr[i].current.style.color = '#fff';
+          navRefArr[i].current.style.fontSize = '12px';
+        }
+        // navRefArr[1].current.style.color = '#78648C';
+        // navRefArr[1].current.style.color = '#FFFBE3';
+        navRefArr[2].current.style.color = '#FFFB51';
+        navRefArr[2].current.style.fontSize = '17px';
       }
 
       if (scrollTop >= outputPos) {
@@ -113,7 +129,7 @@ export default function Home() {
       <NavBar ref={navRefArr} />
       <Welcom />
       <Introduction ref={introRef} />
-      <Curriculum />
+      <Curriculum ref={curriculumRef} />
       <OutPut ref={outputRef} />
       <Join ref={joinRef} />
       <Apply ref={applyRef} />
