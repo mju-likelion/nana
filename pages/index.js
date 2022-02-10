@@ -41,19 +41,20 @@ export default function Home() {
   const handleScroll = () => {
     const scrollTop = window.pageYOffset;
     const introPos =
-      window.pageYOffset + introRef.current.getBoundingClientRect().top;
+      window.pageYOffset + introRef.current.getBoundingClientRect().top - 50;
     const curriculumPos =
-      window.pageYOffset + curriculumRef.current.getBoundingClientRect().top;
+      window.pageYOffset +
+      curriculumRef.current.getBoundingClientRect().top -
+      50;
     const outputPos =
-      window.pageYOffset + outputRef.current.getBoundingClientRect().top;
+      window.pageYOffset + outputRef.current.getBoundingClientRect().top - 50;
     const joinPos =
-      window.pageYOffset + joinRef.current.getBoundingClientRect().top;
+      window.pageYOffset + joinRef.current.getBoundingClientRect().top - 50;
     const applyPos =
-      window.pageYOffset + applyRef.current.getBoundingClientRect().top;
+      window.pageYOffset + applyRef.current.getBoundingClientRect().top - 50;
 
     // 첫 화면이면 스타일 초기화
     if (scrollTop < introPos) {
-      // navRefArr[0].current.style.background = '#071d49';
       navRefArr[0].current.style.background = 'none';
       for (let i = 1; i < navRefArr.length; i++) {
         navRefArr[i].current.style.color = '#fff';
@@ -63,34 +64,29 @@ export default function Home() {
 
     // 스크롤 위치에따라 스타일 부여하기
     if (scrollTop >= introPos) {
-      // navRefArr[0].current.style.background = '#212121DD';
-      navRefArr[0].current.style.background = '#071d49';
+      // 백그라운드를 은하수 이미지 활용해보기
+      navRefArr[0].current.style.background = '#071d49d9';
+      navRefArr[0].current.style.backgroundSize = 'cover';
       for (let i = 1; i < navRefArr.length; i++) {
         navRefArr[i].current.style.color = '#fff';
         navRefArr[i].current.style.fontSize = '12px';
       }
-      // navRefArr[1].current.style.color = '#78648C';
-      // navRefArr[1].current.style.color = '#FFFBE3';
-      // navRefArr[1].current.style.color = '#FFFB51';
       navRefArr[1].current.style.color = '#ffd25d';
       navRefArr[1].current.style.fontSize = '17px';
     }
 
     if (scrollTop >= curriculumPos) {
-      // navRefArr[0].current.style.background = '#212121DD';
-      navRefArr[0].current.style.background = '#071d49';
+      navRefArr[0].current.style.background = '#071d49d9';
       for (let i = 1; i < navRefArr.length; i++) {
         navRefArr[i].current.style.color = '#fff';
         navRefArr[i].current.style.fontSize = '12px';
       }
-      // navRefArr[1].current.style.color = '#78648C';
-      // navRefArr[1].current.style.color = '#FFFBE3';
       navRefArr[2].current.style.color = '#ffd25d';
       navRefArr[2].current.style.fontSize = '17px';
     }
 
     if (scrollTop >= outputPos) {
-      navRefArr[0].current.style.background = '#071d49';
+      navRefArr[0].current.style.background = '#071d49d9';
       for (let i = 1; i < navRefArr.length; i++) {
         navRefArr[i].current.style.color = '#fff';
         navRefArr[i].current.style.fontSize = '12px';
@@ -100,7 +96,7 @@ export default function Home() {
     }
 
     if (scrollTop >= joinPos) {
-      navRefArr[0].current.style.background = '#071d49';
+      navRefArr[0].current.style.background = '#071d49d9';
       for (let i = 1; i < navRefArr.length; i++) {
         navRefArr[i].current.style.color = '#fff';
         navRefArr[i].current.style.fontSize = '12px';
@@ -110,7 +106,7 @@ export default function Home() {
     }
 
     if (scrollTop - applyPos >= -1) {
-      navRefArr[0].current.style.background = '#071d49';
+      navRefArr[0].current.style.background = '#071d49d9';
       for (let i = 1; i < navRefArr.length; i++) {
         navRefArr[i].current.style.color = '#fff';
         navRefArr[i].current.style.fontSize = '12px';
