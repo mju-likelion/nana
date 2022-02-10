@@ -48,7 +48,7 @@ const ColleagueContent = styled.div`
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: 0 auto auto 180px;
+  margin: 0 auto auto 200px;
   line-height: 70px;
 `;
 
@@ -85,14 +85,13 @@ const RecruitContent = styled.div`
     margin: 15px auto;
     width: 90%;
   }
-  /* background: red; */
 
   width: 80%;
   font-size: 20px;
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: 30px auto auto 180px;
+  margin: 30px auto auto 200px;
 `;
 
 const RecruitText = styled.div`
@@ -121,11 +120,11 @@ const Join = forwardRef((props, ref) => {
       <ColleagueBox>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
-          <p>- 일단 해보자구요, 도전정신 가득한 사람👊🏻</p>
-          <p>- 질문해도 물지 않아요🦁 질문하는 사람 대환영 !</p>
-          <p>- 마음껏 나대볼 사람 🙋🏻‍♀🙋🏻‍♂</p>
-          <p>- 의지활활, 열정뿜뿜 사람을 찾아요🔥</p>
-          <p>- 명지대 멋사에 애정을 갖고 투자해주세요💙</p>
+          <p>첫 째, 일단 해보자구요, 도전정신 가득한 사람👊🏻</p>
+          <p>둘 째, 질문해도 물지 않아요🦁 질문하는 사람 대환영 !</p>
+          <p>셋 째, 마음껏 나대볼 사람 🙋🏻‍♀🙋🏻‍♂</p>
+          <p>넷 째, 의지활활, 열정뿜뿜 사람을 찾아요🔥</p>
+          <p>다섯 째, 명지대 멋사에 애정을 갖고 투자해주세요💙</p>
         </ColleagueContent>
       </ColleagueBox>
       <RecruitBox>
