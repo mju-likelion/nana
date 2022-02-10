@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef } from 'react';
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import useScrollAnimation from '../hooks/useScrollAnimation';
@@ -76,22 +76,10 @@ const IntroMjuTextColor = styled.p`
   color: #ffffff;
 `;
 
-const IntroLastTextBox = styled.div`
-  @media screen and (max-width: 1024px) {
-    font-size: 25px;
-    margin-top: 120px;
-  }
-  margin-top: 250px;
-  margin-bottom: 200px;
-  font-size: 55px;
-  font-weight: 800;
-  color: #1f1f1f;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
 const Introduction = forwardRef((props, ref) => {
-  const IntroductionAnimation = useScrollAnimation('up', 1.5, 0.2);
-  const IntroductionMjuAnimation = useScrollAnimation('up', 1.5, 0.2);
+  const IntroductionAnimation = useScrollAnimation('up', 1.3, 0);
+  const IntroductionMjuAnimation = useScrollAnimation('up', 2, 0);
+
   return (
     <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
@@ -166,12 +154,11 @@ const Introduction = forwardRef((props, ref) => {
             </IntroStudyHover>
             이 궁금하다면?
           </IntroMjuTextColor>
-          {/* 위 문장을 코스모스 깃허브 링크 url로 연결해야 함 */}
+          <IntroMjuTextColor>
+            여러분과 함께 2022년을 불태우게 될 10기 운영진이 궁금하다면?
+          </IntroMjuTextColor>
         </IntroTextArray>
       </IntroContainer>
-      <IntroLastTextBox>
-        <p>지금 보시는 페이지도 만들 수 있어요! </p>
-      </IntroLastTextBox>
     </IntroWapper>
   );
 });
