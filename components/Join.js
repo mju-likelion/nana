@@ -65,7 +65,7 @@ const RecruitBox = styled.div`
   height: 469px;
   background: url(${'../img/recruit.svg'});
   background-position: center center;
-  margin-top: 103px;
+  margin-top: 180px;
 `;
 
 // 모집정보 타이틀 컴포넌트 RecruitTitle
@@ -120,8 +120,8 @@ const RecruitDate = styled.p`
 
 const Join = forwardRef((props, ref) => {
 
-  const ColleagueAnimation = useScrollAnimation('up', 1.5, 0.5);
-  const RecruitAnimation = useScrollAnimation('up', 1.5, 0.5);
+  const ColleagueAnimation = useScrollAnimation('up', 2, 0);
+  const RecruitAnimation = useScrollAnimation('up', 2.5, 0);
 
   return (
     <Wrapper ref={ref} id='join'>

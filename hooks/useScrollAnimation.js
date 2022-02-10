@@ -38,6 +38,9 @@ const useScrollAnimation = (direction = 'up', duration = 1, delay = 0) => {
         current.style.transitionDelay = `${delay}s`;
         current.style.opacity = 1;
         current.style.transform = 'translate3d(0, 0, 0)';
+      } else {
+        // 애니메이션 중복 사용 가능하도록
+        current.style.opacity = 0;
       }
     },
     [delay, duration],
@@ -49,7 +52,7 @@ const useScrollAnimation = (direction = 'up', duration = 1, delay = 0) => {
     if (element.current) {
       // 옵저버 객체 생성(타겟을 관측함)
       // threshold를 통해 요소가 70% 보일 때 handleScroll 호출
-      observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
+      observer = new IntersectionObserver(handleScroll, {rootMargin: '10px'}, { threshold: 0.9 });
       observer.observe(element.current);
     }
     // 타겟 변화 관찰 종료 '실행'
