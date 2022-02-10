@@ -10,7 +10,8 @@ const SlideContainer = styled.div`
 const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
-  width: 550px;
+  /* width: 550px; */
+  width: 750px;
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -27,7 +28,8 @@ const SlideContent = styled.div`
   div {
     display: flex;
     justify-content: center;
-    width: 550px;
+    /* width: 550px; */
+    width: 750px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -40,10 +42,12 @@ const SlideContent = styled.div`
 // 해커톤 서비스 설명
 const OutPutTitle = styled.div`
   color: #7a7a7a;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 19px;
   font-weight: bold;
   text-align: center;
-  width: 550px;
+  /* width: 550px; */
+  width: 750px;
   height: 60px;
   padding-top: 20px;
 
@@ -58,7 +62,9 @@ const OutPutTitle = styled.div`
 // 해커톤 서비스 이미지
 const OutPutImages = styled.img`
   box-sizing: border-box;
-  width: 550px;
+  over-fit: contain;
+  width: 600px;
+  /* width: 750px; */
   margin: 20px 5px;
   border-radius: 6px;
 
@@ -71,7 +77,8 @@ const OutPutImages = styled.img`
 const TitleAndBtn = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 650px;
+  /* width: 650px; */
+  width: 840px;
   height: 50px;
 
   @media screen and (max-width: 1024px) {
