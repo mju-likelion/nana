@@ -1,6 +1,8 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
 // 두 컴포넌트를 감싸는 Wrapper
 const Wrapper = styled.div`
   display: flex;
@@ -114,10 +116,16 @@ const RecruitDate = styled.p`
   margin: -10px auto auto 20px;
 `;
 
+
+
 const Join = forwardRef((props, ref) => {
+
+  const ColleagueAnimation = useScrollAnimation('up', 1.5, 0.5);
+  const RecruitAnimation = useScrollAnimation('up', 1.5, 0.5);
+
   return (
     <Wrapper ref={ref} id='join'>
-      <ColleagueBox>
+      <ColleagueBox {...ColleagueAnimation}>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
           <p>첫 째, 일단 해보자구요, 도전정신 가득한 사람👊🏻</p>
@@ -127,7 +135,7 @@ const Join = forwardRef((props, ref) => {
           <p>다섯 째, 명지대 멋사에 애정을 갖고 투자해주세요💙</p>
         </ColleagueContent>
       </ColleagueBox>
-      <RecruitBox>
+      <RecruitBox {...RecruitAnimation}>
         <RecruitTitle>모집정보</RecruitTitle>
         <RecruitContent>
           <RecruitText>
@@ -139,7 +147,7 @@ const Join = forwardRef((props, ref) => {
           </RecruitText>
           <RecruitText>
             <RecruitDot>•</RecruitDot>
-            <p>모집인원(약25명-30명)</p>
+            <p>모집인원 (00명)</p>
           </RecruitText>
           <RecruitText>
             <RecruitDot>•</RecruitDot>
