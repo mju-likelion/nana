@@ -53,8 +53,8 @@ const ApplyEng = styled.div`
     margin-bottom: -20px;
   }
   font-family: 'Mulish-ExtraBold';
-  font-size: 30px;
-  color: white;
+  font-size: 60px;
+  color: #FFD25D;
 `;
 
 const ApplyText = styled.div`
@@ -62,7 +62,7 @@ const ApplyText = styled.div`
     font-size: 20px;
     margin-bottom: 30px;
   }
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 800;
   color: white;
   margin: 50px auto;
