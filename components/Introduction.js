@@ -1,12 +1,14 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
 const IntroWapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 140px;
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
   }
@@ -88,11 +90,13 @@ const IntroLastTextBox = styled.div`
 `;
 
 const Introduction = forwardRef((props, ref) => {
+  const IntroductionAnimation = useScrollAnimation('up', 1.5, 0.2);
+  const IntroductionMjuAnimation = useScrollAnimation('up', 1.5, 0.2);
   return (
     <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
         <img src='../img/introLikelion.png' alt='멋사중앙건물' />
-        <IntroTextArray>
+        <IntroTextArray {...IntroductionAnimation}>
           <IntroMjuTextColor>
             멋쟁이사자처럼은 2013년 비영리법인으로 시작하여
           </IntroMjuTextColor>
@@ -129,7 +133,7 @@ const Introduction = forwardRef((props, ref) => {
 
       <IntroContainer>
         <img src='../img/introLikelionMju.png' alt='멋사명지대단체사진' />
-        <IntroTextArray>
+        <IntroTextArray {...IntroductionMjuAnimation}>
           <IntroMjuTextColor>
             명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
             이어오는 중이에요 !
