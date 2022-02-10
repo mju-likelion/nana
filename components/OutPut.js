@@ -8,10 +8,10 @@ const OutPutWrap = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 300px;
+  margin-top: 230px;
 
   @media screen and (max-width: 1024px) {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 `;
 
@@ -30,7 +30,8 @@ const ContentWrap = styled.div`
 
   h2 {
     font-weight: bold;
-    font-size: 25px;
+    /* font-size: 25px; */
+    font-size: 30px;
     text-align: center;
     padding: 30px 0 20px 0;
 
