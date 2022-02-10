@@ -14,7 +14,8 @@ const SlideWrap = styled.div`
   width: 750px;
 
   @media screen and (max-width: 1024px) {
-    width: 300px;
+    /* width: 300px; */
+    width: 350px;
   }
 `;
 
@@ -34,7 +35,8 @@ const SlideContent = styled.div`
 
   @media screen and (max-width: 1024px) {
     div {
-      width: 300px;
+      /* width: 300px; */
+      width: 350px;
     }
   }
 `;
@@ -63,10 +65,11 @@ const OutPutTitle = styled.div`
 const OutPutImages = styled.img`
   box-sizing: border-box;
   over-fit: contain;
-  width: 600px;
+  width: 700px;
   /* width: 750px; */
-  margin: 20px 5px;
+  /* margin: 20px 5px; */
   border-radius: 6px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -106,6 +109,11 @@ const DotsWrap = styled.div`
   display: flex;
   align-items: center;
   height: 50px;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0;
+  }
 `;
 
 const Dots = styled.span`
