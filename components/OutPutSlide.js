@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
+import Modal from './Modal';
+
 const SlideContainer = styled.div`
   display: flex;
   /* SlideWrap 요소 hidden */
@@ -70,6 +72,7 @@ const OutPutImages = styled.img`
   /* margin: 20px 5px; */
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -137,6 +140,7 @@ const OutPutSlide = ({ Hackathon }) => {
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideTitle, setSliteTitle] = useState('');
+  const [isModal, setIsModal] = useState(false);
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -146,6 +150,10 @@ const OutPutSlide = ({ Hackathon }) => {
   const nextEvent = () => {
     if (currentSlide >= totalSlides) setCurrentSlide(0);
     else setCurrentSlide(currentSlide + 1);
+  };
+
+  const openModal = () => {
+    setIsModal(!isModal);
   };
 
   useEffect(() => {
@@ -174,7 +182,7 @@ const OutPutSlide = ({ Hackathon }) => {
         ))}
       </DotsWrap>
       <SlideContainer>
-        <SlideWrap ref={slideRef}>
+        <SlideWrap ref={slideRef} onClick={openModal}>
           {Hackathon.map((item) => (
             <SlideContent key={item.id}>
               <div>
@@ -184,6 +192,7 @@ const OutPutSlide = ({ Hackathon }) => {
           ))}
         </SlideWrap>
       </SlideContainer>
+      {isModal && <Modal openModal={openModal} />}
     </>
   );
 };
