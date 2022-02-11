@@ -30,7 +30,6 @@ const ContentWrap = styled.div`
 
   h2 {
     font-weight: bold;
-    /* font-size: 25px; */
     font-size: 30px;
     text-align: center;
     padding: 30px 0 20px 0;
