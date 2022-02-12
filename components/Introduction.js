@@ -123,7 +123,7 @@ const Introduction = forwardRef((props, ref) => {
         <img src='../img/introLikelionMju.png' alt='멋사명지대단체사진' />
         <IntroTextArray {...IntroductionMjuAnimation}>
           <IntroMjuTextColor>
-            명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
+            명지대(자연) 멋사는 2019년부터 시작하여 현재 4년 간 함께
             이어오는 중이에요 !
           </IntroMjuTextColor>
           <IntroMjuTextColor>
