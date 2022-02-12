@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
+import Modal from './Modal';
+
 const SlideContainer = styled.div`
   display: flex;
   /* SlideWrap 요소 hidden */
@@ -10,10 +12,10 @@ const SlideContainer = styled.div`
 const SlideWrap = styled.div`
   /* 보이길 원하는 컨테이너 크기 설정 */
   display: flex;
-  width: 550px;
+  width: 750px;
 
   @media screen and (max-width: 1024px) {
-    width: 300px;
+    width: 350px;
   }
 `;
 
@@ -27,12 +29,12 @@ const SlideContent = styled.div`
   div {
     display: flex;
     justify-content: center;
-    width: 550px;
+    width: 750px;
   }
 
   @media screen and (max-width: 1024px) {
     div {
-      width: 300px;
+      width: 350px;
     }
   }
 `;
@@ -40,10 +42,10 @@ const SlideContent = styled.div`
 // 해커톤 서비스 설명
 const OutPutTitle = styled.div`
   color: #7a7a7a;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
   text-align: center;
-  width: 550px;
+  width: 750px;
   height: 60px;
   padding-top: 20px;
 
@@ -58,9 +60,11 @@ const OutPutTitle = styled.div`
 // 해커톤 서비스 이미지
 const OutPutImages = styled.img`
   box-sizing: border-box;
-  width: 550px;
-  margin: 20px 5px;
+  over-fit: contain;
+  width: 700px;
   border-radius: 6px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -71,7 +75,7 @@ const OutPutImages = styled.img`
 const TitleAndBtn = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 650px;
+  width: 840px;
   height: 50px;
 
   @media screen and (max-width: 1024px) {
@@ -99,6 +103,11 @@ const DotsWrap = styled.div`
   display: flex;
   align-items: center;
   height: 50px;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0;
+  }
 `;
 
 const Dots = styled.span`
@@ -122,6 +131,7 @@ const OutPutSlide = ({ Hackathon }) => {
   const slideRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideTitle, setSliteTitle] = useState('');
+  const [isModal, setIsModal] = useState(false);
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -131,6 +141,10 @@ const OutPutSlide = ({ Hackathon }) => {
   const nextEvent = () => {
     if (currentSlide >= totalSlides) setCurrentSlide(0);
     else setCurrentSlide(currentSlide + 1);
+  };
+
+  const openModal = () => {
+    setIsModal(!isModal);
   };
 
   useEffect(() => {
@@ -159,7 +173,7 @@ const OutPutSlide = ({ Hackathon }) => {
         ))}
       </DotsWrap>
       <SlideContainer>
-        <SlideWrap ref={slideRef}>
+        <SlideWrap ref={slideRef} onClick={openModal}>
           {Hackathon.map((item) => (
             <SlideContent key={item.id}>
               <div>
@@ -169,6 +183,7 @@ const OutPutSlide = ({ Hackathon }) => {
           ))}
         </SlideWrap>
       </SlideContainer>
+      {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
   );
 };
