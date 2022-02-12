@@ -54,7 +54,7 @@ const ApplyEng = styled.div`
   }
   font-family: 'Mulish-ExtraBold';
   font-size: 60px;
-  color: #FFD25D;
+  color: #ffd25d;
 `;
 
 const ApplyText = styled.div`
