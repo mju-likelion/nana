@@ -1,6 +1,8 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
 // 두 컴포넌트를 감싸는 Wrapper
 const Wrapper = styled.div`
   display: flex;
@@ -48,7 +50,7 @@ const ColleagueContent = styled.div`
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: 0 auto auto 180px;
+  margin: 0 auto auto 200px;
   line-height: 70px;
 `;
 
@@ -63,7 +65,7 @@ const RecruitBox = styled.div`
   height: 469px;
   background: url(${'../img/recruit.svg'});
   background-position: center center;
-  margin-top: 103px;
+  margin-top: 180px;
 `;
 
 // 모집정보 타이틀 컴포넌트 RecruitTitle
@@ -85,14 +87,13 @@ const RecruitContent = styled.div`
     margin: 15px auto;
     width: 90%;
   }
-  /* background: red; */
 
   width: 80%;
   font-size: 20px;
   font-weight: 800;
   color: white;
   align-items: center;
-  margin: 30px auto auto 180px;
+  margin: 30px auto auto 200px;
 `;
 
 const RecruitText = styled.div`
@@ -116,19 +117,24 @@ const RecruitDate = styled.p`
 `;
 
 const Join = forwardRef((props, ref) => {
+  const AnimationArray = [
+    { id: 1, animation: useScrollAnimation('up', 2, 0) },
+    { id: 2, animation: useScrollAnimation('up', 2.5, 0) },
+  ];
+
   return (
     <Wrapper ref={ref} id='join'>
-      <ColleagueBox>
+      <ColleagueBox {...AnimationArray[0].animation}>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
-          <p>- 일단 해보자구요, 도전정신 가득한 사람👊🏻</p>
-          <p>- 질문해도 물지 않아요🦁 질문하는 사람 대환영 !</p>
-          <p>- 마음껏 나대볼 사람 🙋🏻‍♀🙋🏻‍♂</p>
-          <p>- 의지활활, 열정뿜뿜 사람을 찾아요🔥</p>
-          <p>- 명지대 멋사에 애정을 갖고 투자해주세요💙</p>
+          <p>첫 째, 일단 해보자구요, 도전정신 가득한 사람👊🏻</p>
+          <p>둘 째, 질문해도 물지 않아요🦁 질문하는 사람 대환영 !</p>
+          <p>셋 째, 마음껏 나대볼 사람 🙋🏻‍♀🙋🏻‍♂</p>
+          <p>넷 째, 의지활활, 열정뿜뿜 사람을 찾아요🔥</p>
+          <p>다섯 째, 명지대 멋사에 애정을 갖고 투자해주세요💙</p>
         </ColleagueContent>
       </ColleagueBox>
-      <RecruitBox>
+      <RecruitBox {...AnimationArray[1].animation}>
         <RecruitTitle>모집정보</RecruitTitle>
         <RecruitContent>
           <RecruitText>
@@ -140,7 +146,7 @@ const Join = forwardRef((props, ref) => {
           </RecruitText>
           <RecruitText>
             <RecruitDot>•</RecruitDot>
-            <p>모집인원(약25명-30명)</p>
+            <p>모집인원 (00명)</p>
           </RecruitText>
           <RecruitText>
             <RecruitDot>•</RecruitDot>
