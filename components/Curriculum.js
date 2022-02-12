@@ -30,7 +30,11 @@ const CurriContainer = styled.div`
 const CurriImgBox = styled.div`
 @media screen and (max-width: 1024px) {
       justify-content: center;
+      width: 100%;
+      height: auto;
     }
+    width: 974px;
+    height: 539px;
   }`;
 
 const CurriTextBox = styled.p`
@@ -168,9 +172,8 @@ const Curriculum = forwardRef((props, ref) => {
     <CurriWapper ref={ref} id='curriculum'>
       <CurriContainer>
         <CurriImgBox>
-          <img src='../img/fakeCurriculum.png' alt='커리큘럼사진예시' />
+          <img src='../img/Curriculum.png' alt='커리큘럼사진예시' />
         </CurriImgBox>
-        <CurriTextBox>*커리큘럼은 상황에 따라 변경될 수 있습니다.</CurriTextBox>
       </CurriContainer>
       <TechStackTitle>
         <p>Programming Language</p>
@@ -206,13 +209,6 @@ const Curriculum = forwardRef((props, ref) => {
           />
         </PLImgSecondBox>
       </PLImgContainer>
-
-      <CurriContainer>
-        <CurriImgBox>
-          <img src='../img/fakeCurriculum.png' alt='커리큘럼사진예시' />
-        </CurriImgBox>
-        <CurriTextBox>*커리큘럼은 상황에 따라 변경될 수 있습니다.</CurriTextBox>
-      </CurriContainer>
       <TechStackTitle>
         <p>Team Collaboration Tool</p>
       </TechStackTitle>
