@@ -116,16 +116,15 @@ const RecruitDate = styled.p`
   margin: -10px auto auto 20px;
 `;
 
-
-
 const Join = forwardRef((props, ref) => {
-
-  const ColleagueAnimation = useScrollAnimation('up', 2, 0);
-  const RecruitAnimation = useScrollAnimation('up', 2.5, 0);
+  const AnimationArray = [
+    { id: 1, animation: useScrollAnimation('up', 2, 0) },
+    { id: 2, animation: useScrollAnimation('up', 2.5, 0) },
+  ];
 
   return (
     <Wrapper ref={ref} id='join'>
-      <ColleagueBox {...ColleagueAnimation}>
+      <ColleagueBox {...AnimationArray[0].animation}>
         <ColleagueTitle>동료상</ColleagueTitle>
         <ColleagueContent>
           <p>첫 째, 일단 해보자구요, 도전정신 가득한 사람👊🏻</p>
@@ -135,7 +134,7 @@ const Join = forwardRef((props, ref) => {
           <p>다섯 째, 명지대 멋사에 애정을 갖고 투자해주세요💙</p>
         </ColleagueContent>
       </ColleagueBox>
-      <RecruitBox {...RecruitAnimation}>
+      <RecruitBox {...AnimationArray[1].animation}>
         <RecruitTitle>모집정보</RecruitTitle>
         <RecruitContent>
           <RecruitText>
