@@ -43,7 +43,7 @@ const IntroServiceHover = styled.a`
   text-decoration: underline;
 `;
 
-const IntroStudyHover = styled.a`
+const IntroLinkHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
   text-decoration: underline;
@@ -146,16 +146,21 @@ const Introduction = forwardRef((props, ref) => {
             많은 사람들과 원하는 스택을 공부할 수 있는 환경까지 만들어준답니다.
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            <IntroStudyHover
+            <IntroLinkHover
               href='https://github.com/KOSMOSstudy'
               target='_blank'
             >
               명지대(자연)와 다른 학교의 연합
-            </IntroStudyHover>
+            </IntroLinkHover>
             이 궁금하다면?
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            여러분과 함께 2022년을 불태우게 될 10기 운영진이 궁금하다면?
+            <IntroLinkHover
+              href='https://www.notion.so/4ad89f6d80eb45db97b78127b1a8dbf6'
+              target='blank'
+            >
+              2022년 멋사를 이끌어 갈, 우리가 누구게~!~!~!
+            </IntroLinkHover>
           </IntroMjuTextColor>
         </IntroTextArray>
       </IntroContainer>
