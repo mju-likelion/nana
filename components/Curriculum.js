@@ -8,7 +8,7 @@ const CurriWapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px 0;
+  margin: 200px 0;
 
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
