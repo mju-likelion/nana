@@ -65,6 +65,11 @@ const OutPutImages = styled.img`
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03, 1.03);
+  }
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -173,11 +178,15 @@ const OutPutSlide = ({ Hackathon }) => {
         ))}
       </DotsWrap>
       <SlideContainer>
-        <SlideWrap ref={slideRef} onClick={openModal}>
+        <SlideWrap ref={slideRef}>
           {Hackathon.map((item) => (
             <SlideContent key={item.id}>
               <div>
-                <OutPutImages src={item.serviceImg} alt={item.title} />
+                <OutPutImages
+                  src={item.serviceImg}
+                  alt={item.title}
+                  onClick={openModal}
+                />
               </div>
             </SlideContent>
           ))}
