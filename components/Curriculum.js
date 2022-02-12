@@ -1,12 +1,14 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
 const CurriWapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px 0;
+  margin: 200px 0;
 
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
@@ -28,7 +30,11 @@ const CurriContainer = styled.div`
 const CurriImgBox = styled.div`
 @media screen and (max-width: 1024px) {
       justify-content: center;
+      width: 100%;
+      height: auto;
     }
+    width: 974px;
+    height: 539px;
   }`;
 
 const CurriTextBox = styled.p`
@@ -151,47 +157,86 @@ const PLImgThirdBox = styled.div`
 `;
 
 const Curriculum = forwardRef((props, ref) => {
+  const AnimationArray = [
+    { id: 1, animation: useScrollAnimation('up', 2.5, 0.2) },
+    { id: 2, animation: useScrollAnimation('up', 2.5, 0.4) },
+    { id: 3, animation: useScrollAnimation('up', 2.5, 0.6) },
+    { id: 4, animation: useScrollAnimation('up', 2.5, 0.8) },
+    { id: 5, animation: useScrollAnimation('up', 2.5, 1.0) },
+    { id: 6, animation: useScrollAnimation('up', 2.5, 0.2) },
+    { id: 7, animation: useScrollAnimation('up', 2.5, 0.4) },
+    { id: 8, animation: useScrollAnimation('up', 2.5, 0.6) },
+    { id: 9, animation: useScrollAnimation('up', 2.5, 0.8) },
+  ];
   return (
     <CurriWapper ref={ref} id='curriculum'>
       <CurriContainer>
         <CurriImgBox>
-          <img src='../img/fakeCurriculum.png' alt='커리큘럼사진예시' />
+          <img src='../img/curriculum.png' alt='커리큘럼사진예시' />
         </CurriImgBox>
-        <CurriTextBox>*커리큘럼은 상황에 따라 변경될 수 있습니다.</CurriTextBox>
       </CurriContainer>
       <TechStackTitle>
         <p>Programming Language</p>
       </TechStackTitle>
       <PLImgContainer>
         <PLImgFirstBox>
-          <img src='../img/htmlcss.png' alt='HtmlAndCss' />
-          <img src='../img/react.png' alt='react' />
+          <img
+            src='../img/htmlcss.png'
+            alt='HtmlAndCss'
+            {...AnimationArray[0].animation}
+          />
+          <img
+            src='../img/react.png'
+            alt='react'
+            {...AnimationArray[1].animation}
+          />
         </PLImgFirstBox>
         <PLImgSecondBox>
-          <img src='../img/node.png' alt='node.js' />
-          <img src='../img/javascript.png' alt='javascript' />
-          <img src='../img/django.png' alt='django' />
+          <img
+            src='../img/node.png'
+            alt='node.js'
+            {...AnimationArray[2].animation}
+          />
+          <img
+            src='../img/javascript.png'
+            alt='javascript'
+            {...AnimationArray[3].animation}
+          />
+          <img
+            src='../img/django.png'
+            alt='django'
+            {...AnimationArray[4].animation}
+          />
         </PLImgSecondBox>
       </PLImgContainer>
-
-      <CurriContainer>
-        <CurriImgBox>
-          <img src='../img/fakeCurriculum.png' alt='커리큘럼사진예시' />
-        </CurriImgBox>
-        <CurriTextBox>*커리큘럼은 상황에 따라 변경될 수 있습니다.</CurriTextBox>
-      </CurriContainer>
       <TechStackTitle>
         <p>Team Collaboration Tool</p>
       </TechStackTitle>
       <PLImgContainer>
         {/* 피그마 아이콘 잘리는 현상 */}
         <PLImgFirstBox>
-          <img src='../img/slack.png' alt='HtmlAndCss' />
-          <img src='../img/notion.png' alt='react' />
+          <img
+            src='../img/slack.png'
+            alt='HtmlAndCss'
+            {...AnimationArray[5].animation}
+          />
+          <img
+            src='../img/notion.png'
+            alt='react'
+            {...AnimationArray[6].animation}
+          />
         </PLImgFirstBox>
         <PLImgThirdBox>
-          <img src='../img/figma.png' alt='node.js' />
-          <img src='../img/github.png' alt='javascript' />
+          <img
+            src='../img/figma.png'
+            alt='node.js'
+            {...AnimationArray[7].animation}
+          />
+          <img
+            src='../img/github.png'
+            alt='javascript'
+            {...AnimationArray[8].animation}
+          />
         </PLImgThirdBox>
       </PLImgContainer>
     </CurriWapper>

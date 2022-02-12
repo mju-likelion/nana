@@ -14,8 +14,8 @@ const MenuWrap = styled.div`
     /* 세로변환 시 메뉴들 센터로 -> 너비는 넓게 100% */
     align-items: center;
     width: 100%;
-    margin: 0;
-    background: #071d49;
+    margin: 10px 0 0 0;
+    background: #071d49d9;
 
     a {
       padding: 20px 0;

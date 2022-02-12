@@ -14,8 +14,9 @@ const NavWrap = styled.div`
   z-index: 10;
   width: 100%;
   height: 75px;
+  transition: 0.5s ease-out;
   @media screen and (max-width: 1024px) {
-    background: #071d49;
+    /* background: #071d49d9; */
   }
 `;
 
@@ -30,6 +31,7 @@ const NavContainer = styled.div`
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: flex-start;
+    background: #071d49d9;
   }
 `;
 

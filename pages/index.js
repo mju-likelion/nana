@@ -38,86 +38,51 @@ export default function Home() {
   const joinRef = useRef();
   const applyRef = useRef();
 
+  const initNabStyle = () => {
+    for (let i = 1; i < navRefArr.length; i++) {
+      navRefArr[i].current.style.color = '#fff';
+      navRefArr[i].current.style.fontSize = '12px';
+    }
+  };
+
+  const highlightNavItem = (index) => {
+    navRefArr[0].current.style.background = '#071d49d9';
+    initNabStyle();
+    navRefArr[index].current.style.color = '#ffd25d';
+    navRefArr[index].current.style.fontSize = '17px';
+  };
+
   const handleScroll = () => {
     const scrollTop = window.pageYOffset;
     const introPos =
-      window.pageYOffset + introRef.current.getBoundingClientRect().top;
+      window.pageYOffset + introRef.current.getBoundingClientRect().top - 50;
     const curriculumPos =
-      window.pageYOffset + curriculumRef.current.getBoundingClientRect().top;
+      window.pageYOffset +
+      curriculumRef.current.getBoundingClientRect().top -
+      50;
     const outputPos =
-      window.pageYOffset + outputRef.current.getBoundingClientRect().top;
+      window.pageYOffset + outputRef.current.getBoundingClientRect().top - 50;
     const joinPos =
-      window.pageYOffset + joinRef.current.getBoundingClientRect().top;
+      window.pageYOffset + joinRef.current.getBoundingClientRect().top - 50;
     const applyPos =
-      window.pageYOffset + applyRef.current.getBoundingClientRect().top;
+      window.pageYOffset + applyRef.current.getBoundingClientRect().top - 50;
 
     // 첫 화면이면 스타일 초기화
     if (scrollTop < introPos) {
-      // navRefArr[0].current.style.background = '#071d49';
       navRefArr[0].current.style.background = 'none';
-      for (let i = 1; i < navRefArr.length; i++) {
-        navRefArr[i].current.style.color = '#fff';
-        navRefArr[i].current.style.fontSize = '12px';
-      }
+      initNabStyle();
     }
 
     // 스크롤 위치에따라 스타일 부여하기
-    if (scrollTop >= introPos) {
-      // navRefArr[0].current.style.background = '#212121DD';
-      navRefArr[0].current.style.background = '#071d49';
-      for (let i = 1; i < navRefArr.length; i++) {
-        navRefArr[i].current.style.color = '#fff';
-        navRefArr[i].current.style.fontSize = '12px';
-      }
-      // navRefArr[1].current.style.color = '#78648C';
-      // navRefArr[1].current.style.color = '#FFFBE3';
-      // navRefArr[1].current.style.color = '#FFFB51';
-      navRefArr[1].current.style.color = '#ffd25d';
-      navRefArr[1].current.style.fontSize = '17px';
-    }
+    if (scrollTop >= introPos) highlightNavItem(1);
 
-    if (scrollTop >= curriculumPos) {
-      // navRefArr[0].current.style.background = '#212121DD';
-      navRefArr[0].current.style.background = '#071d49';
-      for (let i = 1; i < navRefArr.length; i++) {
-        navRefArr[i].current.style.color = '#fff';
-        navRefArr[i].current.style.fontSize = '12px';
-      }
-      // navRefArr[1].current.style.color = '#78648C';
-      // navRefArr[1].current.style.color = '#FFFBE3';
-      navRefArr[2].current.style.color = '#ffd25d';
-      navRefArr[2].current.style.fontSize = '17px';
-    }
+    if (scrollTop >= curriculumPos) highlightNavItem(2);
 
-    if (scrollTop >= outputPos) {
-      navRefArr[0].current.style.background = '#071d49';
-      for (let i = 1; i < navRefArr.length; i++) {
-        navRefArr[i].current.style.color = '#fff';
-        navRefArr[i].current.style.fontSize = '12px';
-      }
-      navRefArr[3].current.style.color = '#ffd25d';
-      navRefArr[3].current.style.fontSize = '17px';
-    }
+    if (scrollTop >= outputPos) highlightNavItem(3);
 
-    if (scrollTop >= joinPos) {
-      navRefArr[0].current.style.background = '#071d49';
-      for (let i = 1; i < navRefArr.length; i++) {
-        navRefArr[i].current.style.color = '#fff';
-        navRefArr[i].current.style.fontSize = '12px';
-      }
-      navRefArr[4].current.style.color = '#ffd25d';
-      navRefArr[4].current.style.fontSize = '17px';
-    }
+    if (scrollTop >= joinPos) highlightNavItem(4);
 
-    if (scrollTop - applyPos >= -1) {
-      navRefArr[0].current.style.background = '#071d49';
-      for (let i = 1; i < navRefArr.length; i++) {
-        navRefArr[i].current.style.color = '#fff';
-        navRefArr[i].current.style.fontSize = '12px';
-      }
-      navRefArr[5].current.style.color = '#ffd25d';
-      navRefArr[5].current.style.fontSize = '17px';
-    }
+    if (scrollTop - applyPos >= -1) highlightNavItem(5);
   };
 
   // 위치별 스타일 주기
