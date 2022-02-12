@@ -1,12 +1,14 @@
-import { forwardRef, useEffect, useRef } from 'react';
+import { forwardRef } from 'react';
 import styled from 'styled-components';
+
+import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const IntroWapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 140px;
   @media screen and (max-width: 1024px) {
     margin-top: 20px;
   }
@@ -41,7 +43,7 @@ const IntroServiceHover = styled.a`
   text-decoration: underline;
 `;
 
-const IntroStudyHover = styled.a`
+const IntroLinkHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
   text-decoration: underline;
@@ -74,25 +76,15 @@ const IntroMjuTextColor = styled.p`
   color: #ffffff;
 `;
 
-const IntroLastTextBox = styled.div`
-  @media screen and (max-width: 1024px) {
-    font-size: 25px;
-    margin-top: 120px;
-  }
-  margin-top: 250px;
-  margin-bottom: 200px;
-  font-size: 55px;
-  font-weight: 800;
-  color: #1f1f1f;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
 const Introduction = forwardRef((props, ref) => {
+  const IntroductionAnimation = useScrollAnimation('up', 1.3, 0);
+  const IntroductionMjuAnimation = useScrollAnimation('up', 2, 0);
+
   return (
     <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
         <img src='../img/introLikelion.png' alt='멋사중앙건물' />
-        <IntroTextArray>
+        <IntroTextArray {...IntroductionAnimation}>
           <IntroMjuTextColor>
             멋쟁이사자처럼은 2013년 비영리법인으로 시작하여
           </IntroMjuTextColor>
@@ -129,7 +121,7 @@ const Introduction = forwardRef((props, ref) => {
 
       <IntroContainer>
         <img src='../img/introLikelionMju.png' alt='멋사명지대단체사진' />
-        <IntroTextArray>
+        <IntroTextArray {...IntroductionMjuAnimation}>
           <IntroMjuTextColor>
             명지대(자연) 멋사는 (시작한년도)부터 시작하여 현재 N년 간 함께
             이어오는 중이에요 !
@@ -154,20 +146,24 @@ const Introduction = forwardRef((props, ref) => {
             많은 사람들과 원하는 스택을 공부할 수 있는 환경까지 만들어준답니다.
           </IntroMjuTextColor>
           <IntroMjuTextColor>
-            <IntroStudyHover
+            <IntroLinkHover
               href='https://github.com/KOSMOSstudy'
               target='_blank'
             >
               명지대(자연)와 다른 학교의 연합
-            </IntroStudyHover>
+            </IntroLinkHover>
             이 궁금하다면?
           </IntroMjuTextColor>
-          {/* 위 문장을 코스모스 깃허브 링크 url로 연결해야 함 */}
+          <IntroMjuTextColor>
+            <IntroLinkHover
+              href='https://www.notion.so/4ad89f6d80eb45db97b78127b1a8dbf6'
+              target='blank'
+            >
+              2022년 멋사를 이끌어 갈, 우리가 누구게~!~!~!
+            </IntroLinkHover>
+          </IntroMjuTextColor>
         </IntroTextArray>
       </IntroContainer>
-      <IntroLastTextBox>
-        <p>지금 보시는 페이지도 만들 수 있어요! </p>
-      </IntroLastTextBox>
     </IntroWapper>
   );
 });
