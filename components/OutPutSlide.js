@@ -30,6 +30,8 @@ const SlideContent = styled.div`
     display: flex;
     justify-content: center;
     width: 750px;
+    /* 이미지 hover시 위쪽 잘림 방지 */
+    margin-top: 15px;
   }
 
   @media screen and (max-width: 1024px) {
