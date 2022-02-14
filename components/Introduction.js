@@ -21,21 +21,19 @@ const IntroContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
 
-  img {
-    position: absolute;
-    width: 1024px;
-    height: 425px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
-  }
+const IntroBackground = styled.img`
+  position: absolute;
+  width: 1005px;
+  height: ${(props) => (props.isBlue ? '550px' : '425px')};
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 1024px) {
-    img {
-      position: static;
-      width: 80%;
-      height: auto;
-    }
+    position: static;
+    width: 80%;
+    height: auto;
   }
 `;
 
@@ -58,18 +56,28 @@ const IntroTextArray = styled.div`
     margin: 0 auto;
     text-align: center;
     margin-top: 27px;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 900;
   }
   width: 985px;
   margin: 0 auto;
   font-weight: bold;
-  font-size: 18px;
-  line-height: 45px;
+  font-size: 16px;
+  line-height: 40px;
   text-align: center;
   z-index: 1;
   word-break: keep-all;
 `;
+
+const Textpartion = styled.div`
+  margin: 15px 0;
+`;
+
+// const LikelionText = styled.div`
+//   width: 340px;
+//   margin: 10px auto;
+//   text-align: start;
+// `;
 
 const IntroMjuTextColor = styled.p`
   @media screen and (max-width: 1024px) {
@@ -78,6 +86,16 @@ const IntroMjuTextColor = styled.p`
   color: #ffffff;
 `;
 
+const IntroBigText = styled.p`
+  font-size: 27px;
+  color: #ffffff;
+
+  @media screen and (max-width: 1024px) {
+    color: black;
+    margin: 60px 0 7px 0;
+    font-size: 24px;
+  }
+`;
 const Introduction = forwardRef((props, ref) => {
   const IntroductionAnimation = useScrollAnimation('up', 1.3, 0);
   const IntroductionMjuAnimation = useScrollAnimation('up', 2, 0);
@@ -85,44 +103,65 @@ const Introduction = forwardRef((props, ref) => {
   return (
     <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
-        <img src='../img/introLikelion.png' alt='멋사중앙건물' />
+        <IntroBackground
+          src='../img/introLikelion.png'
+          alt='멋사중앙건물'
+          isBlue
+        />
         <IntroTextArray {...IntroductionAnimation}>
-          <IntroMjuTextColor>
-            멋쟁이사자처럼은 2013년 비영리법인으로 시작하여
-          </IntroMjuTextColor>
-          <IntroMjuTextColor>
-            국내 및 국외(한국, 미국, 호주, 홍콩, 일본 등) 7,000여명의 대학생에게
-            프로그래밍 교육을 제공해왔습니다.
-          </IntroMjuTextColor>
-          <IntroMjuTextColor>
-            2018년 5월 영리법인으로 전환하여 교육 대상과 지역(베트남 등)을
-            확장했고,
-          </IntroMjuTextColor>
-          <IntroMjuTextColor>
-            현재는 멋쟁이사자처럼 대학생, 멋쟁이사자처럼 직장인 , 멋쟁이사자처럼
-            AI School , 광주 인공지능사관학교 등의
-          </IntroMjuTextColor>
-          <IntroMjuTextColor>
-            오프라인 교육과, 글로벌 온라인 코딩 교육 플랫폼 코드라이언(CODE
-            LION)을 개발, 운영하고 있습니다.
-          </IntroMjuTextColor>
-          <br />
-          <IntroMjuTextColor>
-            2018년 5월 영리법인으로 전환한 이후, 2019년 전년 대비 매출액 425%를
-            달성했고,
-          </IntroMjuTextColor>
-          <IntroMjuTextColor>
-            2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다.
-          </IntroMjuTextColor>
-          <IntroMjuTextColor>
-            이에 역량과 향후 글로벌 차원의 성장성을 인정받아 2019년 9월
-            미래에셋벤처투자로부터 투자를 유치한바 있습니다.
-          </IntroMjuTextColor>
+          <Textpartion>
+            <IntroMjuTextColor>
+              우리 멋쟁이사자처럼은 2013년 비영리법인으로, 서울대학교에서부터
+              1기가 시작됐어요!
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              현재는 영리법인으로 전환하여 교육의 범위를 확장했고,
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              `멋쟁이사자처럼 대학생-직장인` `AI SCHOOL` `광주
+              인공지능사관학교`와 같은
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              온•오프라인 교육을 제공하고 있어요!
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              더불어 멋쟁이사자처럼의 설립자이신 이두희님과 유튜브 38만명
+              구독자를 보유하신 조코딩님 등
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              멋진 실력자분들과 함께할 수 있는 온라인 코딩 교육 플랫폼인
+              `코드라이언(CODE LION)`까지 운영하고 있답니다.
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              2020년에는 전년 대비 1,500% 이상의 성장을 달성했습니다.
+            </IntroMjuTextColor>
+          </Textpartion>
+          <Textpartion>
+            <IntroBigText>
+              우리 멋쟁이사자처럼의 비전은 이렇습니다.
+            </IntroBigText>
+
+            <IntroMjuTextColor>
+              • 성장 의지를 가진 사람들을 연결합니다
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              • 누구나 성장을 실현할 수 있도록 합니다
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              • 혁신적인 교육방식으로 성장을 이끌어 나갑니다
+            </IntroMjuTextColor>
+            <IntroMjuTextColor>
+              • 시공간의 제약 없이 성장 가능한 환경을 만듭니다
+            </IntroMjuTextColor>
+          </Textpartion>
         </IntroTextArray>
       </IntroContainer>
 
       <IntroContainer>
-        <img src='../img/introLikelionMju.png' alt='멋사명지대단체사진' />
+        <IntroBackground
+          src='../img/introLikelionMju.png'
+          alt='멋사명지대단체사진'
+        />
         <IntroTextArray {...IntroductionMjuAnimation}>
           <IntroMjuTextColor>
             명지대(자연) 멋사는 2019년부터 시작하여 현재 4년 간 함께 이어오는
