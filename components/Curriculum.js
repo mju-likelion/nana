@@ -33,9 +33,13 @@ const CurriImgBox = styled.div`
       width: 100%;
       height: auto;
     }
+    img {
+      border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+    }
     width: 974px;
     height: 539px;
-  }`;
+  `;
 
 const CurriTextBox = styled.p`
   @media screen and (max-width: 1024px) {
@@ -79,7 +83,6 @@ const PLImgFirstBox = styled.div`
   }
   img:nth-child(2) {
     margin: 0 33px;
-    width: ;
   }
 
   @media screen and (max-width: 1024px) {
