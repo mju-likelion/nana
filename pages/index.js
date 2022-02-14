@@ -93,6 +93,7 @@ export default function Home() {
 
   return (
     <MainContainer>
+      <title>멋쟁이사자처럼 at 명지대(자연)</title>
       <NavBar ref={navRefArr} />
       <Welcom />
       <Introduction ref={introRef} />
