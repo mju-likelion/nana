@@ -26,6 +26,8 @@ const IntroContainer = styled.div`
     position: absolute;
     width: 1024px;
     height: 425px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
   }
 
   @media screen and (max-width: 1024px) {
@@ -123,8 +125,8 @@ const Introduction = forwardRef((props, ref) => {
         <img src='../img/introLikelionMju.png' alt='멋사명지대단체사진' />
         <IntroTextArray {...IntroductionMjuAnimation}>
           <IntroMjuTextColor>
-            명지대(자연) 멋사는 2019년부터 시작하여 현재 4년 간 함께
-            이어오는 중이에요 !
+            명지대(자연) 멋사는 2019년부터 시작하여 현재 4년 간 함께 이어오는
+            중이에요 !
           </IntroMjuTextColor>
           <IntroMjuTextColor>
             우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지
