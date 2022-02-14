@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Modal from './Modal';
 
 const SlideContainer = styled.div`
+  position: relative;
   display: flex;
   /* SlideWrap 요소 hidden */
   overflow: hidden;
@@ -32,6 +33,7 @@ const SlideContent = styled.div`
     width: 750px;
     /* 이미지 hover시 위쪽 잘림 방지 */
     margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -62,7 +64,7 @@ const OutPutTitle = styled.div`
 // 해커톤 서비스 이미지
 const OutPutImages = styled.img`
   box-sizing: border-box;
-  over-fit: contain;
+  /* over-fit: contain; */
   width: 700px;
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
@@ -131,6 +133,20 @@ const Dots = styled.span`
   }
 `;
 
+const MoreBtn = styled.img`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 20px;
+  right: 33px;
+
+  @media screen and (max-width: 1024px) {
+    right: 27px;
+    width: 32px;
+    height: 32px;
+  }
+`;
+
 const OutPutSlide = ({ Hackathon }) => {
   // 총 슬라이드 개수(0부터 시작이므로 6개면 5로 설정)
   const totalSlides = 5;
@@ -193,6 +209,7 @@ const OutPutSlide = ({ Hackathon }) => {
             </SlideContent>
           ))}
         </SlideWrap>
+        <MoreBtn src='../img/moreBtn.svg' />
       </SlideContainer>
       {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
