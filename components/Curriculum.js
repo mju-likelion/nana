@@ -41,19 +41,6 @@ const CurriImgBox = styled.div`
   height: 539px;
 `;
 
-const CurriTextBox = styled.p`
-  @media screen and (max-width: 1024px) {
-    text-align: center;
-  }
-  width: 100%;
-  margin-top: 8px;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 16px;
-  text-align: right;
-  color: #737070;
-`;
 const TechStackTitle = styled.div`
   width: 413px;
   font-style: normal;
@@ -69,13 +56,14 @@ const TechStackTitle = styled.div`
   }
 `;
 
-const PLImgContainer = styled.div`
+const TechStackImgContainer = styled.div`
   @media screen and (max-width: 1024px) {
     display: block;
   }
   display: flex;
 `;
-const PLImgFirstBox = styled.div`
+
+const TechCommonBox = styled.div`
   display: flex;
   justify-content: center;
   img:nth-child(1) {
@@ -101,7 +89,7 @@ const PLImgFirstBox = styled.div`
     }
   }
 `;
-const PLImgSecondBox = styled.div`
+const TechLanguageBox = styled.div`
   display: flex;
   img:nth-child(1) {
     margin: 0 27px;
@@ -132,7 +120,7 @@ const PLImgSecondBox = styled.div`
   }
 `;
 
-const PLImgThirdBox = styled.div`
+const TechToolBox = styled.div`
   display: flex;
   img:nth-child(1) {
     margin: 0 33px 0 48px;
@@ -187,8 +175,8 @@ const Curriculum = forwardRef((props, ref) => {
       <TechStackTitle>
         <p>Programming Language</p>
       </TechStackTitle>
-      <PLImgContainer>
-        <PLImgFirstBox>
+      <TechStackImgContainer>
+        <TechCommonBox>
           <img
             src='../img/htmlcss.png'
             alt='HtmlAndCss 아이콘'
@@ -199,8 +187,8 @@ const Curriculum = forwardRef((props, ref) => {
             alt='리액트 아이콘'
             {...AnimationArray[1].animation}
           />
-        </PLImgFirstBox>
-        <PLImgSecondBox>
+        </TechCommonBox>
+        <TechLanguageBox>
           <img
             src='../img/node.png'
             alt='노드JS 아이콘'
@@ -216,14 +204,14 @@ const Curriculum = forwardRef((props, ref) => {
             alt='장고 아이콘'
             {...AnimationArray[4].animation}
           />
-        </PLImgSecondBox>
-      </PLImgContainer>
+        </TechLanguageBox>
+      </TechStackImgContainer>
       <TechStackTitle>
         <p>Team Collaboration Tool</p>
       </TechStackTitle>
-      <PLImgContainer>
+      <TechStackImgContainer>
         {/* 피그마 아이콘 잘리는 현상 */}
-        <PLImgFirstBox>
+        <TechCommonBox>
           <img
             src='../img/slack.png'
             alt='슬랙 아이콘'
@@ -234,8 +222,8 @@ const Curriculum = forwardRef((props, ref) => {
             alt='노션 아이콘'
             {...AnimationArray[6].animation}
           />
-        </PLImgFirstBox>
-        <PLImgThirdBox>
+        </TechCommonBox>
+        <TechToolBox TechToolBox>
           <img
             src='../img/figma.png'
             alt='피그마 아이콘'
@@ -251,8 +239,8 @@ const Curriculum = forwardRef((props, ref) => {
             alt='게더타운 아이콘'
             {...AnimationArray[9].animation}
           />
-        </PLImgThirdBox>
-      </PLImgContainer>
+        </TechToolBox>
+      </TechStackImgContainer>
     </CurriWapper>
   );
 });
