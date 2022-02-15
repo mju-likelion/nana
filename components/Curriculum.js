@@ -67,11 +67,11 @@ const TechCommonBox = styled.div`
   display: flex;
   justify-content: center;
   img:nth-child(1) {
-    margin-right: 33px;
+    margin-right: 30px;
     height: 91px;
   }
   img:nth-child(2) {
-    margin: 0 33px;
+    margin: 0 27px;
     height: 91px;
   }
 
@@ -123,16 +123,16 @@ const TechLanguageBox = styled.div`
 const TechToolBox = styled.div`
   display: flex;
   img:nth-child(1) {
-    margin: 0 33px 0 48px;
+    margin: 0 27px 0 40px;
   }
   img:nth-child(2) {
-    margin: 0 33px;
+    margin: 0 25px;
   }
   img:nth-child(3) {
-    margin: 8px 0 0 30px;
+    margin: 8px 0 0 17px;
     height: 73px;
   }
-  margin: 0 0 0 15px;
+  margin: 0 14px 0 5px;
 
   @media screen and (max-width: 1024px) {
     align-items: center;
@@ -145,7 +145,7 @@ const TechToolBox = styled.div`
       width: 150px;
     }
     img:nth-child(3) {
-      margin: 10px 3px 10px 0;
+      margin: 10px 0 10px 0;
       width: 115px;
       height: 60px;
     }
