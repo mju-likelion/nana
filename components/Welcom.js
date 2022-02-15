@@ -43,15 +43,11 @@ const BackgroundBox = styled.div`
 `;
 
 const WelcomText = styled.div`
-  @font-face {
-    font-family: 'Mulish-ExtraBold';
-    src: local('Mulish'),
-      url(${'/fonts/Mulish-ExtraBold.ttf'}) format('truetype');
-  }
+  font-family: 'Mulish-ExtraBold';
   margin: 0 auto;
   text-align: center;
   h1 {
-    font-family: 'Mulish-ExtraBold';
+    /* font-family: 'Mulish-ExtraBold'; */
     color: #ffd25e;
     font-size: 60px;
     font-weight: bolder;

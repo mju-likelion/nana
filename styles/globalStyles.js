@@ -12,6 +12,11 @@ const GlobalStyle = createGlobalStyle`
     url(${'/fonts/Mulish-Regular.ttf'}) format("truetype");
   }
   @font-face {
+    font-family: 'Mulish-ExtraBold';
+    src: local('Mulish'),
+      url(${'/fonts/Mulish-ExtraBold.ttf'}) format('truetype');
+  }
+  @font-face {
     font-family: "NanumGothicBold";
     src: local('NanumGothicBold'), url(${'/fonts/NanumGothicBold.ttf'}) format("truetype");
     // 한글만 해당 폰트 적용
