@@ -79,10 +79,31 @@ const Menu = forwardRef((props, ref) => {
     },
   ];
 
+  const smoothScroll = (target) => {
+    // herf 객체를 object로 변환 후 쌍따옴표를 기준으로 나눔 그 후 다시 #으로 나눈다
+    const pointArr = JSON.stringify(target.href).split('"');
+    const splitAddr = pointArr[1].split('#');
+
+    const ele = document.getElementById(splitAddr[1]);
+    ele.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
+  const handleScroll = (e) => {
+    smoothScroll(e.target);
+    e.preventDefault();
+  };
+
   return (
     <MenuWrap ref={ref} isToggled={isToggled}>
       {menuItems.map((item) => (
-        <a ref={item.ref} href={item.href} key={item.title}>
+        <a
+          onClick={handleScroll}
+          href={item.href}
+          ref={item.ref}
+          key={item.title}
+        >
           {item.title}
         </a>
       ))}
