@@ -17,9 +17,6 @@ const GlobalStyle = createGlobalStyle`
     // 한글만 해당 폰트 적용
     unicode-range: U+AC00–D7A3;
   }
-  html {
-    scroll-behavior: smooth;
-  }
   body{
     user-select: none;
     background-color: #ffffff;
