@@ -28,18 +28,18 @@ const CurriContainer = styled.div`
   }
 `;
 const CurriImgBox = styled.div`
-@media screen and (max-width: 1024px) {
-      justify-content: center;
-      width: 100%;
-      height: auto;
-    }
-    img {
-      border-radius: 15px;
+  @media screen and (max-width: 1024px) {
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+  img {
+    border-radius: 15px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
-    }
-    width: 974px;
-    height: 539px;
-  `;
+  }
+  width: 974px;
+  height: 539px;
+`;
 
 const CurriTextBox = styled.p`
   @media screen and (max-width: 1024px) {
@@ -106,6 +106,7 @@ const PLImgSecondBox = styled.div`
   }
   img:nth-child(2) {
     margin: 0 33px;
+    border-radius: 10px;
   }
   img:nth-child(3) {
     margin-left: 30px;
@@ -142,6 +143,7 @@ const PLImgThirdBox = styled.div`
   img:nth-child(3) {
     margin-left: 30px;
   }
+  margin: 0 0 0 15px;
 
   @media screen and (max-width: 1024px) {
     margin-top: 15px;
@@ -153,7 +155,10 @@ const PLImgThirdBox = styled.div`
       width: 90px;
     }
     img:nth-child(2) {
-      margin: 0 0 0 50px;
+      margin: 0 0 0 20px;
+      width: 550px;
+    }
+    img:nth-child(3) {
       width: 550px;
     }
   }
@@ -170,12 +175,13 @@ const Curriculum = forwardRef((props, ref) => {
     { id: 7, animation: useScrollAnimation('up', 2.5, 0.4) },
     { id: 8, animation: useScrollAnimation('up', 2.5, 0.6) },
     { id: 9, animation: useScrollAnimation('up', 2.5, 0.8) },
+    { id: 10, animation: useScrollAnimation('up', 2.5, 0.8) },
   ];
   return (
     <CurriWapper ref={ref} id='curriculum'>
       <CurriContainer>
         <CurriImgBox>
-          <img src='../img/curriculum.png' alt='커리큘럼사진예시' />
+          <img src='../img/curriculum.svg' alt='커리큘럼사진예시' />
         </CurriImgBox>
       </CurriContainer>
       <TechStackTitle>
@@ -239,6 +245,11 @@ const Curriculum = forwardRef((props, ref) => {
             src='../img/github.png'
             alt='javascript'
             {...AnimationArray[8].animation}
+          />
+          <img
+            src='../img/gatherTown.png'
+            alt='javascript'
+            {...AnimationArray[9].animation}
           />
         </PLImgThirdBox>
       </PLImgContainer>
