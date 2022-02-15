@@ -25,70 +25,72 @@ const ModalContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45%;
-  height: 500px;
+  width: 50%;
+  height: 80%;
   margin-top: 50px;
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
   background-color: #ffffff;
 
   @media screen and (max-width: 1024px) {
-    width: 320px;
-    height: 470px;
+    margin-top: 45px;
+    width: 85%;
+    height: 77%;
   }
 `;
 
 const ContentsWrap = styled.div`
-  width: 85%;
-  height: 380px;
+  width: 90%;
+  height: 90%;
 
   @media screen and (max-width: 1024px) {
     display: flex;
     width: 90%;
-    height: 430px;
+    height: 95%;
   }
 `;
 
 const ImgsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 75%;
+  height: 90%;
   margin: 20px auto -25px auto;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 94%;
-    margin: 10px 0 0 0;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    height: 100%;
   }
 `;
 
 const Imgs = styled.div`
-  width: 200px;
-  height: 65%;
-  margin: 0 5px 5px 5px;
+  width: 47%;
+  height: 52%;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  margin: 5px;
 
   @media screen and (max-width: 1024px) {
-    width: 180px;
-    height: 40%;
+    width: 75%;
+    max-height: 230px;
   }
 `;
 
 // 모달창에 추가로 넣는 해커톤 이미지
 const AdditionImg = styled.img`
   box-sizing: border-box;
-  /* over-fit: contain; */
   border-radius: 6px;
 `;
 
 // 데스크탑/랩탑환경에서만 보이는 나가기버튼
 const CloseBtn = styled.button`
-  width: 150px;
-  height: 40px;
-  margin-bottom: 30px;
-  font-size: 16px;
+  width: 200px;
+  height: 55px;
+  margin-bottom: 20px;
+  font-size: 22px;
   font-weight: bold;
   border: 1px solid #eeeeee;
   border-radius: 2em;
@@ -96,6 +98,11 @@ const CloseBtn = styled.button`
   color: white;
   background-color: #bdbdbd80;
   cursor: pointer;
+
+  &:hover {
+    background-color: #bdbdbd;
+    transition-duration: 0.2s;
+  }
 
   @media screen and (max-width: 1024px) {
     display: none;
