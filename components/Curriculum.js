@@ -73,6 +73,7 @@ const TechCommonBox = styled.div`
   img:nth-child(2) {
     margin: 0 27px;
     height: 91px;
+    width: auto;
   }
 
   @media screen and (max-width: 1024px) {
@@ -80,12 +81,12 @@ const TechCommonBox = styled.div`
     img:nth-child(1) {
       margin-right: 27px;
       width: 180px;
-      height: 91px;
+      height: 80px;
     }
     img:nth-child(2) {
-      margin: 0 22px;
+      margin: 0 18px;
       width: 87px;
-      height: 80px;
+      height: 75px;
     }
   }
 `;
