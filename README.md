@@ -23,6 +23,8 @@ http://localhost:3000에 접속해 보세요
 
 ## Tech Stack
 
+![제목을-입력해주세요_-001 (2)](https://user-images.githubusercontent.com/61998801/154004889-fbf4e277-c5cc-4816-b1b4-7314ed3b603c.jpg)
+
 - React, Next.js
 - styled-components, styled-reset
 - eslint, prettier
