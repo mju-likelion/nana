@@ -75,7 +75,7 @@ const Imgs = styled.div`
 
   @media screen and (max-width: 1024px) {
     width: 75%;
-    max-height: 230px;
+    max-height: 35%;
   }
 `;
 
@@ -89,7 +89,6 @@ const AdditionImg = styled.img`
 const CloseBtn = styled.button`
   width: 130px;
   height: 30px;
-  /* margin-bottom: 20px; */
   margin: 22px 0 25px 0;
   font-size: 18px;
   font-weight: bold;
