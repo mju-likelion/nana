@@ -47,3 +47,7 @@ http://localhost:3000에 접속해 보세요
 └── develop
     └── feature
 ```
+
+## 팀소개
+![제목을-입력해주세요_-001](https://user-images.githubusercontent.com/61998801/154003156-3a5dd67b-808f-42c9-a3cd-174e38911da2.jpg)
+
