@@ -27,12 +27,20 @@ const AnimationBox = styled.div`
   min-height: 100vh;
 
   /* margin 조절시 비율 고려해야함 */
+  /* 사파리 브라우저의 경우 [from, to] 속성을 쓰지 못함, [0%, 100%]로 치환하여 사용 */
   @keyframes star {
     from {
       opacity: 0;
       margin-left: 0;
       margin-top: 0;
     }
+
+    0% {
+      opacity: 0;
+      margin-left: 0%;
+      margin-top: 0%;
+    }
+
     35% {
       opacity: 1;
       margin-left: 25%;
@@ -43,6 +51,12 @@ const AnimationBox = styled.div`
       opacity: 0;
       margin-left: 50%;
       margin-top: 50%;
+    }
+
+    100% {
+      opacity: 0;
+      margin-left: 100%;
+      margin-top: 100%;
     }
 
     to {
@@ -57,6 +71,8 @@ const AnimationBox = styled.div`
     height: 40px;
     position: absolute;
     animation: star 10s linear infinite;
+    -moz-animation: star 10s linear infinite;
+
     opacity: 0;
     margin: 0 auto auto 0;
     transform: rotate(35deg);
@@ -117,7 +133,12 @@ const FallingStarEffect = () => {
         <InnerBox>
           <AnimationBox>
             {effectPositions.map((position) => (
-              <img src='../img/fallingStar.png' alt='유성' key={position} />
+              <img
+                id={position}
+                src='../img/fallingStar.png'
+                alt='유성'
+                key={position}
+              />
             ))}
           </AnimationBox>
         </InnerBox>
