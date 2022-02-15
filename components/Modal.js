@@ -87,10 +87,11 @@ const AdditionImg = styled.img`
 
 // 데스크탑/랩탑환경에서만 보이는 나가기버튼
 const CloseBtn = styled.button`
-  width: 200px;
-  height: 55px;
-  margin-bottom: 20px;
-  font-size: 22px;
+  width: 130px;
+  height: 30px;
+  /* margin-bottom: 20px; */
+  margin: 22px 0 25px 0;
+  font-size: 18px;
   font-weight: bold;
   border: 1px solid #eeeeee;
   border-radius: 2em;
