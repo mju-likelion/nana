@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
 import Modal from './Modal';
@@ -139,11 +139,30 @@ const MoreBtn = styled.img`
   height: 50px;
   top: 20px;
   right: 33px;
+  animation: ${(props) => (props.active ? 'moreFadeInOut 0.5s' : '')};
 
   @media screen and (max-width: 1024px) {
     right: 27px;
     width: 32px;
     height: 32px;
+  }
+
+  @keyframes moreFadeInOut {
+    from {
+      opacity: 1;
+    }
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
@@ -152,9 +171,11 @@ const OutPutSlide = ({ Hackathon }) => {
   const totalSlides = 5;
 
   const slideRef = useRef();
+  const moreRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideTitle, setSliteTitle] = useState('');
   const [isModal, setIsModal] = useState(false);
+  const [clickMore, setClickMore] = useState(0);
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -173,13 +194,14 @@ const OutPutSlide = ({ Hackathon }) => {
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
     setSliteTitle(Hackathon[currentSlide].title);
+    setClickMore(currentSlide);
 
     if (window.innerWidth >= 1024) {
       slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
     } else {
       slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
     }
-  }, [currentSlide]);
+  }, [currentSlide, slideTitle, clickMore]);
 
   return (
     <>
@@ -209,7 +231,7 @@ const OutPutSlide = ({ Hackathon }) => {
             </SlideContent>
           ))}
         </SlideWrap>
-        <MoreBtn src='../img/moreBtn.svg' />
+        <MoreBtn src='../img/moreBtn.svg' active={clickMore === currentSlide} />
       </SlideContainer>
       {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
