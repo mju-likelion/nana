@@ -80,9 +80,11 @@ const PLImgFirstBox = styled.div`
   justify-content: center;
   img:nth-child(1) {
     margin-right: 33px;
+    height: 91px;
   }
   img:nth-child(2) {
     margin: 0 33px;
+    height: 91px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -93,9 +95,9 @@ const PLImgFirstBox = styled.div`
       height: 91px;
     }
     img:nth-child(2) {
-      margin: 0 33px;
+      margin: 0 22px;
       width: 87px;
-      height: 87px;
+      height: 80px;
     }
   }
 `;
@@ -113,21 +115,19 @@ const PLImgSecondBox = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    margin-top: 15px;
-    width: 75px;
-    height: auto;
+    margin-top: 40px;
     align-items: center;
     img:nth-child(1) {
       margin: 0 21px 0 0;
-      width: 90px;
+      width: 100px;
     }
     img:nth-child(2) {
-      margin: 0 30px;
-      width: 550px;
+      margin: 0 21px;
+      width: 87px;
     }
     img:nth-child(3) {
       margin-left: 21px;
-      width: 550px;
+      width: 87px;
     }
   }
 `;
@@ -135,31 +135,31 @@ const PLImgSecondBox = styled.div`
 const PLImgThirdBox = styled.div`
   display: flex;
   img:nth-child(1) {
-    margin: 0 27px;
+    margin: 0 33px 0 48px;
   }
   img:nth-child(2) {
     margin: 0 33px;
   }
   img:nth-child(3) {
-    margin-left: 30px;
+    margin: 8px 0 0 30px;
+    height: 73px;
   }
   margin: 0 0 0 15px;
 
   @media screen and (max-width: 1024px) {
-    margin-top: 15px;
-    width: 75px;
-    height: auto;
     align-items: center;
     img:nth-child(1) {
-      margin: 0 21px 0 30px;
-      width: 90px;
+      margin: 0 9px 0 0;
+      width: 55px;
     }
     img:nth-child(2) {
-      margin: 0 0 0 20px;
-      width: 550px;
+      margin: 0 10px;
+      width: 150px;
     }
     img:nth-child(3) {
-      width: 550px;
+      margin: 10px 3px 10px 0;
+      width: 115px;
+      height: 60px;
     }
   }
 `;
@@ -191,29 +191,29 @@ const Curriculum = forwardRef((props, ref) => {
         <PLImgFirstBox>
           <img
             src='../img/htmlcss.png'
-            alt='HtmlAndCss'
+            alt='HtmlAndCss 아이콘'
             {...AnimationArray[0].animation}
           />
           <img
             src='../img/react.png'
-            alt='react'
+            alt='리액트 아이콘'
             {...AnimationArray[1].animation}
           />
         </PLImgFirstBox>
         <PLImgSecondBox>
           <img
             src='../img/node.png'
-            alt='node.js'
+            alt='노드JS 아이콘'
             {...AnimationArray[2].animation}
           />
           <img
             src='../img/javascript.png'
-            alt='javascript'
+            alt='JS 아이콘'
             {...AnimationArray[3].animation}
           />
           <img
             src='../img/django.png'
-            alt='django'
+            alt='장고 아이콘'
             {...AnimationArray[4].animation}
           />
         </PLImgSecondBox>
@@ -226,29 +226,29 @@ const Curriculum = forwardRef((props, ref) => {
         <PLImgFirstBox>
           <img
             src='../img/slack.png'
-            alt='HtmlAndCss'
+            alt='슬랙 아이콘'
             {...AnimationArray[5].animation}
           />
           <img
             src='../img/notion.png'
-            alt='react'
+            alt='노션 아이콘'
             {...AnimationArray[6].animation}
           />
         </PLImgFirstBox>
         <PLImgThirdBox>
           <img
             src='../img/figma.png'
-            alt='node.js'
+            alt='피그마 아이콘'
             {...AnimationArray[7].animation}
           />
           <img
             src='../img/github.png'
-            alt='javascript'
+            alt='깃허브 아이콘'
             {...AnimationArray[8].animation}
           />
           <img
             src='../img/gatherTown.png'
-            alt='javascript'
+            alt='게더타운 아이콘'
             {...AnimationArray[9].animation}
           />
         </PLImgThirdBox>
