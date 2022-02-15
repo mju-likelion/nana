@@ -26,7 +26,7 @@ const IntroContainer = styled.div`
 const IntroBackground = styled.img`
   position: absolute;
   width: 1005px;
-  height: ${(props) => (props.ImgHeight ? '550px' : '425px')};
+  height: ${(props) => (props.imgHeight ? '550px' : '425px')};
   border-radius: 10px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
@@ -81,12 +81,6 @@ const IntroBigText = styled.p`
   }
 `;
 
-const IntroServiceHover = styled.a`
-  color: #ffd25d;
-  cursor: pointer;
-  text-decoration: underline;
-`;
-
 const IntroLinkHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
@@ -107,7 +101,7 @@ const Introduction = forwardRef((props, ref) => {
         <IntroBackground
           src='../img/introLikelion.png'
           alt='멋사중앙건물'
-          ImgHeight
+          imgHeight
         />
         <IntroTextArray {...IntroductionAnimation}>
           <TextPartition>
@@ -175,9 +169,8 @@ const Introduction = forwardRef((props, ref) => {
           <p>우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지</p>
           <p>하나하나 맛보고 내 것으로 만들 수 있어요.</p>
           <p>
-            우리가 만든{' '}
-            <IntroServiceHover href='#output'>웹서비스</IntroServiceHover>가
-            궁금하다면 ?
+            우리가 만든 <IntroLinkHover href='#output'>웹서비스</IntroLinkHover>
+            가 궁금하다면 ?
           </p>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
           <p>
@@ -199,7 +192,7 @@ const Introduction = forwardRef((props, ref) => {
           <p>
             <IntroLinkHover
               href='https://www.notion.so/4ad89f6d80eb45db97b78127b1a8dbf6'
-              target='blank'
+              target='_blank'
             >
               2022년 멋사를 이끌어 갈, 우리가 누구게~!~!~!
             </IntroLinkHover>
