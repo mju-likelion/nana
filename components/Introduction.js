@@ -26,7 +26,7 @@ const IntroContainer = styled.div`
 const IntroBackground = styled.img`
   position: absolute;
   width: 1005px;
-  height: ${(props) => (props.isBlue ? '550px' : '425px')};
+  height: ${(props) => (props.ImgHeight ? '550px' : '425px')};
   border-radius: 10px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
@@ -107,7 +107,7 @@ const Introduction = forwardRef((props, ref) => {
         <IntroBackground
           src='../img/introLikelion.png'
           alt='멋사중앙건물'
-          isBlue
+          ImgHeight
         />
         <IntroTextArray {...IntroductionAnimation}>
           <TextPartition>
