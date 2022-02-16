@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
 import Arrow from '../public/img/arrow.svg';
+import MoreBtn from '../public/img/moreBtn.svg';
 
 import Modal from './Modal';
 
@@ -132,7 +133,40 @@ const Dots = styled.span`
   }
 `;
 
-const MoreBtn = styled.img`
+// const MoreBtn = styled.img`
+//   position: absolute;
+//   width: 50px;
+//   height: 50px;
+//   top: 20px;
+//   right: 33px;
+//   animation: ${(props) => (props.active ? 'moreFadeInOut 0.5s' : '')};
+
+//   @media screen and (max-width: 1024px) {
+//     right: 27px;
+//     width: 32px;
+//     height: 32px;
+//   }
+
+//   @keyframes moreFadeInOut {
+//     from {
+//       opacity: 1;
+//     }
+//     0% {
+//       opacity: 1;
+//     }
+//     50% {
+//       opacity: 0;
+//     }
+//     100% {
+//       opacity: 1;
+//     }
+//     to {
+//       opacity: 1;
+//     }
+//   }
+// `;
+
+const MoreBtnContainer = styled(MoreBtn)`
   position: absolute;
   width: 50px;
   height: 50px;
@@ -147,9 +181,6 @@ const MoreBtn = styled.img`
   }
 
   @keyframes moreFadeInOut {
-    from {
-      opacity: 1;
-    }
     0% {
       opacity: 1;
     }
@@ -157,9 +188,6 @@ const MoreBtn = styled.img`
       opacity: 0;
     }
     100% {
-      opacity: 1;
-    }
-    to {
       opacity: 1;
     }
   }
@@ -170,7 +198,6 @@ const OutPutSlide = ({ Hackathon }) => {
   const totalSlides = 5;
 
   const slideRef = useRef();
-  const moreRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideTitle, setSliteTitle] = useState('');
   const [isModal, setIsModal] = useState(false);
@@ -225,7 +252,7 @@ const OutPutSlide = ({ Hackathon }) => {
             </SlideContent>
           ))}
         </SlideWrap>
-        <MoreBtn src='../img/moreBtn.svg' active={clickMore === currentSlide} />
+        <MoreBtnContainer active={clickMore === currentSlide} />
       </SlideContainer>
       {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
