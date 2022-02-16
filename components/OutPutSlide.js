@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
-// import SlideBtn from '../public/img/arrow.svg';
+import Arrow from '../public/img/arrow.svg';
 
 import Modal from './Modal';
 
@@ -95,16 +95,13 @@ const TitleAndBtn = styled.div`
   }
 `;
 
-// 슬라이드 버튼
-const SlideBtn = styled.img`
-  z-index: 2;
+const SlideBtn = styled(Arrow)`
   width: 50px;
   height: 50px;
-  transform: ${(props) => props.prevBtn && 'rotate(180deg)'};
+  transform: ${(props) => props.prevbtn && 'rotate(180deg)'};
   cursor: pointer;
 
   @media screen and (max-width: 1024px) {
-    z-index: 2;
     width: 30px;
     height: 30px;
   }
@@ -203,11 +200,9 @@ const OutPutSlide = ({ Hackathon }) => {
   return (
     <>
       <TitleAndBtn>
-        <SlideBtn src='../img/arrow.svg' prevBtn onClick={prevEvent} />
-        {/* <SlideBtn /> */}
+        <SlideBtn prevbtn='true' onClick={prevEvent} />
         <OutPutTitle>{slideTitle}</OutPutTitle>
-        <SlideBtn src='../img/arrow.svg' onClick={nextEvent} />
-        {/* <SlideBtn /> */}
+        <SlideBtn onClick={nextEvent} />
       </TitleAndBtn>
       {/* 슬라이드 Dots 부분 */}
       <DotsWrap>
