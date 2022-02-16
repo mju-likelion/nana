@@ -46,7 +46,7 @@ const Hackathon = [
   {
     id: 0,
     title: '준비됐멍 팀의 반려견 입양 준비도 테스트 & 커뮤니티',
-    serviceImg: '../img/walwal.svg',
+    serviceImg: '../img/walwalTest1.png',
   },
   {
     id: 1,

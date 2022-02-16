@@ -115,9 +115,9 @@ const Addition = [
     id: 0,
     explaination: '9기 준비됐멍 팀',
     serviceImgs: [
-      '../img/walwal.svg',
-      '../img/walwal1.svg',
-      '../img/walwal2.svg',
+      '../img/walwalTest1.png',
+      '../img/walwalTest2.png',
+      '../img/walwalTest3.png',
     ],
     explainImgs: ['메인페이지', '테스트 합격증', '멍멍고사'],
   },
