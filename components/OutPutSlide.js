@@ -133,39 +133,6 @@ const Dots = styled.span`
   }
 `;
 
-// const MoreBtn = styled.img`
-//   position: absolute;
-//   width: 50px;
-//   height: 50px;
-//   top: 20px;
-//   right: 33px;
-//   animation: ${(props) => (props.active ? 'moreFadeInOut 0.5s' : '')};
-
-//   @media screen and (max-width: 1024px) {
-//     right: 27px;
-//     width: 32px;
-//     height: 32px;
-//   }
-
-//   @keyframes moreFadeInOut {
-//     from {
-//       opacity: 1;
-//     }
-//     0% {
-//       opacity: 1;
-//     }
-//     50% {
-//       opacity: 0;
-//     }
-//     100% {
-//       opacity: 1;
-//     }
-//     to {
-//       opacity: 1;
-//     }
-//   }
-// `;
-
 const MoreBtnContainer = styled(MoreBtn)`
   position: absolute;
   width: 50px;
