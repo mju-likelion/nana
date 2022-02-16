@@ -125,7 +125,7 @@ const Dots = styled.span`
   margin: 0 2px;
   border-radius: 100%;
   border: ${(props) => (props.active ? 'none' : '1px solid #7a7a7a80 ')};
-  background-color: ${(props) => (props.active ? '#FFD25D' : 'transparent')};
+  background-color: ${(props) => (props.active ? '#ffd25d' : 'transparent')};
 
   @media screen and (max-width: 1024px) {
     width: 11px;
@@ -195,12 +195,7 @@ const OutPutSlide = ({ Hackathon }) => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
     setSliteTitle(Hackathon[currentSlide].title);
     setClickMore(currentSlide);
-
-    if (window.innerWidth >= 1024) {
-      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
-    } else {
-      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
-    }
+    slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide, slideTitle, clickMore]);
 
   return (
