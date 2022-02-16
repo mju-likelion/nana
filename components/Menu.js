@@ -79,6 +79,7 @@ const Menu = forwardRef((props, ref) => {
     },
   ];
 
+  // href를 받아 string으로 변환한 후 해당 객체 까지 이동
   const smoothScroll = (target) => {
     // herf 객체를 object로 변환 후 쌍따옴표를 기준으로 나눔 그 후 다시 #으로 나눈다
     const pointArr = JSON.stringify(target.href).split('"');
@@ -90,6 +91,7 @@ const Menu = forwardRef((props, ref) => {
     });
   };
 
+  // 부드러운 스크롤을 위한 헨들러
   const handleScroll = (e) => {
     smoothScroll(e.target);
     e.preventDefault();
