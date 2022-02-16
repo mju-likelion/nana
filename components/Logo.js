@@ -1,7 +1,7 @@
 // Navbar 로고와 명지대이름 컴포넌트
 import styled from 'styled-components';
 
-import LogoSVG from '../public/img/mjuLogo.svg';
+import LogoSVG from '../public/img/MjuLogo.svg';
 
 const LogoWrap = styled.div`
   display: flex;
