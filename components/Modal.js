@@ -83,6 +83,7 @@ const Imgs = styled.div`
 const AdditionImg = styled.img`
   box-sizing: border-box;
   border-radius: 6px;
+  object-fit: contain;
 `;
 
 // 데스크탑/랩탑환경에서만 보이는 나가기버튼
@@ -115,25 +116,25 @@ const Addition = [
     id: 0,
     explaination: '9기 준비됐멍 팀',
     serviceImgs: [
-      '../img/walwalTest1.png',
-      '../img/walwalTest2.png',
-      '../img/walwalTest3.png',
+      '../img/walwal1.png',
+      '../img/walwal2.png',
+      '../img/walwal3.png',
     ],
     explainImgs: ['메인페이지', '테스트 합격증', '멍멍고사'],
   },
   {
     id: 1,
     explaination: '9기 RaonAir 팀',
-    serviceImgs: ['../img/raonAir.svg', '../img/raonAir1.svg'],
+    serviceImgs: ['../img/raonAir1.png', '../img/raonAir2.png'],
     explainImgs: ['메인페이지', '상세페이지'],
   },
   {
     id: 2,
     explaination: '9기 MapLog 팀',
     serviceImgs: [
-      '../img/mapLog.svg',
-      '../img/mapLog1.svg',
-      '../img/mapLog2.svg',
+      '../img/mapLog1.png',
+      '../img/mapLog2.png',
+      '../img/mapLog3.png',
     ],
     explainImgs: ['메인페이지', '로그 작성창', '맵로그 팀소개'],
   },
@@ -141,9 +142,9 @@ const Addition = [
     id: 3,
     explaination: '9기 Mans Skin 팀',
     serviceImgs: [
-      '../img/mansSkin.svg',
-      '../img/mansSkin1.svg',
-      '../img/mansSkin2.svg',
+      '../img/mansSkin1.png',
+      '../img/mansSkin2.png',
+      '../img/mansSkin3.png',
     ],
     explainImgs: ['메인페이지', '피부 측정', '커뮤니티 페이지'],
   },
@@ -151,9 +152,9 @@ const Addition = [
     id: 4,
     explaination: '9기 Save Energy 팀',
     serviceImgs: [
-      '../img/saveEnergy.svg ',
-      '../img/saveEnergy1.svg',
-      '../img/saveEnergy2.svg',
+      '../img/saveEnergy1.png ',
+      '../img/saveEnergy2.png',
+      '../img/saveEnergy3.png',
     ],
     explainImgs: ['메인페이지', '월 이산화탄소 계산', '월별 사용량 기록'],
   },
@@ -161,9 +162,9 @@ const Addition = [
     id: 5,
     explaination: '9기 One Can Do it! 팀',
     serviceImgs: [
-      '../img/oneCan.svg',
-      '../img/oneCan1.svg',
-      '../img/oneCan2.svg',
+      '../img/oneCan1.png',
+      '../img/oneCan2.png',
+      '../img/oneCan3.png',
     ],
     explainImgs: ['메인페이지', '로그인화면', '레시피 커뮤니티'],
   },
