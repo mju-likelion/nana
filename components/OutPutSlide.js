@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
+// import SlideBtn from '../public/img/arrow.svg';
+
 import Modal from './Modal';
 
 const SlideContainer = styled.div`
@@ -202,8 +204,10 @@ const OutPutSlide = ({ Hackathon }) => {
     <>
       <TitleAndBtn>
         <SlideBtn src='../img/arrow.svg' prevBtn onClick={prevEvent} />
+        {/* <SlideBtn /> */}
         <OutPutTitle>{slideTitle}</OutPutTitle>
         <SlideBtn src='../img/arrow.svg' onClick={nextEvent} />
+        {/* <SlideBtn /> */}
       </TitleAndBtn>
       {/* 슬라이드 Dots 부분 */}
       <DotsWrap>
