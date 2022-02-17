@@ -84,9 +84,12 @@ const IntroBigText = styled.p`
 const IntroLinkHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
-  text-decoration: underline;
 `;
 
+const IntroUnderline = styled.a`
+  color: #ffffff;
+  text-decoration: underline;
+`;
 const TextPartition = styled.div`
   margin: 15px 0;
 `;
@@ -169,8 +172,9 @@ const Introduction = forwardRef((props, ref) => {
           <p>우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지</p>
           <p>하나하나 맛보고 내 것으로 만들 수 있어요.</p>
           <p>
-            우리가 만든 <IntroLinkHover href='#output'>웹서비스</IntroLinkHover>
-            가 궁금하다면 ?
+            우리가 만든 <IntroUnderline href='#output'>웹서비스</IntroUnderline>
+            가 궁금하다면 ?{' '}
+            <IntroLinkHover href='#output'>Click !</IntroLinkHover>
           </p>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
           <p>
@@ -181,20 +185,35 @@ const Introduction = forwardRef((props, ref) => {
             많은 사람들과 원하는 스택을 공부할 수 있는 환경까지 만들어준답니다.
           </p>
           <p>
-            <IntroLinkHover
+            <IntroUnderline
               href='https://github.com/KOSMOSstudy'
               target='_blank'
             >
               명지대(자연)와 다른 학교의 연합
+            </IntroUnderline>
+            이 궁금하다면?{' '}
+            <IntroLinkHover
+              href='https://github.com/KOSMOSstudy'
+              target='_blank'
+            >
+              Click !
             </IntroLinkHover>
-            이 궁금하다면?
           </p>
           <p>
+            여러분과 함께 2022년을 불태우게 될{' '}
+            <IntroUnderline
+              href='https://www.notion.so/4ad89f6d80eb45db97b78127b1a8dbf6'
+              target='_blank'
+            >
+              10기 운영진
+            </IntroUnderline>
+            이 궁금하다면?
             <IntroLinkHover
               href='https://www.notion.so/4ad89f6d80eb45db97b78127b1a8dbf6'
               target='_blank'
             >
-              2022년 멋사를 이끌어 갈, 우리가 누구게~!~!~!
+              {' '}
+              Click !
             </IntroLinkHover>
           </p>
         </IntroTextArray>
