@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
@@ -219,7 +221,7 @@ const OutPutSlide = ({ Hackathon }) => {
             </SlideContent>
           ))}
         </SlideWrap>
-        <MoreBtnContainer active={clickMore === currentSlide} />
+        <MoreBtnContainer active={clickMore === currentSlide ? '1' : '0'} />
       </SlideContainer>
       {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
