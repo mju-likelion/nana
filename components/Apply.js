@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import ApplyButton from './ApplyButton';
+import Footer from './Footer';
 
 const BgGradient = styled.div`
   position: relative;
@@ -11,8 +12,8 @@ const BgGradient = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: -2;
   margin-top: 300px;
+  z-index: 0;
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -47,6 +48,17 @@ const BackgroundImage = styled.div`
   z-index: -1;
 `;
 
+const TextWrapper = styled.div`
+  @media screen and (max-width: 1024px) {
+    margin-top: 280px;
+  }
+  margin-top: 340px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+`;
+
 const ApplyEng = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 30px;
@@ -72,9 +84,12 @@ const Apply = forwardRef((props, ref) => {
   return (
     <BgGradient id='apply'>
       <BackgroundImage ref={ref} />
-      <ApplyEng>APPLY</ApplyEng>
-      <ApplyText>10기의 주인공은 바로 당신 !</ApplyText>
-      <ApplyButton text='10기 지원하기' width='356px' height='61px' />
+      <TextWrapper>
+        <ApplyEng>APPLY</ApplyEng>
+        <ApplyText>10기의 주인공은 바로 당신 !</ApplyText>
+        <ApplyButton text='10기 지원하기' width='356px' height='61px' />
+      </TextWrapper>
+      <Footer />
     </BgGradient>
   );
 });
