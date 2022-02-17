@@ -2,6 +2,16 @@ import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import DjangoImg from '../public/img/django.svg';
+import FigmaImg from '../public/img/figma.svg';
+import GathertownImg from '../public/img/gathertown.svg';
+import GithubImg from '../public/img/github.svg';
+import HtmlCssImg from '../public/img/htmlCss.svg';
+import JsImg from '../public/img/javascript.svg';
+import NodeImg from '../public/img/node.svg';
+import NotionImg from '../public/img/notion.svg';
+import ReactImg from '../public/img/react.svg';
+import SlackImg from '../public/img/slack.svg';
 
 const CurriWapper = styled.div`
   display: flex;
@@ -153,6 +163,118 @@ const TechToolBox = styled.div`
   }
 `;
 
+const HtmlCssBox = styled(HtmlCssImg)`
+  margin: 0 30px;
+  width: 156px;
+  height: 87px;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px;
+    width: 140px;
+    height: 78px;
+  }
+`;
+
+const ReactBox = styled(ReactImg)`
+  margin: 10px 30px 0 30px;
+  width: 79px;
+  height: 79px;
+  @media screen and (max-width: 1024px) {
+    margin: 5px 15px 0 15px;
+    width: 77px;
+    height: 80px;
+  }
+`;
+
+const NodeBox = styled(NodeImg)`
+  margin: 7px 30px 0 30px;
+  width: 115px;
+  height: 70px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px;
+    width: 103px;
+    height: 63px;
+  }
+`;
+
+const JsBox = styled(JsImg)`
+  margin: 5px 30px 0 30px;
+  width: 76px;
+  height: 76px;
+  border-radius: 6px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px;
+    width: 68px;
+    height: 68px;
+    border-radius: 6px;
+  }
+`;
+
+const DjangoBox = styled(DjangoImg)`
+  margin: 5px 30px 0 30px;
+  width: 60px;
+  height: 76px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px;
+    width: 54px;
+    height: 68px;
+  }
+`;
+
+const SlackBox = styled(SlackImg)`
+  margin: 0 30px;
+  width: 155px;
+  height: 65px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px;
+    width: 138px;
+    height: 57px;
+  }
+`;
+
+const NotionBox = styled(NotionImg)`
+  margin: 0 30px;
+  width: 68px;
+  height: 68px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px;
+    width: 61px;
+    height: 50px;
+  }
+`;
+
+const FigmaBox = styled(FigmaImg)`
+  margin: 0 30px 0 32px;
+  width: 48px;
+  height: 70px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 15px 0 8px;
+    width: 43px;
+    height: 63px;
+  }
+`;
+
+const GithubBox = styled(GithubImg)`
+  margin: 11px 30px 0 30px;
+  width: 140px;
+  height: 44px;
+  @media screen and (max-width: 1024px) {
+    margin: 2px 15px 0 10px;
+    width: 126px;
+    height: 40px;
+  }
+`;
+
+const GathertownBox = styled(GathertownImg)`
+  margin: 6px 30px 0 30px;
+  width: 138px;
+  height: 54px;
+  @media screen and (max-width: 1024px) {
+    margin: 0 2px 0 10px;
+    width: 124px;
+    height: 49px;
+  }
+`;
 const Curriculum = forwardRef((props, ref) => {
   const AnimationArray = [
     { id: 1, animation: useScrollAnimation('up', 2.5, 0.2) },
@@ -164,7 +286,7 @@ const Curriculum = forwardRef((props, ref) => {
     { id: 7, animation: useScrollAnimation('up', 2.5, 0.4) },
     { id: 8, animation: useScrollAnimation('up', 2.5, 0.6) },
     { id: 9, animation: useScrollAnimation('up', 2.5, 0.8) },
-    { id: 10, animation: useScrollAnimation('up', 2.5, 0.8) },
+    { id: 10, animation: useScrollAnimation('up', 2.5, 1) },
   ];
   return (
     <CurriWapper ref={ref} id='curriculum'>
@@ -178,33 +300,25 @@ const Curriculum = forwardRef((props, ref) => {
       </TechStackTitle>
       <TechStackImgContainer>
         <TechCommonBox>
-          <img
-            src='../img/htmlcss.png'
-            alt='HtmlAndCss 아이콘'
-            {...AnimationArray[0].animation}
-          />
-          <img
-            src='../img/react.png'
-            alt='리액트 아이콘'
-            {...AnimationArray[1].animation}
-          />
+          <div {...AnimationArray[0].animation}>
+            <HtmlCssBox alt='HtmlAndCss 아이콘' />
+          </div>
+          <div {...AnimationArray[1].animation}>
+            <ReactBox alt='리액트 아이콘' />
+          </div>
         </TechCommonBox>
         <TechLanguageBox>
-          <img
-            src='../img/node.png'
-            alt='노드JS 아이콘'
-            {...AnimationArray[2].animation}
-          />
-          <img
-            src='../img/javascript.png'
-            alt='JS 아이콘'
-            {...AnimationArray[3].animation}
-          />
-          <img
-            src='../img/django.png'
-            alt='장고 아이콘'
-            {...AnimationArray[4].animation}
-          />
+          <div {...AnimationArray[2].animation}>
+            <NodeBox alt='노드JS 아이콘' />
+          </div>
+
+          <div {...AnimationArray[3].animation}>
+            <JsBox alt='JS 아이콘' />
+          </div>
+
+          <div {...AnimationArray[4].animation}>
+            <DjangoBox alt='장고 아이콘' />
+          </div>
         </TechLanguageBox>
       </TechStackImgContainer>
       <TechStackTitle>
@@ -213,33 +327,24 @@ const Curriculum = forwardRef((props, ref) => {
       <TechStackImgContainer>
         {/* 피그마 아이콘 잘리는 현상 */}
         <TechCommonBox>
-          <img
-            src='../img/slack.png'
-            alt='슬랙 아이콘'
-            {...AnimationArray[5].animation}
-          />
-          <img
-            src='../img/notion.png'
-            alt='노션 아이콘'
-            {...AnimationArray[6].animation}
-          />
+          <div {...AnimationArray[5].animation}>
+            <SlackBox alt='슬랙 아이콘' />
+          </div>
+          <div {...AnimationArray[6].animation}>
+            <NotionBox alt='노션 아이콘' />
+          </div>
         </TechCommonBox>
         <TechToolBox TechToolBox>
-          <img
-            src='../img/figma.png'
-            alt='피그마 아이콘'
-            {...AnimationArray[7].animation}
-          />
-          <img
-            src='../img/github.png'
-            alt='깃허브 아이콘'
-            {...AnimationArray[8].animation}
-          />
-          <img
-            src='../img/gatherTown.png'
-            alt='게더타운 아이콘'
-            {...AnimationArray[9].animation}
-          />
+          <div {...AnimationArray[7].animation}>
+            <FigmaBox alt='피그마 아이콘' />
+          </div>
+
+          <div {...AnimationArray[8].animation}>
+            <GithubBox alt='깃허브 아이콘' />
+          </div>
+          <div {...AnimationArray[9].animation}>
+            <GathertownBox alt='게더타운 아이콘' />
+          </div>
         </TechToolBox>
       </TechStackImgContainer>
     </CurriWapper>
