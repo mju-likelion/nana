@@ -22,6 +22,7 @@ http://localhost:3000에 접속해 보세요
 ```
 
 ## Tech Stack
+![제목을-입력해주세요_-001 (3)](https://user-images.githubusercontent.com/61998801/154005045-93ba6349-833d-46f9-aaf1-4fb853e797a8.jpg)
 
 - React, Next.js
 - styled-components, styled-reset
@@ -47,3 +48,8 @@ http://localhost:3000에 접속해 보세요
 └── develop
     └── feature
 ```
+
+## 팀소개
+![제목을-입력해주세요_-001 (1)](https://user-images.githubusercontent.com/61998801/154003336-baafc005-def3-4dab-9d47-4e58ebe960d2.jpg)
+
+
