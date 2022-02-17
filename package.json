@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.2.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -15,6 +16,7 @@
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.3.3",
     "styled-reset": "^4.3.4"
   },
