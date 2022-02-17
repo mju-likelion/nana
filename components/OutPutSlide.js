@@ -1,9 +1,15 @@
-import { useState, useRef, useEffect } from 'react';
+/* eslint-disable */
+
+import { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
+
+import Arrow from '../public/img/arrow.svg';
+import MoreBtn from '../public/img/moreBtn.svg';
 
 import Modal from './Modal';
 
 const SlideContainer = styled.div`
+  position: relative;
   display: flex;
   /* SlideWrap 요소 hidden */
   overflow: hidden;
@@ -30,6 +36,9 @@ const SlideContent = styled.div`
     display: flex;
     justify-content: center;
     width: 750px;
+    /* 이미지 hover시 위쪽 잘림 방지 */
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -60,7 +69,7 @@ const OutPutTitle = styled.div`
 // 해커톤 서비스 이미지
 const OutPutImages = styled.img`
   box-sizing: border-box;
-  over-fit: contain;
+  /* over-fit: contain; */
   width: 700px;
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
@@ -89,16 +98,13 @@ const TitleAndBtn = styled.div`
   }
 `;
 
-// 슬라이드 버튼
-const SlideBtn = styled.img`
-  z-index: 2;
+const SlideBtn = styled(Arrow)`
   width: 50px;
   height: 50px;
-  transform: ${(props) => props.prevBtn && 'rotate(180deg)'};
+  transform: ${(props) => props.prevbtn && 'rotate(180deg)'};
   cursor: pointer;
 
   @media screen and (max-width: 1024px) {
-    z-index: 2;
     width: 30px;
     height: 30px;
   }
@@ -121,11 +127,38 @@ const Dots = styled.span`
   margin: 0 2px;
   border-radius: 100%;
   border: ${(props) => (props.active ? 'none' : '1px solid #7a7a7a80 ')};
-  background-color: ${(props) => (props.active ? '#FFD25D' : 'transparent')};
+  background-color: ${(props) => (props.active ? '#ffd25d' : 'transparent')};
 
   @media screen and (max-width: 1024px) {
     width: 11px;
     height: 11px;
+  }
+`;
+
+const MoreBtnContainer = styled(MoreBtn)`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 20px;
+  right: 33px;
+  animation: ${(props) => (props.active ? 'moreFadeInOut 0.5s' : '')};
+
+  @media screen and (max-width: 1024px) {
+    right: 27px;
+    width: 32px;
+    height: 32px;
+  }
+
+  @keyframes moreFadeInOut {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
 
@@ -137,6 +170,7 @@ const OutPutSlide = ({ Hackathon }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideTitle, setSliteTitle] = useState('');
   const [isModal, setIsModal] = useState(false);
+  const [clickMore, setClickMore] = useState(0);
 
   const prevEvent = () => {
     if (currentSlide === 0) setCurrentSlide(totalSlides);
@@ -155,20 +189,16 @@ const OutPutSlide = ({ Hackathon }) => {
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.4s ease-out';
     setSliteTitle(Hackathon[currentSlide].title);
-
-    if (window.innerWidth >= 1024) {
-      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
-    } else {
-      slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
-    }
-  }, [currentSlide]);
+    setClickMore(currentSlide);
+    slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
+  }, [currentSlide, slideTitle, clickMore]);
 
   return (
     <>
       <TitleAndBtn>
-        <SlideBtn src='../img/arrow.svg' prevBtn onClick={prevEvent} />
+        <SlideBtn prevbtn='true' onClick={prevEvent} />
         <OutPutTitle>{slideTitle}</OutPutTitle>
-        <SlideBtn src='../img/arrow.svg' onClick={nextEvent} />
+        <SlideBtn onClick={nextEvent} />
       </TitleAndBtn>
       {/* 슬라이드 Dots 부분 */}
       <DotsWrap>
@@ -191,6 +221,7 @@ const OutPutSlide = ({ Hackathon }) => {
             </SlideContent>
           ))}
         </SlideWrap>
+        <MoreBtnContainer active={clickMore === currentSlide ? '1' : '0'} />
       </SlideContainer>
       {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
