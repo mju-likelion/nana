@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import styled from 'styled-components';
 
 const ApplyBtn = styled.button`
@@ -37,10 +38,16 @@ const ApplyBtn = styled.button`
 const ApplyButton = ({ text, width, height }) => {
   return (
     // 받아온 props를 스타일링을 위한 수치로 활용합니다
-    <ApplyBtn width={width} height={height}>
-      {text}
-      <img src='../img/ic-more.svg' alt='화살표' />
-    </ApplyBtn>
+    <a
+      rel='noreferrer'
+      href='https://aphrodite-mju-likelion.vercel.app/'
+      target='_blank'
+    >
+      <ApplyBtn width={width} height={height}>
+        {text}
+        <img src='../img/ic-more.svg' alt='화살표' />
+      </ApplyBtn>
+    </a>
   );
 };
 
