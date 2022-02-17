@@ -1,11 +1,16 @@
-# 멋쟁이 사자처럼 홍보 사이트 nana
+# 멋쟁이 사자처럼 명지대 홍보 사이트 nana
 
-## Before Start
+## 📢 INFO
+
+멋쟁이 사자처럼 명지대 홍보 사이트는 멋쟁이 사자처럼 명지대를 홍보하고 지원을 독려하기 위한 브랜드 사이트입니다
+
+
+## 📌 Before Start
 
 - 이 프로젝트는 패키지 매니저로 yarn을 권장합니다
 - 원활한 개발을 위해 prettier, eslint 확장자 설치가 필요합니다
 
-## Start Project
+## ✨ Start Project
 
 ```bash
 yarn dev
@@ -21,17 +26,17 @@ npm run dev
 http://localhost:3000에 접속해 보세요
 ```
 
-## Tech Stack
+## 🛠 Tech Stack
 ![제목을-입력해주세요_-001 (3)](https://user-images.githubusercontent.com/61998801/154005045-93ba6349-833d-46f9-aaf1-4fb853e797a8.jpg)
 
 - React, Next.js
 - styled-components, styled-reset
 - eslint, prettier
 
-## Convention
+## ⚖ Convention
 
 ### commit message
-|머릿말|내용|
+|헤더|내용|
 |------|---|
 |feature|새로운 기능 추가|
 |refactor|코드 리팩토링|
@@ -49,7 +54,7 @@ http://localhost:3000에 접속해 보세요
     └── feature
 ```
 
-## 팀소개
+## 👩‍👩‍👦 팀소개
 ![제목을-입력해주세요_-001 (1)](https://user-images.githubusercontent.com/61998801/154003336-baafc005-def3-4dab-9d47-4e58ebe960d2.jpg)
 
 
