@@ -1,6 +1,4 @@
-/* eslint-disable */
-
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Arrow from '../public/img/arrow.svg';
@@ -69,7 +67,6 @@ const OutPutTitle = styled.div`
 // 해커톤 서비스 이미지
 const OutPutImages = styled.img`
   box-sizing: border-box;
-  /* over-fit: contain; */
   width: 700px;
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
@@ -141,7 +138,8 @@ const MoreBtnContainer = styled(MoreBtn)`
   height: 50px;
   top: 20px;
   right: 33px;
-  animation: ${(props) => (props.active ? 'moreFadeInOut 0.5s' : '')};
+  animation: ${(props) => (props.active === '1' ? 'moreFadeInOut 0.5s' : '')};
+  cursor: pointer;
 
   @media screen and (max-width: 1024px) {
     right: 27px;
@@ -221,7 +219,10 @@ const OutPutSlide = ({ Hackathon }) => {
             </SlideContent>
           ))}
         </SlideWrap>
-        <MoreBtnContainer active={clickMore === currentSlide ? '1' : '0'} />
+        <MoreBtnContainer
+          active={clickMore === currentSlide ? '1' : '0'}
+          onClick={openModal}
+        />
       </SlideContainer>
       {isModal && <Modal openModal={openModal} currentSlide={currentSlide} />}
     </>
