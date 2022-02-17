@@ -49,6 +49,9 @@ const BackgroundImage = styled.div`
 `;
 
 const TextWrapper = styled.div`
+  @media screen and (max-width: 1024px) {
+    margin-top: 280px;
+  }
   margin-top: 340px;
   align-items: center;
   display: flex;
