@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -69,7 +68,6 @@ const ImgsContainer = styled.div`
 const Imgs = styled.div`
   width: 47%;
   height: 52%;
-  /* border: 1px solid #eeeeee; */
   border: 1px solid #bdbdbd;
   border-radius: 6px;
   margin: 5px;
