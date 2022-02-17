@@ -119,13 +119,11 @@ const Addition = [
       '../img/walwal2.png',
       '../img/walwal3.png',
     ],
-    explainImgs: ['메인페이지', '테스트 합격증', '멍멍고사'],
   },
   {
     id: 1,
     explaination: '9기 RaonAir 팀',
     serviceImgs: ['../img/raonAir1.png', '../img/raonAir2.png'],
-    explainImgs: ['메인페이지', '상세페이지'],
   },
   {
     id: 2,
@@ -135,7 +133,6 @@ const Addition = [
       '../img/mapLog2.png',
       '../img/mapLog3.png',
     ],
-    explainImgs: ['메인페이지', '로그 작성창', '맵로그 팀소개'],
   },
   {
     id: 3,
@@ -145,7 +142,6 @@ const Addition = [
       '../img/mansSkin2.png',
       '../img/mansSkin3.png',
     ],
-    explainImgs: ['메인페이지', '피부 측정', '커뮤니티 페이지'],
   },
   {
     id: 4,
@@ -155,7 +151,6 @@ const Addition = [
       '../img/saveEnergy2.png',
       '../img/saveEnergy3.png',
     ],
-    explainImgs: ['메인페이지', '월 이산화탄소 계산', '월별 사용량 기록'],
   },
   {
     id: 5,
@@ -165,7 +160,6 @@ const Addition = [
       '../img/oneCan2.png',
       '../img/oneCan3.png',
     ],
-    explainImgs: ['메인페이지', '로그인화면', '레시피 커뮤니티'],
   },
 ];
 
