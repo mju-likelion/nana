@@ -266,11 +266,11 @@ const GithubBox = styled(GithubImg)`
 `;
 
 const GathertownBox = styled(GathertownImg)`
-  margin: 6px 30px 0 30px;
+  margin: 14px 30px 0 30px;
   width: 138px;
   height: 54px;
   @media screen and (max-width: 1024px) {
-    margin: 0 2px 0 10px;
+    margin: 8px 2px 0 10px;
     width: 124px;
     height: 49px;
   }
