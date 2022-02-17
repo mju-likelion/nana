@@ -84,11 +84,19 @@ const IntroBigText = styled.p`
 const IntroLinkHover = styled.a`
   color: #ffd25d;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    color: #ffd25d;
+  }
 `;
 
 const IntroUnderline = styled.a`
   color: #ffffff;
   text-decoration: underline;
+
+  @media screen and (max-width: 1024px) {
+    color: black;
+  }
 `;
 const TextPartition = styled.div`
   margin: 15px 0;
