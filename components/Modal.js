@@ -69,7 +69,8 @@ const ImgsContainer = styled.div`
 const Imgs = styled.div`
   width: 47%;
   height: 52%;
-  border: 1px solid #eeeeee;
+  /* border: 1px solid #eeeeee; */
+  border: 1px solid #bdbdbd;
   border-radius: 6px;
   margin: 5px;
 
@@ -94,7 +95,7 @@ const CloseBtn = styled.button`
   font-size: 18px;
   font-weight: bold;
   border: 1px solid #eeeeee;
-  border-radius: 2em;
+  border-radius: 0.5em;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   color: white;
   background-color: #bdbdbd80;
