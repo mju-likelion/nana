@@ -35,6 +35,7 @@ const ApplyBtn = styled.button`
 `;
 
 const onClick = () => {
+  // eslint-disable-next-line no-alert
   alert('3월 2일부터 지원가능합니다.');
 };
 
