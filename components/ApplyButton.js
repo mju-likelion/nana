@@ -34,7 +34,9 @@ const ApplyBtn = styled.button`
   }
 `;
 
-
+const onClick = () => {
+  alert('3월 2일부터 지원가능합니다.');
+};
 
 // props로 text, width, height을 받아옵니다
 const ApplyButton = ({ text, width, height }) => {
@@ -45,10 +47,10 @@ const ApplyButton = ({ text, width, height }) => {
     //   href='https://aphrodite-mju-likelion.vercel.app/'
     //   target='_blank'
     // >
-      <ApplyBtn width={width} height={height}>
-        {text}
-        <img src='../img/ic-more.svg' alt='화살표' />
-      </ApplyBtn>
+    <ApplyBtn width={width} height={height} onClick={onClick}>
+      {text}
+      <img src='../img/ic-more.svg' alt='화살표' />
+    </ApplyBtn>
     // </a>
   );
 };
