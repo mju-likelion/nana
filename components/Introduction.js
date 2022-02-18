@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import styled from 'styled-components';
 
 import useScrollAnimation from '../hooks/useScrollAnimation';
@@ -106,6 +107,26 @@ const Introduction = forwardRef((props, ref) => {
   const IntroductionAnimation = useScrollAnimation('up', 1.3, 0);
   const IntroductionMjuAnimation = useScrollAnimation('up', 2, 0);
 
+  // href를 받아 string으로 변환한 후 해당 객체 까지 이동
+  const smoothScrollEvent = (target) => {
+    smoothscroll.polyfill();
+
+    // herf 객체를 object로 변환 후 쌍따옴표를 기준으로 나눔 그 후 다시 #으로 나눈다
+    const pointArr = JSON.stringify(target.href).split('"');
+    const splitAddr = pointArr[1].split('#');
+
+    const ele = document.getElementById(splitAddr[1]);
+    ele.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
+  // 부드러운 스크롤을 위한 헨들러
+  const handleMoveScroll = (e) => {
+    smoothScrollEvent(e.target);
+    e.preventDefault();
+  };
+
   return (
     <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
@@ -180,9 +201,14 @@ const Introduction = forwardRef((props, ref) => {
           <p>우리는 웹 서비스 제작을 위한 프로그래밍언어부터 프레임워크까지</p>
           <p>하나하나 맛보고 내 것으로 만들 수 있어요.</p>
           <p>
-            우리가 만든 <IntroUnderline href='#output'>웹서비스</IntroUnderline>
+            우리가 만든{' '}
+            <IntroUnderline onClick={handleMoveScroll} href='#output'>
+              웹서비스
+            </IntroUnderline>
             가 궁금하다면 ?{' '}
-            <IntroLinkHover href='#output'>Click !</IntroLinkHover>
+            <IntroLinkHover onClick={handleMoveScroll} href='#output'>
+              Click !
+            </IntroLinkHover>
           </p>
           {/* 위문장 누르면 웹 서비스 소개하는 곳으로 스크롤 이동되게끔 구현 */}
           <p>
