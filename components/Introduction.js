@@ -236,14 +236,14 @@ const Introduction = forwardRef((props, ref) => {
           <p>
             여러분과 함께 2022년을 불태우게 될{' '}
             <IntroUnderline
-              href='https://www.notion.so/95ea501a56ff470eb62336dd45cb932e'
+              href='https://burnt-dahlia-f9e.notion.site/95ea501a56ff470eb62336dd45cb932e'
               target='_blank'
             >
               10기 운영진
             </IntroUnderline>
             이 궁금하다면?
             <IntroLinkHover
-              href='https://www.notion.so/95ea501a56ff470eb62336dd45cb932e'
+              href='https://burnt-dahlia-f9e.notion.site/95ea501a56ff470eb62336dd45cb932e'
               target='_blank'
             >
               {' '}
