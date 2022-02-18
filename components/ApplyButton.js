@@ -34,20 +34,25 @@ const ApplyBtn = styled.button`
   }
 `;
 
+const onClick = () => {
+  // eslint-disable-next-line no-alert
+  alert('3월 2일부터 지원가능합니다.');
+};
+
 // props로 text, width, height을 받아옵니다
 const ApplyButton = ({ text, width, height }) => {
   return (
     // 받아온 props를 스타일링을 위한 수치로 활용합니다
-    <a
-      rel='noreferrer'
-      href='https://aphrodite-mju-likelion.vercel.app/'
-      target='_blank'
-    >
-      <ApplyBtn width={width} height={height}>
-        {text}
-        <img src='../img/ic-more.svg' alt='화살표' />
-      </ApplyBtn>
-    </a>
+    // <a
+    //   rel='noreferrer'
+    //   href='https://aphrodite-mju-likelion.vercel.app/'
+    //   target='_blank'
+    // >
+    <ApplyBtn width={width} height={height} onClick={onClick}>
+      {text}
+      <img src='../img/ic-more.svg' alt='화살표' />
+    </ApplyBtn>
+    // </a>
   );
 };
 
