@@ -76,90 +76,26 @@ const TechStackImgContainer = styled.div`
 const TechCommonBox = styled.div`
   display: flex;
   justify-content: center;
-  img:nth-child(1) {
-    margin-right: 30px;
-    height: 91px;
-  }
-  img:nth-child(2) {
-    margin: 0 27px;
-    height: 91px;
-    width: auto;
-  }
 
   @media screen and (max-width: 1024px) {
     margin-bottom: 15px;
-    img:nth-child(1) {
-      margin-right: 27px;
-      width: 180px;
-      height: 80px;
-    }
-    img:nth-child(2) {
-      margin: 0 18px;
-      width: 87px;
-      height: 75px;
-    }
   }
 `;
 const TechLanguageBox = styled.div`
   display: flex;
-  img:nth-child(1) {
-    margin: 0 27px;
-  }
-  img:nth-child(2) {
-    margin: 0 33px;
-    border-radius: 10px;
-  }
-  img:nth-child(3) {
-    margin-left: 30px;
-  }
 
   @media screen and (max-width: 1024px) {
     margin-top: 40px;
     align-items: center;
-    img:nth-child(1) {
-      margin: 0 21px 0 0;
-      width: 100px;
-    }
-    img:nth-child(2) {
-      margin: 0 21px;
-      width: 87px;
-    }
-    img:nth-child(3) {
-      margin-left: 21px;
-      width: 87px;
-    }
   }
 `;
 
 const TechToolBox = styled.div`
   display: flex;
-  img:nth-child(1) {
-    margin: 0 27px 0 40px;
-  }
-  img:nth-child(2) {
-    margin: 0 25px;
-  }
-  img:nth-child(3) {
-    margin: 8px 0 0 17px;
-    height: 73px;
-  }
   margin: 0 14px 0 5px;
 
   @media screen and (max-width: 1024px) {
     align-items: center;
-    img:nth-child(1) {
-      margin: 0 9px 0 0;
-      width: 55px;
-    }
-    img:nth-child(2) {
-      margin: 0 10px;
-      width: 150px;
-    }
-    img:nth-child(3) {
-      margin: 10px 0 10px 0;
-      width: 115px;
-      height: 60px;
-    }
   }
 `;
 
@@ -248,7 +184,7 @@ const FigmaBox = styled(FigmaImg)`
   width: 48px;
   height: 70px;
   @media screen and (max-width: 1024px) {
-    margin: 0 15px 0 8px;
+    margin: 0 15px 0 10px;
     width: 43px;
     height: 63px;
   }
@@ -270,7 +206,7 @@ const GathertownBox = styled(GathertownImg)`
   width: 138px;
   height: 54px;
   @media screen and (max-width: 1024px) {
-    margin: 8px 2px 0 10px;
+    margin: 8px 0 0 10px;
     width: 124px;
     height: 49px;
   }
