@@ -57,4 +57,5 @@ http://localhost:3000에 접속해 보세요
 ## 👩‍👩‍👦 팀소개
 ![제목을-입력해주세요_-001 (1)](https://user-images.githubusercontent.com/61998801/154003336-baafc005-def3-4dab-9d47-4e58ebe960d2.jpg)
 
-
+## Note
+임시 배포 주소: https://nana-six.vercel.app/
