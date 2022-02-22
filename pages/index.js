@@ -1,5 +1,6 @@
 /* eslint-disable no-plusplus */
-import { useState, useEffect, useRef } from 'react';
+import Head from 'next/head';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import Apply from '../components/Apply';
@@ -93,7 +94,31 @@ export default function Home() {
 
   return (
     <MainContainer>
-      <title>멋쟁이사자처럼 at 명지대(자연)</title>
+      <Head>
+        <title>멋쟁이사자처럼 at 명지대(자연)</title>
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:url'
+          content='https://nana-promotion-mju-likelion.vercel.app/'
+        />
+        <meta property='og:title' content='멋쟁이사자처럼 at 명지대(자연)' />
+        <meta property='og:image' content='../public/img/MjuLogo.svg' />
+        <meta
+          property='og:description'
+          content='멋쟁이사자처럼 명지대 홍보 사이트'
+        />
+        <meta
+          property='og:site_name'
+          content='멋쟁이사자처럼 at 명지대(자연)'
+        />
+        <meta property='og:locale' content='en_US' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta
+          property='og:description'
+          content='멋쟁이사자처럼 명지대 홍보사이트입니다'
+        />
+      </Head>
       <NavBar ref={navRefArr} />
       <Welcom />
       <Introduction ref={introRef} />
