@@ -112,11 +112,11 @@ export default function Home() {
           content='멋쟁이사자처럼 at 명지대(자연)'
         />
         <meta property='og:locale' content='en_US' />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
+        <meta property='og:image:width' content='804' />
+        <meta property='og:image:height' content='422' />
         <meta
           property='og:description'
-          content='멋쟁이사자처럼 명지대 홍보사이트입니다'
+          content='멋쟁이사자처럼 명지대 홍보 사이트'
         />
       </Head>
       <NavBar ref={navRefArr} />
