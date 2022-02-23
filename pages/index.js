@@ -102,7 +102,10 @@ export default function Home() {
           content='https://nana-promotion-mju-likelion.vercel.app/'
         />
         <meta property='og:title' content='멋쟁이사자처럼 at 명지대(자연)' />
-        <meta property='og:image' content='../public/img/MjuLogo.svg' />
+        <meta
+          property='og:image'
+          content='https://i.ibb.co/0tZWQN4/open-Graph-Img.png'
+        />
         <meta
           property='og:description'
           content='멋쟁이사자처럼 명지대 홍보 사이트'
@@ -112,11 +115,11 @@ export default function Home() {
           content='멋쟁이사자처럼 at 명지대(자연)'
         />
         <meta property='og:locale' content='en_US' />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
+        <meta property='og:image:width' content='804' />
+        <meta property='og:image:height' content='422' />
         <meta
           property='og:description'
-          content='멋쟁이사자처럼 명지대 홍보사이트입니다'
+          content='멋쟁이사자처럼 명지대 홍보 사이트'
         />
       </Head>
       <NavBar ref={navRefArr} />

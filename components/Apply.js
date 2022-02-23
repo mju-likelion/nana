@@ -87,7 +87,6 @@ const Apply = forwardRef((props, ref) => {
       <TextWrapper>
         <ApplyEng>APPLY</ApplyEng>
         <ApplyText>10기의 주인공은 바로 당신 !</ApplyText>
-        <h1>브랜치 테스트입니다</h1>
         <ApplyButton text='10기 지원하기' width='356px' height='61px' />
       </TextWrapper>
       <Footer />
