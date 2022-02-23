@@ -2,8 +2,9 @@
 
 ## 📢 INFO
 
-멋쟁이 사자처럼 명지대 홍보 사이트는 멋쟁이 사자처럼 명지대를 홍보하고 지원을 독려하기 위한 브랜드 사이트입니다
+### [🦁사이트 바로가기](https://nana-six.vercel.app/)
 
+멋쟁이 사자처럼 명지대 홍보 사이트는 멋쟁이 사자처럼 명지대를 홍보하고 지원을 독려하기 위한 브랜드 사이트입니다
 
 ## 📌 Before Start
 
@@ -57,5 +58,5 @@ http://localhost:3000에 접속해 보세요
 ## 👩‍👩‍👦 팀소개
 ![제목을-입력해주세요_-001 (1)](https://user-images.githubusercontent.com/61998801/154003336-baafc005-def3-4dab-9d47-4e58ebe960d2.jpg)
 
-## Note
-임시 배포 주소: https://nana-six.vercel.app/
+## 📒 Note
+배포 주소: https://nana-six.vercel.app/
