@@ -154,7 +154,7 @@ const Join = forwardRef((props, ref) => {
           </RecruitText>
           <RecruitText>
             <RecruitDot>•</RecruitDot>
-            <p>기획, 디자인, 웹 파트로 나눠 지원받아요!</p>
+            <p>기획·디자인, 프론트엔드, 백엔트 파트로 나눠서 지원받아요!</p>
           </RecruitText>
         </RecruitContent>
       </RecruitBox>
