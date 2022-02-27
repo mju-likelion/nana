@@ -90,16 +90,11 @@ export default function Home() {
     }
   };
 
-  // 로딩 중을 판단
   useEffect(() => {
     setIsLoading(false);
-  });
-
-  // 위치별 스타일 주기
-  useEffect(() => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
-  }, []);
+  });
 
   return (
     <MainContainer>
@@ -131,11 +126,11 @@ export default function Home() {
           content='멋쟁이사자처럼 명지대 홍보 사이트'
         />
       </Head>
-      <NavBar ref={navRefArr} />
       {isLoading ? (
         <p>로딩중</p>
       ) : (
         <>
+          <NavBar ref={navRefArr} />
           <Welcom />
           <Introduction ref={introRef} />
           <Curriculum ref={curriculumRef} />
