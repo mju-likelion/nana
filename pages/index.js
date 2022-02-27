@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus */
 import Head from 'next/head';
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import Apply from '../components/Apply';
@@ -16,6 +16,8 @@ const MainContainer = styled.div`
 `;
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   // forwardRef 이용하기
   const navRef = useRef();
   const menuIntroRef = useRef();
@@ -54,37 +56,44 @@ export default function Home() {
   };
 
   const handleScroll = () => {
-    const scrollTop = window.pageYOffset;
-    const introPos =
-      window.pageYOffset + introRef.current.getBoundingClientRect().top - 50;
-    const curriculumPos =
-      window.pageYOffset +
-      curriculumRef.current.getBoundingClientRect().top -
-      50;
-    const outputPos =
-      window.pageYOffset + outputRef.current.getBoundingClientRect().top - 50;
-    const joinPos =
-      window.pageYOffset + joinRef.current.getBoundingClientRect().top - 50;
-    const applyPos =
-      window.pageYOffset + applyRef.current.getBoundingClientRect().top - 50;
+    if (!isLoading) {
+      const scrollTop = window.pageYOffset;
+      const introPos =
+        window.pageYOffset + introRef.current.getBoundingClientRect().top - 50;
+      const curriculumPos =
+        window.pageYOffset +
+        curriculumRef.current.getBoundingClientRect().top -
+        50;
+      const outputPos =
+        window.pageYOffset + outputRef.current.getBoundingClientRect().top - 50;
+      const joinPos =
+        window.pageYOffset + joinRef.current.getBoundingClientRect().top - 50;
+      const applyPos =
+        window.pageYOffset + applyRef.current.getBoundingClientRect().top - 50;
 
-    // 첫 화면이면 스타일 초기화
-    if (scrollTop < introPos) {
-      navRefArr[0].current.style.background = 'none';
-      initNabStyle();
+      // 첫 화면이면 스타일 초기화
+      if (scrollTop < introPos) {
+        navRefArr[0].current.style.background = 'none';
+        initNabStyle();
+      }
+
+      // 스크롤 위치에따라 스타일 부여하기
+      if (scrollTop >= introPos) highlightNavItem(1);
+
+      if (scrollTop >= curriculumPos) highlightNavItem(2);
+
+      if (scrollTop >= outputPos) highlightNavItem(3);
+
+      if (scrollTop >= joinPos) highlightNavItem(4);
+
+      if (scrollTop - applyPos >= -1) highlightNavItem(5);
     }
-
-    // 스크롤 위치에따라 스타일 부여하기
-    if (scrollTop >= introPos) highlightNavItem(1);
-
-    if (scrollTop >= curriculumPos) highlightNavItem(2);
-
-    if (scrollTop >= outputPos) highlightNavItem(3);
-
-    if (scrollTop >= joinPos) highlightNavItem(4);
-
-    if (scrollTop - applyPos >= -1) highlightNavItem(5);
   };
+
+  // 로딩 중을 판단
+  useEffect(() => {
+    setIsLoading(false);
+  });
 
   // 위치별 스타일 주기
   useEffect(() => {
@@ -123,12 +132,25 @@ export default function Home() {
         />
       </Head>
       <NavBar ref={navRefArr} />
+      {isLoading ? (
+        <p>로딩중</p>
+      ) : (
+        <>
+          <Welcom />
+          <Introduction ref={introRef} />
+          <Curriculum ref={curriculumRef} />
+          <OutPut ref={outputRef} />
+          <Join ref={joinRef} />
+          <Apply ref={applyRef} />
+        </>
+      )}
+      {/* <NavBar ref={navRefArr} />
       <Welcom />
       <Introduction ref={introRef} />
       <Curriculum ref={curriculumRef} />
       <OutPut ref={outputRef} />
       <Join ref={joinRef} />
-      <Apply ref={applyRef} />
+      <Apply ref={applyRef} /> */}
     </MainContainer>
   );
 }
