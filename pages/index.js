@@ -95,31 +95,31 @@ export default function Home() {
   return (
     <MainContainer>
       <Head>
-        <title>멋쟁이사자처럼 at 명지대(자연)</title>
+        <title>멋쟁이사자처럼 명지대학교(자연)</title>
         <meta property='og:type' content='website' />
         <meta
           property='og:url'
           content='https://nana-promotion-mju-likelion.vercel.app/'
         />
-        <meta property='og:title' content='멋쟁이사자처럼 at 명지대(자연)' />
+        <meta property='og:title' content='멋쟁이사자처럼 명지대학교(자연)' />
         <meta
           property='og:image'
           content='https://i.ibb.co/0tZWQN4/open-Graph-Img.png'
         />
         <meta
           property='og:description'
-          content='멋쟁이사자처럼 명지대 홍보 사이트'
+          content='멋쟁이사자처럼 명지대학교 홍보 사이트'
         />
         <meta
           property='og:site_name'
-          content='멋쟁이사자처럼 at 명지대(자연)'
+          content='멋쟁이사자처럼 명지대학교(자연)'
         />
         <meta property='og:locale' content='en_US' />
         <meta property='og:image:width' content='804' />
         <meta property='og:image:height' content='422' />
         <meta
           property='og:description'
-          content='멋쟁이사자처럼 명지대 홍보 사이트'
+          content='멋쟁이사자처럼 명지대학교 홍보 사이트'
         />
       </Head>
       <NavBar ref={navRefArr} />
