@@ -228,7 +228,10 @@ const Curriculum = forwardRef((props, ref) => {
     <CurriWapper ref={ref} id='curriculum'>
       <CurriContainer>
         <CurriImgBox>
-          <img src='../img/curriculum.png' alt='커리큘럼사진예시' />
+          <img
+            src='https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/curriculum.png'
+            alt='커리큘럼사진예시'
+          />
         </CurriImgBox>
       </CurriContainer>
       <TechStackTitle>

@@ -133,7 +133,11 @@ const FallingStarEffect = () => {
         <InnerBox>
           <AnimationBox>
             {effectPositions.map((position) => (
-              <img src='../img/fallingStar.png' alt='유성' key={position} />
+              <img
+                src='https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/fallingStar.png'
+                alt='유성'
+                key={position}
+              />
             ))}
           </AnimationBox>
         </InnerBox>

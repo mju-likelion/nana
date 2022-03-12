@@ -42,7 +42,7 @@ const BackgroundImage = styled.div`
       rgba(255, 255, 255, 0.8) 95%,
       rgba(255, 255, 255, 1) 100%
     ),
-    url('../img/applyBg2.png');
+    url('https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/applyBg2.png');
   background-size: cover;
   background-position: center center;
   z-index: -1;

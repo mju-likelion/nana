@@ -131,7 +131,7 @@ const Introduction = forwardRef((props, ref) => {
     <IntroWapper ref={ref} id='introduction'>
       <IntroContainer>
         <IntroBackground
-          src='../img/introLikelion.png'
+          src='https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/introLikelion.png'
           alt='멋사중앙건물'
           imgHeight
         />
@@ -190,7 +190,7 @@ const Introduction = forwardRef((props, ref) => {
 
       <IntroContainer>
         <IntroBackground
-          src='../img/introLikelionMju.png'
+          src='https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/introLikelionMju.png'
           alt='멋사명지대단체사진'
         />
         <IntroTextArray {...IntroductionMjuAnimation}>
