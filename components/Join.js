@@ -21,7 +21,7 @@ const ColleagueBox = styled.div`
   width: 974px;
   height: 469px;
   object-fit: cover;
-  background: url(${'../img/colleague.svg'});
+  background: url(${'https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/colleague.svg'});
   background-position: center center;
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
@@ -65,7 +65,7 @@ const RecruitBox = styled.div`
   }
   width: 974px;
   height: 469px;
-  background: url(${'../img/recruit.svg'});
+  background: url(${'https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/recruit.svg'});
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
   background-position: center center;

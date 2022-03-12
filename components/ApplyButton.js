@@ -41,7 +41,10 @@ const ApplyButton = ({ text, width, height }) => {
     <a rel='noreferrer' href='https://apply.mju-likelion.com/' target='_blank'>
       <ApplyBtn width={width} height={height}>
         {text}
-        <img src='../img/ic-more.svg' alt='화살표' />
+        <img
+          src='https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/ic-more.svg'
+          alt='화살표'
+        />
       </ApplyBtn>
     </a>
   );

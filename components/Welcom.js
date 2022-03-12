@@ -37,7 +37,7 @@ const BackgroundBox = styled.div`
   /* height: 90vh; */
   min-height: 90%;
   top: 0;
-  background: url('../img/bgSky.png');
+  background: url('https://promotionlikelion.s3.ap-northeast-2.amazonaws.com/bgSky.png');
   background-size: cover;
   z-index: -1;
 `;
@@ -47,13 +47,6 @@ const WelcomText = styled.div`
   margin: 0 auto;
   text-align: center;
   word-break: keep-all;
-  /* h1 {
-    font-family: 'Mulish-ExtraBold';
-    color: #ffd25e;
-    font-size: 60px;
-    font-weight: bolder;
-    margin-bottom: 25px;
-  } */
   h2 {
     color: #fff;
     font-size: 30px;
